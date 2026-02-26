@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Wedding</title>
+<title>Bryll & Perveen | Wedding</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --rose-gold:#B76E79;
   --pastel-yellow:#FFF4B8;
@@ -17,42 +16,52 @@
   --dusty-blue:#7A9CC6;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-  font-family:'Poppins', sans-serif;
-  background:#ffffff;
+  font-family:'Poppins',sans-serif;
   color:#444;
   scroll-behavior:smooth;
+  background:white;
 }
 
 section{
-  padding:80px 20px;
+  padding:90px 20px;
   text-align:center;
 }
 
 h1,h2{
-  font-family:'Playfair Display', serif;
+  font-family:'Playfair Display',serif;
 }
 
 .hero{
   background:linear-gradient(135deg,var(--powder-blue),var(--pastel-yellow));
-  color:#fff;
-  padding:120px 20px;
+  color:white;
+  padding:130px 20px;
+  position:relative;
 }
 
+.hero:before,
+.hero:after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  background:var(--rose-gold);
+  opacity:0.1;
+  border-radius:50%;
+}
+
+.hero:before{top:-50px;left:-50px;}
+.hero:after{bottom:-50px;right:-50px;}
+
 .hero h1{
-  font-size:48px;
-  margin-bottom:10px;
+  font-size:52px;
 }
 
 .hero p{
-  font-size:20px;
-  letter-spacing:2px;
+  letter-spacing:3px;
+  margin-top:10px;
 }
 
 .countdown{
@@ -63,29 +72,26 @@ h1,h2{
 
 .btn{
   display:inline-block;
-  margin-top:25px;
-  padding:12px 30px;
+  margin-top:30px;
+  padding:14px 35px;
   border-radius:30px;
   text-decoration:none;
   background:var(--rose-gold);
   color:white;
-  transition:.3s;
+  transition:0.3s;
 }
 
 .btn:hover{
   background:var(--dusty-blue);
 }
 
-.story{
-  background:var(--sage);
-}
+.story{background:var(--sage);}
+.details{background:var(--pastel-yellow);}
+.gallery{background:white;}
 
-.details{
-  background:var(--pastel-yellow);
-}
-
-.gallery{
-  background:#fff;
+.container{
+  max-width:900px;
+  margin:auto;
 }
 
 .gallery-grid{
@@ -97,69 +103,98 @@ h1,h2{
 
 .gallery-grid img{
   width:100%;
-  border-radius:15px;
-  height:250px;
+  height:260px;
   object-fit:cover;
+  border-radius:15px;
+}
+
+.map-container{
+  margin-top:40px;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border:0;
 }
 
 footer{
   background:var(--dusty-blue);
   color:white;
-  padding:40px 20px;
+  padding:50px 20px;
 }
 
 @media(max-width:768px){
-  .hero h1{
-    font-size:32px;
-  }
+  .hero h1{font-size:34px;}
 }
-
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-  <h1>John & Maria</h1>
+  <h1>Bryll & Perveen</h1>
   <p>ARE GETTING MARRIED</p>
-  <p>June 20, 2026</p>
-
+  <p>August 28, 2026 • 3:00 PM</p>
   <div class="countdown" id="countdown"></div>
 
   <a href="https://forms.gle/yourformlink" target="_blank" class="btn">RSVP Here</a>
 </section>
 
 <section class="story">
-  <h2>Our Story</h2>
-  <p style="max-width:600px;margin:20px auto;">
-    From friends to forever. What started as a simple hello turned into a lifetime promise.
-  </p>
+  <div class="container">
+    <h2>Our Story</h2>
+    <p style="margin-top:20px;">
+      What began as a simple connection blossomed into a love meant to last a lifetime.
+      We invite you to celebrate this beautiful chapter with us.
+    </p>
+  </div>
 </section>
 
 <section class="details">
-  <h2>Wedding Details</h2>
-  <p><strong>Ceremony:</strong> St. Mary's Church – 3:00 PM</p>
-  <p><strong>Reception:</strong> Garden Hall – 6:00 PM</p>
-  <p>Dress Code: Formal Pastel Attire</p>
+  <div class="container">
+    <h2>Wedding Details</h2>
+    <p style="margin-top:20px;"><strong>Ceremony:</strong><br>
+    Iglesia ni Cristo<br>
+    District of Laoag City, Ilocos Norte<br>
+    3:00 PM</p>
+
+    <p style="margin-top:25px;"><strong>Reception:</strong><br>
+    ARABELLA Events Place<br>
+    F. Julian Street, Pila Road Barangay 2,<br>
+    Laoag City, Philippines, 2900</p>
+
+    <p style="margin-top:25px;"><strong>Dress Code:</strong> Formal Pastel Attire</p>
+
+    <div class="map-container">
+      <iframe
+        src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed">
+      </iframe>
+    </div>
+
+  </div>
 </section>
 
 <section class="gallery">
-  <h2>Gallery</h2>
-
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
-    <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33" alt="">
+  <div class="container">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33">
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>With love, John & Maria</p>
+  <p>With love, Bryll & Perveen</p>
 </footer>
 
 <script>
-const weddingDate = new Date("June 20, 2026 15:00:00").getTime();
+const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
 
 const countdown = setInterval(function() {
   const now = new Date().getTime();
@@ -171,8 +206,8 @@ const countdown = setInterval(function() {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML =
-  days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  days + " Days • " + hours + " Hours • "
+  + minutes + " Minutes • " + seconds + " Seconds ";
 
   if (distance < 0) {
     clearInterval(countdown);
