@@ -9,7 +9,7 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- External CSS -->
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,39 +27,13 @@
   </div>
 </nav>
 
-<!-- ================= FLOATING FLORALS ================= -->
-<!-- Flower with petals SVG 1 -->
-<svg class="floating-floral f1" viewBox="0 0 100 100">
-  <path fill="var(--rose-gold)" opacity="0.15"
-    d="M50,10
-       C60,10 80,25 75,40
-       C80,55 60,70 50,60
-       C40,70 20,55 25,40
-       C20,25 40,10 50,10Z"/>
-</svg>
-
-<!-- Flower with petals SVG 2 -->
-<svg class="floating-floral f2" viewBox="0 0 100 100">
-  <path fill="var(--dusty-blue)" opacity="0.15"
-    d="M50,15
-       C62,15 80,30 78,45
-       C80,60 62,75 50,65
-       C38,75 20,60 22,45
-       C20,30 38,15 50,15Z"/>
-</svg>
-
-<!-- Flower with petals SVG 3 -->
-<svg class="floating-floral f3" viewBox="0 0 100 100">
-  <path fill="var(--sage)" opacity="0.12"
-    d="M50,12
-       C60,12 78,28 74,42
-       C78,56 60,72 50,62
-       C40,72 22,56 26,42
-       C22,28 40,12 50,12Z"/>
-</svg>
+<!-- ================= FLOATING FLOWERS ================= -->
+<img src="image/flower1.png" class="floating-floral f1" alt="Flower 1">
+<img src="image/flower2.png" class="floating-floral f2" alt="Flower 2">
+<img src="image/flower3.png" class="floating-floral f3" alt="Flower 3">
 
 <!-- ================= HERO ================= -->
-<header class="hero" style="background-image: url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac');">
+<header class="hero" style="background-image: url('image/gallery1.png');">
   <div class="hero-content">
     <h1>Bryll & Perveen</h1>
     <p>August 28, 2026 • 3:00 PM</p>
@@ -73,30 +47,21 @@
 <!-- ================= STORY ================= -->
 <section id="story" class="story">
   <h2>Our Story</h2>
-  <p>
-    From a simple hello to forever. What started as a beautiful connection
-    became a lifetime promise. We invite you to celebrate our love
-    as we begin this new chapter together.
-  </p>
+  <p>From a simple hello to forever. What started as a beautiful connection became a lifetime promise. We invite you to celebrate our love as we begin this new chapter together.</p>
 </section>
 
 <!-- ================= DETAILS ================= -->
 <section id="details" class="details">
   <h2>Wedding Details</h2>
-
   <p><strong>Ceremony</strong><br>
   Iglesia ni Cristo<br>
   District of Laoag City, Ilocos Norte<br>
   3:00 PM</p>
 
-  <br>
-
   <p><strong>Reception</strong><br>
   ARABELLA Events Place<br>
   F. Julian Street, Pila Road Barangay 2,<br>
   Laoag City, Philippines, 2900</p>
-
-  <br>
 
   <p><strong>Dress Code:</strong> Formal Pastel Attire</p>
 </section>
@@ -104,17 +69,14 @@
 <!-- ================= RSVP ================= -->
 <section id="rsvp" class="rsvp">
   <h2>RSVP</h2>
-
   <form action="#" method="POST">
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email Address" required>
-
     <select required>
       <option value="">Will you attend?</option>
       <option>Joyfully Accept</option>
       <option>Respectfully Decline</option>
     </select>
-
     <button type="submit">Submit RSVP</button>
   </form>
 </section>
@@ -122,15 +84,13 @@
 <!-- ================= GALLERY ================= -->
 <section id="gallery" class="gallery">
   <h2>Gallery</h2>
-
   <div class="slider">
     <div class="slides" id="slides">
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="Gallery Image 1">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Gallery Image 2">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Gallery Image 3">
+      <img src="image/gallery1.png" alt="Gallery Image 1">
+      <img src="image/gallery2.png" alt="Gallery Image 2">
+      <img src="image/gallery3.png" alt="Gallery Image 3">
     </div>
   </div>
-
   <div class="slider-controls">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
@@ -140,103 +100,62 @@
 <!-- ================= MAP ================= -->
 <section id="location" class="map">
   <h2>Location</h2>
-
-  <iframe
-    src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed">
-  </iframe>
+  <iframe src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <p>With love, Bryll & Perveen</p>
 </footer>
 
-<!-- ================= BACKGROUND MUSIC ================= -->
 <audio id="bg-music" loop>
   <source src="piano.mp3" type="audio/mpeg">
 </audio>
 
-<!-- ================= JAVASCRIPT ================= -->
 <script>
-
-/* ===== Countdown ===== */
+/* Countdown Timer */
 const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-
-setInterval(function(){
+setInterval(()=>{
   const now = new Date().getTime();
   const distance = weddingDate - now;
+  const days = Math.floor(distance/(1000*60*60*24));
+  const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+  const seconds = Math.floor((distance%(1000*60))/1000);
+  document.getElementById("countdown").innerHTML = `${days} Days • ${hours} Hours • ${minutes} Minutes • ${seconds} Seconds`;
+},1000);
 
-  const days = Math.floor(distance / (1000*60*60*24));
-  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
-  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
-  const seconds = Math.floor((distance % (1000*60)) / 1000);
-
-  document.getElementById("countdown").innerHTML =
-    days + " Days • " +
-    hours + " Hours • " +
-    minutes + " Minutes • " +
-    seconds + " Seconds";
-
-}, 1000);
-
-
-/* ===== Scroll Fade Animation ===== */
+/* Scroll Fade Animation */
 const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", function(){
-  sections.forEach(section => {
-    const position = section.getBoundingClientRect().top;
-    if(position < window.innerHeight - 100){
+window.addEventListener("scroll", ()=>{
+  sections.forEach(section=>{
+    if(section.getBoundingClientRect().top < window.innerHeight - 100){
       section.classList.add("show");
     }
   });
 });
 
-
-/* ===== Slider ===== */
+/* Gallery Slider */
 let index = 0;
 const totalSlides = 3;
+function showSlide(){ document.getElementById("slides").style.transform = `translateX(-${index*100}%)`; }
+function nextSlide(){ index=(index+1)%totalSlides; showSlide(); }
+function prevSlide(){ index=(index-1+totalSlides)%totalSlides; showSlide(); }
 
-function showSlide(){
-  document.getElementById("slides").style.transform =
-    "translateX(-" + index * 100 + "%)";
-}
-
-function nextSlide(){
-  index = (index + 1) % totalSlides;
-  showSlide();
-}
-
-function prevSlide(){
-  index = (index - 1 + totalSlides) % totalSlides;
-  showSlide();
-}
-
-/* ===== Swipe Support for Mobile ===== */
+/* Swipe Mobile */
 const slidesEl = document.getElementById('slides');
-let startX = 0;
-let endX = 0;
-
-slidesEl.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
-slidesEl.addEventListener('touchmove', e => { endX = e.touches[0].clientX; });
-slidesEl.addEventListener('touchend', () => {
-  const diff = startX - endX;
-  if(diff > 50){ nextSlide(); } 
-  else if(diff < -50){ prevSlide(); }
+let startX=0, endX=0;
+slidesEl.addEventListener('touchstart',e=>{startX=e.touches[0].clientX});
+slidesEl.addEventListener('touchmove',e=>{endX=e.touches[0].clientX});
+slidesEl.addEventListener('touchend',()=>{
+  const diff=startX-endX;
+  if(diff>50){ nextSlide(); } else if(diff<-50){ prevSlide(); }
 });
 
-
-/* ===== Background Music Toggle ===== */
+/* Background Music */
 function toggleMusic(){
-  const music = document.getElementById("bg-music");
-
-  if(music.paused){
-    music.play();
-  } else {
-    music.pause();
-  }
+  const music=document.getElementById("bg-music");
+  if(music.paused){ music.play(); } else { music.pause(); }
 }
-
 </script>
 
 </body>
