@@ -3,193 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bryll & Perveen Wedding</title>
+<title>Bryll & Perveen | Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-/* ---------------- GLOBAL ---------------- */
+/* ================= GLOBAL ================= */
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #fffafc;
+  background: linear-gradient(to bottom, #111, #1c1c1c);
+  color: #f5f5f5;
   text-align: center;
   overflow-x: hidden;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
 .section {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* ---------------- ENVELOPE OPEN EFFECT ---------------- */
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 2px;
+}
 
-#envelope {
-  position: fixed;
-  inset: 0;
-  background: #f8e8ee;
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  cursor: pointer;
+  animation: fadeIn 2s ease forwards;
 }
 
-.envelope-box {
-  width: 300px;
-  height: 200px;
-  background: #fff;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  overflow: hidden;
+.hero h1 {
+  font-size: 60px;
+  font-weight: 600;
 }
 
-.flap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #e8c5d1;
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
-  transform-origin: top;
-  transition: transform 1s ease;
-}
-
-#envelope.open .flap {
-  transform: rotateX(180deg);
-}
-
-.invite-text {
-  margin-top: 80px;
+.hero p {
   font-size: 20px;
+  letter-spacing: 4px;
 }
 
-/* ---------------- PETALS ---------------- */
+/* ================= COUNTDOWN ================= */
 
-.petal {
-  position: fixed;
-  top: -10%;
-  pointer-events: none;
-  animation-name: fall;
-  animation-timing-function: linear;
+.countdown {
+  font-size: 22px;
+  margin-top: 20px;
+  letter-spacing: 2px;
 }
 
-@keyframes fall {
-  to {
-    transform: translateX(200px) translateY(120vh) rotate(360deg);
-  }
+/* ================= SAVE THE DATE ================= */
+
+.save-date {
+  font-size: 24px;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
 }
 
-/* ---------------- GALLERY ---------------- */
+/* ================= VENUE ================= */
 
-.gallery-container {
-  overflow: hidden;
+.venue-box {
+  margin-bottom: 60px;
 }
 
-.gallery {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 20px;
-}
-
-.gallery img {
+iframe {
+  margin-top: 20px;
+  width: 100%;
   height: 300px;
   border-radius: 15px;
-  scroll-snap-align: center;
-  flex-shrink: 0;
+  border: none;
 }
 
-/* ---------------- BUTTON ---------------- */
+/* ================= SLIDESHOW ================= */
+
+.slideshow {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* ================= BUTTON ================= */
 
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  margin-top: 20px;
-  background: #c48ea3;
-  color: white;
+  padding: 14px 28px;
+  background: #d4af37;
+  color: black;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
-/* ---------------- MUSIC BUTTON ---------------- */
+/* ================= ANIMATIONS ================= */
 
-.music-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #c48ea3;
-  color: white;
-  border: none;
-  padding: 12px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 999;
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
 </style>
 </head>
 <body>
 
-<!-- ENVELOPE -->
-<div id="envelope">
-  <div class="envelope-box">
-    <div class="flap"></div>
-    <div class="invite-text">Tap to Open Invitation 💌</div>
-  </div>
-</div>
-
-<!-- MUSIC -->
-<audio id="bg-music" loop>
-  <source src="your-wedding-music.mp3" type="audio/mpeg">
-</audio>
-
-<button class="music-btn" onclick="toggleMusic()">🎶</button>
-
 <!-- HERO -->
-<div class="section">
+<div class="hero">
+  <div class="save-date">SAVE THE DATE</div>
   <h1>Bryll & Perveen</h1>
   <p>August 28, 2026 • 3:00 PM</p>
+  <div class="countdown" id="countdown"></div>
 </div>
 
 <!-- CEREMONY -->
 <div class="section">
   <h2>Ceremony</h2>
-  <p>Iglesia ni Cristo<br>District of Laoag City, Ilocos Norte</p>
+  <div class="venue-box">
+    Iglesia ni Cristo<br>
+    District of Laoag City, Ilocos Norte
 
-  <iframe 
-    src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed"
-    width="100%" height="300" style="border:0; border-radius:15px;">
-  </iframe>
-</div>
+    <iframe 
+    src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed">
+    </iframe>
+  </div>
 
-<!-- RECEPTION -->
-<div class="section">
   <h2>Reception</h2>
-  <p>ARABELLA Events Place<br>F. Julian Street, Pila Road Barangay 2, Laoag City</p>
+  <div class="venue-box">
+    ARABELLA Events Place<br>
+    F. Julian Street, Pila Road Barangay 2, Laoag City, Philippines
 
-  <iframe 
-    src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed"
-    width="100%" height="300" style="border:0; border-radius:15px;">
-  </iframe>
+    <iframe 
+    src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed">
+    </iframe>
+  </div>
 </div>
 
-<!-- GALLERY -->
+<!-- SLIDESHOW -->
 <div class="section">
   <h2>Our Moments</h2>
-  <div class="gallery-container">
-    <div class="gallery">
+  <div class="slideshow">
+
+    <div class="slide fade">
       <img src="photo1.jpg">
+    </div>
+
+    <div class="slide fade">
       <img src="photo2.jpg">
+    </div>
+
+    <div class="slide fade">
       <img src="photo3.jpg">
+    </div>
+
+    <div class="slide fade">
       <img src="photo4.jpg">
     </div>
+
   </div>
 </div>
 
@@ -201,46 +197,42 @@ h1, h2 {
 
 <script>
 
-/* ---------------- ENVELOPE OPEN ---------------- */
+/* ================= COUNTDOWN ================= */
 
-document.getElementById("envelope").addEventListener("click", function() {
-  this.classList.add("open");
-  setTimeout(() => {
-    this.style.display = "none";
-    document.getElementById("bg-music").play();
-  }, 1000);
-});
+const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
 
-/* ---------------- MUSIC ---------------- */
+const countdown = setInterval(function() {
 
-function toggleMusic() {
-  const music = document.getElementById("bg-music");
-  if (music.paused) music.play();
-  else music.pause();
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " Days • " + hours + " Hours • "
+    + minutes + " Minutes • " + seconds + " Seconds";
+
+}, 1000);
+
+/* ================= SLIDESHOW ================= */
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000);
 }
-
-/* ---------------- PETAL GENERATOR ---------------- */
-
-function createPetal() {
-  const petal = document.createElement("img");
-  petal.src = "your-transparent-flower.png"; 
-  petal.classList.add("petal");
-
-  const size = Math.random() * 20 + 15;
-  petal.style.width = size + "px";
-  petal.style.left = Math.random() * 100 + "vw";
-
-  const duration = Math.random() * 5 + 8;
-  petal.style.animationDuration = duration + "s";
-
-  document.body.appendChild(petal);
-
-  setTimeout(() => {
-    petal.remove();
-  }, duration * 1000);
-}
-
-setInterval(createPetal, 800);
 
 </script>
 
