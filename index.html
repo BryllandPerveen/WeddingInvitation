@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --rose-gold:#B76E79;
+  --pastel-yellow:#FFF4B8;
+  --powder-blue:#BFD7ED;
+  --sage:#CFE3D4;
+  --dusty-blue:#7A9CC6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:#ffffff;
+  color:#444;
+  scroll-behavior:smooth;
+}
+
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+h1,h2{
+  font-family:'Playfair Display', serif;
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--powder-blue),var(--pastel-yellow));
+  color:#fff;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:20px;
+  letter-spacing:2px;
+}
+
+.countdown{
+  margin-top:30px;
+  font-size:22px;
+  font-weight:500;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  background:var(--rose-gold);
+  color:white;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:var(--dusty-blue);
+}
+
+.story{
+  background:var(--sage);
+}
+
+.details{
+  background:var(--pastel-yellow);
+}
+
+.gallery{
+  background:#fff;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  margin-top:40px;
+}
+
+.gallery-grid img{
+  width:100%;
+  border-radius:15px;
+  height:250px;
+  object-fit:cover;
+}
+
+footer{
+  background:var(--dusty-blue);
+  color:white;
+  padding:40px 20px;
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:32px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>John & Maria</h1>
+  <p>ARE GETTING MARRIED</p>
+  <p>June 20, 2026</p>
+
+  <div class="countdown" id="countdown"></div>
+
+  <a href="https://forms.gle/yourformlink" target="_blank" class="btn">RSVP Here</a>
+</section>
+
+<section class="story">
+  <h2>Our Story</h2>
+  <p style="max-width:600px;margin:20px auto;">
+    From friends to forever. What started as a simple hello turned into a lifetime promise.
+  </p>
+</section>
+
+<section class="details">
+  <h2>Wedding Details</h2>
+  <p><strong>Ceremony:</strong> St. Mary's Church – 3:00 PM</p>
+  <p><strong>Reception:</strong> Garden Hall – 6:00 PM</p>
+  <p>Dress Code: Formal Pastel Attire</p>
+</section>
+
+<section class="gallery">
+  <h2>Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+    <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33" alt="">
+  </div>
+</section>
+
+<footer>
+  <p>With love, John & Maria</p>
+</footer>
+
+<script>
+const weddingDate = new Date("June 20, 2026 15:00:00").getTime();
+
+const countdown = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("countdown").innerHTML = "Just Married 💍";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
