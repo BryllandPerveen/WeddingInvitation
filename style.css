@@ -58,17 +58,40 @@ h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
 /* Footer */
 footer{padding:60px 20px;text-align:center;background:#111;color:white;}
 
-/* Floating PNG Flowers */
+/* Floating PNG Flowers - More & Side Floating */
 .floating-floral{
-  position:fixed;width:100px;height:auto;z-index:1;pointer-events:none;animation:floatAnim 25s infinite ease-in-out alternate;
+  position:fixed;
+  width:70px;      /* smaller size */
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+  animation:floatRot 30s infinite ease-in-out alternate;
+  opacity:0.6;
 }
-.f1{top:10%; left:5%;animation-duration:25s;}
-.f2{top:50%; left:80%;animation-duration:30s;}
-.f3{top:70%; left:20%;animation-duration:35s;}
-@keyframes floatAnim{
-  0%{transform:translateY(0) translateX(0) rotate(0deg);}
-  50%{transform:translateY(-20px) translateX(15px) rotate(15deg);}
-  100%{transform:translateY(0) translateX(0) rotate(0deg);}
+
+/* Side positioning for more flowers */
+.f1{top:5%; left:2%; animation-duration:28s; animation-delay:0s;}
+.f2{top:15%; right:3%; animation-duration:32s; animation-delay:5s;}
+.f3{top:25%; left:1%; animation-duration:30s; animation-delay:2s;}
+.f4{top:35%; right:2%; animation-duration:33s; animation-delay:3s;}
+.f5{top:50%; left:2%; animation-duration:29s; animation-delay:6s;}
+.f6{top:60%; right:3%; animation-duration:31s; animation-delay:1s;}
+.f7{top:75%; left:1%; animation-duration:34s; animation-delay:4s;}
+.f8{top:85%; right:2%; animation-duration:30s; animation-delay:2s;}
+
+/* Floating + Rotating Animation */
+@keyframes floatRot{
+  0%{transform: translateY(0px) rotate(0deg);}
+  50%{transform: translateY(-15px) rotate(15deg);}
+  100%{transform: translateY(0px) rotate(-10deg);}
+}
+
+/* Responsive Sizes */
+@media(max-width:768px){
+  .floating-floral{width:50px;}
+}
+@media(max-width:480px){
+  .floating-floral{width:30px;}
 }
 
 /* Responsive */
