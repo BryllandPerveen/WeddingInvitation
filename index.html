@@ -11,7 +11,7 @@
 
 <body>
 
-<!-- Petal Container -->
+<!-- Petal Layer -->
 <div class="petal-container"></div>
 
 <!-- Navigation -->
@@ -25,23 +25,23 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero" style="background-image:url('image/hero.jpg');">
   <div class="hero-content">
     <h1>Anna & Ben</h1>
     <p>ARE GETTING MARRIED</p>
-    <div class="countdown" id="countdown"></div>
+    <div id="countdown"></div>
   </div>
 </section>
 
 <!-- Story -->
-<section id="story" class="story">
+<section id="story">
   <h2>Our Story</h2>
   <p>A beautiful journey that started with friendship and grew into forever.</p>
 </section>
 
 <!-- Details -->
-<section id="details" class="details">
+<section id="details">
   <h2>Wedding Details</h2>
   <p>June 25, 2026</p>
   <p>St. Mary's Church</p>
@@ -49,7 +49,7 @@
 </section>
 
 <!-- Gallery -->
-<section id="gallery" class="gallery">
+<section id="gallery">
   <h2>Gallery</h2>
   <div class="slider">
     <div class="slides">
@@ -61,7 +61,7 @@
 </section>
 
 <!-- RSVP -->
-<section id="rsvp" class="rsvp">
+<section id="rsvp">
   <h2>RSVP</h2>
   <form>
     <input type="text" placeholder="Full Name" required>
@@ -74,59 +74,51 @@
   </form>
 </section>
 
-<!-- Footer -->
 <footer>
   With love, Anna & Ben
 </footer>
 
-<!-- Countdown Script -->
+<!-- PETAL SCRIPT -->
 <script>
-const weddingDate = new Date("June 25, 2026 15:00:00").getTime();
-const countdown = document.getElementById("countdown");
+const container = document.querySelector(".petal-container");
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  countdown.innerHTML = days + " Days " + hours + " Hours " + minutes + " Minutes";
-}, 1000);
-</script>
-
-<!-- Falling Petals Script -->
-<script>
-const petalContainer = document.querySelector('.petal-container');
-
-const flowerImages = [
+const images = [
   "image/flower1.png",
   "image/flower2.png",
   "image/flower3.png"
 ];
 
-function createPetal(){
+let maxPetals = 20;
+let current = 0;
+
+function spawnPetal(){
+  if(current >= maxPetals) return;
+
   const petal = document.createElement("img");
-  petal.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
+  petal.src = images[Math.floor(Math.random()*images.length)];
   petal.classList.add("petal");
 
+  // random horizontal start
   petal.style.left = Math.random() * 100 + "vw";
 
-  const size = Math.random() * 25 + 15;
+  // random size
+  const size = Math.random() * 20 + 18;
   petal.style.width = size + "px";
 
-  const duration = Math.random() * 5 + 8;
+  // random duration
+  const duration = Math.random() * 4 + 8;
   petal.style.animationDuration = duration + "s";
 
-  petalContainer.appendChild(petal);
+  container.appendChild(petal);
+  current++;
 
-  setTimeout(() => {
+  setTimeout(()=>{
     petal.remove();
+    current--;
   }, duration * 1000);
 }
 
-setInterval(createPetal, 500);
+setInterval(spawnPetal, 800);
 </script>
 
 </body>
