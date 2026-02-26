@@ -3,122 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Wedding</title>
+<title>Bryll & Perveen Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------------- GLOBAL ---------------- */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffafc;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+/* ---------------- ENVELOPE OPEN EFFECT ---------------- */
+
+#envelope {
+  position: fixed;
+  inset: 0;
+  background: #f8e8ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.envelope-box {
+  width: 300px;
+  height: 200px;
+  background: #fff;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.flap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e8c5d1;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
+}
+
+#envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.invite-text {
+  margin-top: 80px;
+  font-size: 20px;
+}
+
+/* ---------------- PETALS ---------------- */
+
+.petal {
+  position: fixed;
+  top: -10%;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateX(200px) translateY(120vh) rotate(360deg);
+  }
+}
+
+/* ---------------- GALLERY ---------------- */
+
+.gallery-container {
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.gallery img {
+  height: 300px;
+  border-radius: 15px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+/* ---------------- BUTTON ---------------- */
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  background: #c48ea3;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+/* ---------------- MUSIC BUTTON ---------------- */
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c48ea3;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+}
+
+</style>
 </head>
-
 <body>
 
-<!-- Petal Layer -->
-<div class="petal-container"></div>
-
-<!-- Navigation -->
-<nav>
-  <div class="logo">A & B</div>
-  <div>
-    <a href="#story">Story</a>
-    <a href="#details">Details</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#rsvp">RSVP</a>
+<!-- ENVELOPE -->
+<div id="envelope">
+  <div class="envelope-box">
+    <div class="flap"></div>
+    <div class="invite-text">Tap to Open Invitation 💌</div>
   </div>
-</nav>
+</div>
 
-<!-- Hero -->
-<section class="hero" style="background-image:url('image/hero.jpg');">
-  <div class="hero-content">
-    <h1>Anna & Ben</h1>
-    <p>ARE GETTING MARRIED</p>
-    <div id="countdown"></div>
-  </div>
-</section>
+<!-- MUSIC -->
+<audio id="bg-music" loop>
+  <source src="your-wedding-music.mp3" type="audio/mpeg">
+</audio>
 
-<!-- Story -->
-<section id="story">
-  <h2>Our Story</h2>
-  <p>A beautiful journey that started with friendship and grew into forever.</p>
-</section>
+<button class="music-btn" onclick="toggleMusic()">🎶</button>
 
-<!-- Details -->
-<section id="details">
-  <h2>Wedding Details</h2>
-  <p>June 25, 2026</p>
-  <p>St. Mary's Church</p>
-  <p>Reception at Grand Hall</p>
-</section>
+<!-- HERO -->
+<div class="section">
+  <h1>Bryll & Perveen</h1>
+  <p>August 28, 2026 • 3:00 PM</p>
+</div>
 
-<!-- Gallery -->
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="image/gallery1.jpg">
-      <img src="image/gallery2.jpg">
-      <img src="image/gallery3.jpg">
+<!-- CEREMONY -->
+<div class="section">
+  <h2>Ceremony</h2>
+  <p>Iglesia ni Cristo<br>District of Laoag City, Ilocos Norte</p>
+
+  <iframe 
+    src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed"
+    width="100%" height="300" style="border:0; border-radius:15px;">
+  </iframe>
+</div>
+
+<!-- RECEPTION -->
+<div class="section">
+  <h2>Reception</h2>
+  <p>ARABELLA Events Place<br>F. Julian Street, Pila Road Barangay 2, Laoag City</p>
+
+  <iframe 
+    src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed"
+    width="100%" height="300" style="border:0; border-radius:15px;">
+  </iframe>
+</div>
+
+<!-- GALLERY -->
+<div class="section">
+  <h2>Our Moments</h2>
+  <div class="gallery-container">
+    <div class="gallery">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
+      <img src="photo4.jpg">
     </div>
   </div>
-</section>
+</div>
 
 <!-- RSVP -->
-<section id="rsvp">
+<div class="section">
   <h2>RSVP</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <select required>
-      <option value="">Will you attend?</option>
-      <option>Yes, with joy!</option>
-      <option>Sadly, no</option>
-    </select>
-    <button type="submit">Submit</button>
-  </form>
-</section>
+  <a href="YOUR_GOOGLE_FORM_LINK" class="btn">Confirm Attendance</a>
+</div>
 
-<footer>
-  With love, Anna & Ben
-</footer>
-
-<!-- PETAL SCRIPT -->
 <script>
-const container = document.querySelector(".petal-container");
 
-const images = [
-  "image/flower1.png",
-  "image/flower2.png",
-  "image/flower3.png"
-];
+/* ---------------- ENVELOPE OPEN ---------------- */
 
-let maxPetals = 20;
-let current = 0;
+document.getElementById("envelope").addEventListener("click", function() {
+  this.classList.add("open");
+  setTimeout(() => {
+    this.style.display = "none";
+    document.getElementById("bg-music").play();
+  }, 1000);
+});
 
-function spawnPetal(){
-  if(current >= maxPetals) return;
+/* ---------------- MUSIC ---------------- */
 
+function toggleMusic() {
+  const music = document.getElementById("bg-music");
+  if (music.paused) music.play();
+  else music.pause();
+}
+
+/* ---------------- PETAL GENERATOR ---------------- */
+
+function createPetal() {
   const petal = document.createElement("img");
-  petal.src = images[Math.floor(Math.random()*images.length)];
+  petal.src = "your-transparent-flower.png"; 
   petal.classList.add("petal");
 
-  // random horizontal start
+  const size = Math.random() * 20 + 15;
+  petal.style.width = size + "px";
   petal.style.left = Math.random() * 100 + "vw";
 
-  // random size
-  const size = Math.random() * 20 + 18;
-  petal.style.width = size + "px";
-
-  // random duration
-  const duration = Math.random() * 4 + 8;
+  const duration = Math.random() * 5 + 8;
   petal.style.animationDuration = duration + "s";
 
-  container.appendChild(petal);
-  current++;
+  document.body.appendChild(petal);
 
-  setTimeout(()=>{
+  setTimeout(() => {
     petal.remove();
-    current--;
   }, duration * 1000);
 }
 
-setInterval(spawnPetal, 800);
+setInterval(createPetal, 800);
+
 </script>
 
 </body>
