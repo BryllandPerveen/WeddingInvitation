@@ -58,40 +58,46 @@ h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
 /* Footer */
 footer{padding:60px 20px;text-align:center;background:#111;color:white;}
 
-/* Floating PNG Flowers - More & Side Floating */
+/* Tiny Floating Flowers - Scattered & Drifting */
 .floating-floral{
   position:fixed;
-  width:70px;      /* smaller size */
+  width:30px;      /* tiny size */
   height:auto;
   z-index:1;
   pointer-events:none;
-  animation:floatRot 30s infinite ease-in-out alternate;
   opacity:0.6;
+  animation:floatRot 35s infinite ease-in-out alternate;
 }
 
-/* Side positioning for more flowers */
-.f1{top:5%; left:2%; animation-duration:28s; animation-delay:0s;}
-.f2{top:15%; right:3%; animation-duration:32s; animation-delay:5s;}
-.f3{top:25%; left:1%; animation-duration:30s; animation-delay:2s;}
-.f4{top:35%; right:2%; animation-duration:33s; animation-delay:3s;}
-.f5{top:50%; left:2%; animation-duration:29s; animation-delay:6s;}
-.f6{top:60%; right:3%; animation-duration:31s; animation-delay:1s;}
-.f7{top:75%; left:1%; animation-duration:34s; animation-delay:4s;}
-.f8{top:85%; right:2%; animation-duration:30s; animation-delay:2s;}
+/* Side & scattered positions + random delays */
+.f1{top:5%; left:2%; animation-delay:0s;}
+.f2{top:12%; right:3%; animation-delay:2s;}
+.f3{top:18%; left:4%; animation-delay:4s;}
+.f4{top:25%; right:5%; animation-delay:6s;}
+.f5{top:30%; left:1%; animation-delay:3s;}
+.f6{top:40%; right:2%; animation-delay:5s;}
+.f7{top:50%; left:3%; animation-delay:1s;}
+.f8{top:60%; right:4%; animation-delay:7s;}
+.f9{top:68%; left:2%; animation-delay:2s;}
+.f10{top:75%; right:3%; animation-delay:4s;}
+.f11{top:82%; left:4%; animation-delay:6s;}
+.f12{top:90%; right:2%; animation-delay:3s;}
 
-/* Floating + Rotating Animation */
+/* Floating + Rotation Animation */
 @keyframes floatRot{
   0%{transform: translateY(0px) rotate(0deg);}
-  50%{transform: translateY(-15px) rotate(15deg);}
-  100%{transform: translateY(0px) rotate(-10deg);}
+  25%{transform: translateY(-10px) rotate(10deg);}
+  50%{transform: translateY(-5px) rotate(-10deg);}
+  75%{transform: translateY(5px) rotate(5deg);}
+  100%{transform: translateY(0px) rotate(0deg);}
 }
 
 /* Responsive Sizes */
 @media(max-width:768px){
-  .floating-floral{width:50px;}
+  .floating-floral{width:20px;}
 }
 @media(max-width:480px){
-  .floating-floral{width:30px;}
+  .floating-floral{width:15px;}
 }
 
 /* Responsive */
