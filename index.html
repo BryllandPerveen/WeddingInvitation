@@ -3,328 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bryll & Perveen | Wedding</title>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --rose-gold:#B76E79;
-  --dusty-blue:#7A9CC6;
-  --sage:#CFE3D4;
-  --soft-white:#ffffff;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Montserrat',sans-serif;
-  color:#333;
-  overflow-x:hidden;
-}
-
-/* Navigation */
-nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  padding:20px 40px;
-  display:flex;
-  justify-content:space-between;
-  z-index:999;
-  background:rgba(0,0,0,0.3);
-  backdrop-filter:blur(6px);
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-  letter-spacing:2px;
-}
-
-/* Hero */
-.hero{
-  height:100vh;
-  background:url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac') center/cover no-repeat fixed;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  position:relative;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.4);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-
-.hero h1{
-  font-family:'Great Vibes',cursive;
-  font-size:80px;
-}
-
-.hero p{
-  letter-spacing:4px;
-  margin-top:10px;
-}
-
-.countdown{
-  margin-top:20px;
-  font-size:18px;
-}
-
-/* Sections */
-section{
-  padding:100px 20px;
-  text-align:center;
-  opacity:0;
-  transform:translateY(50px);
-  transition:1s ease;
-}
-
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-h2{
-  font-family:'Playfair Display',serif;
-  font-size:36px;
-  margin-bottom:20px;
-}
-
-/* Story */
-.story{
-  background:var(--sage);
-}
-
-/* Details */
-.details{
-  background:#f9f9f9;
-}
-
-/* RSVP */
-.rsvp{
-  background:var(--dusty-blue);
-  color:white;
-}
-
-.rsvp form{
-  max-width:500px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.rsvp input, .rsvp select{
-  padding:12px;
-  border:none;
-  border-radius:5px;
-}
-
-.rsvp button{
-  padding:12px;
-  border:none;
-  background:var(--rose-gold);
-  color:white;
-  cursor:pointer;
-  border-radius:5px;
-}
-
-/* Gallery Slider */
-.gallery{
-  background:white;
-}
-
-.slider{
-  position:relative;
-  max-width:800px;
-  margin:auto;
-  overflow:hidden;
-}
-
-.slides{
-  display:flex;
-  transition:transform 0.6s ease;
-}
-
-.slides img{
-  width:100%;
-  flex-shrink:0;
-  border-radius:10px;
-}
-
-.slider-buttons{
-  margin-top:15px;
-}
-
-.slider-buttons button{
-  padding:8px 15px;
-  margin:0 5px;
-  border:none;
-  background:var(--rose-gold);
-  color:white;
-  cursor:pointer;
-}
-
-/* Map */
-.map iframe{
-  width:100%;
-  height:350px;
-  border:0;
-}
-
-footer{
-  padding:50px;
-  background:#111;
-  color:white;
-}
-
-@media(max-width:768px){
-  .hero h1{font-size:48px;}
-  nav{flex-direction:column;}
-}
-</style>
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Floating Floral Decorations -->
-<svg class="floating-floral f1" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="var(--rose-gold)" opacity="0.2"/>
-</svg>
-
-<svg class="floating-floral f2" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="var(--dusty-blue)" opacity="0.15"/>
-</svg>
-
-<svg class="floating-floral f3" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="var(--sage)" opacity="0.12"/>
-</svg>
-
-<!-- Background Music -->
-<audio id="bg-music" loop>
-  <source src="piano.mp3" type="audio/mpeg">
-</audio>
-
+<!-- ================= NAVIGATION ================= -->
 <nav>
-  <div style="color:white;font-family:'Playfair Display',serif;">B & P</div>
-  <div>
+  <div class="logo">B & P</div>
+  <div class="nav-links">
     <a href="#story">Story</a>
     <a href="#details">Details</a>
     <a href="#rsvp">RSVP</a>
     <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
   </div>
 </nav>
 
-<section class="hero">
+<!-- ================= FLOATING FLORALS ================= -->
+<svg class="floating-floral f1" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="var(--rose-gold)" opacity="0.2"/>
+</svg>
+<svg class="floating-floral f2" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="var(--dusty-blue)" opacity="0.15"/>
+</svg>
+<svg class="floating-floral f3" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="var(--sage)" opacity="0.12"/>
+</svg>
+
+<!-- ================= HERO ================= -->
+<header class="hero" style="background-image: url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac');">
   <div class="hero-content">
     <h1>Bryll & Perveen</h1>
     <p>August 28, 2026 • 3:00 PM</p>
-    <div class="countdown" id="countdown"></div>
-    <button onclick="toggleMusic()" style="margin-top:20px;padding:10px 20px;border:none;background:white;color:black;cursor:pointer;">🎵 Play Music</button>
-  </div>
-</section>
 
+    <div class="countdown" id="countdown"></div>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+  </div>
+</header>
+
+<!-- ================= STORY ================= -->
 <section id="story" class="story">
   <h2>Our Story</h2>
-  <p>From a simple hello to forever. Join us as we begin our greatest adventure.</p>
+  <p>
+    From a simple hello to forever. What started as a beautiful connection
+    became a lifetime promise. We invite you to celebrate our love
+    as we begin this new chapter together.
+  </p>
 </section>
 
+<!-- ================= DETAILS ================= -->
 <section id="details" class="details">
   <h2>Wedding Details</h2>
-  <p><strong>Ceremony:</strong> Iglesia ni Cristo – Laoag City</p>
-  <p><strong>Reception:</strong> ARABELLA Events Place – Laoag City</p>
+
+  <p><strong>Ceremony</strong><br>
+  Iglesia ni Cristo<br>
+  District of Laoag City, Ilocos Norte<br>
+  3:00 PM</p>
+
+  <br>
+
+  <p><strong>Reception</strong><br>
+  ARABELLA Events Place<br>
+  F. Julian Street, Pila Road Barangay 2,<br>
+  Laoag City, Philippines, 2900</p>
+
+  <br>
+
   <p><strong>Dress Code:</strong> Formal Pastel Attire</p>
 </section>
 
+<!-- ================= RSVP ================= -->
 <section id="rsvp" class="rsvp">
   <h2>RSVP</h2>
-  <form>
+
+  <form action="#" method="POST">
     <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+
     <select required>
       <option value="">Will you attend?</option>
       <option>Joyfully Accept</option>
       <option>Respectfully Decline</option>
     </select>
-    <button type="submit">Submit</button>
+
+    <button type="submit">Submit RSVP</button>
   </form>
 </section>
 
+<!-- ================= GALLERY ================= -->
 <section id="gallery" class="gallery">
   <h2>Gallery</h2>
+
   <div class="slider">
     <div class="slides" id="slides">
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="Gallery Image 1">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Gallery Image 2">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Gallery Image 3">
     </div>
   </div>
-  <div class="slider-buttons">
+
+  <div class="slider-controls">
     <button onclick="prevSlide()">Prev</button>
     <button onclick="nextSlide()">Next</button>
   </div>
 </section>
 
-<section class="map">
+<!-- ================= MAP ================= -->
+<section id="location" class="map">
   <h2>Location</h2>
-  <iframe src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+
+  <iframe
+    src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed">
+  </iframe>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
-  With love, Bryll & Perveen
+  <p>With love, Bryll & Perveen</p>
 </footer>
 
-<script>
-/* Countdown */
-const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-setInterval(()=>{
-  const now=new Date().getTime();
-  const d=weddingDate-now;
-  const days=Math.floor(d/(1000*60*60*24));
-  const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-  const mins=Math.floor((d%(1000*60*60))/(1000*60));
-  const secs=Math.floor((d%(1000*60))/1000);
-  document.getElementById("countdown").innerHTML=
-  days+" Days • "+hrs+" Hrs • "+mins+" Min • "+secs+" Sec";
-},1000);
+<!-- ================= BACKGROUND MUSIC ================= -->
+<audio id="bg-music" loop>
+  <source src="piano.mp3" type="audio/mpeg">
+</audio>
 
-/* Fade-in on scroll */
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-  sections.forEach(sec=>{
-    if(sec.getBoundingClientRect().top<window.innerHeight-100){
-      sec.classList.add("show");
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+/* ===== Countdown ===== */
+const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
+
+setInterval(function(){
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " Days • " +
+    hours + " Hours • " +
+    minutes + " Minutes • " +
+    seconds + " Seconds";
+
+}, 1000);
+
+
+/* ===== Scroll Fade Animation ===== */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", function(){
+  sections.forEach(section => {
+    const position = section.getBoundingClientRect().top;
+    if(position < window.innerHeight - 100){
+      section.classList.add("show");
     }
   });
 });
 
-/* Slider */
-let index=0;
-function showSlide(){
-  document.getElementById("slides").style.transform=
-  "translateX(-"+index*100+"%)";
-}
-function nextSlide(){index=(index+1)%3;showSlide();}
-function prevSlide(){index=(index-1+3)%3;showSlide();}
 
-/* Music */
-function toggleMusic(){
-  const music=document.getElementById("bg-music");
-  music.paused?music.play():music.pause();
+/* ===== Slider ===== */
+let index = 0;
+const totalSlides = 3;
+
+function showSlide(){
+  document.getElementById("slides").style.transform =
+    "translateX(-" + index * 100 + "%)";
 }
+
+function nextSlide(){
+  index = (index + 1) % totalSlides;
+  showSlide();
+}
+
+function prevSlide(){
+  index = (index - 1 + totalSlides) % totalSlides;
+  showSlide();
+}
+
+/* ===== Swipe Support for Mobile ===== */
+const slidesEl = document.getElementById('slides');
+let startX = 0;
+let endX = 0;
+
+slidesEl.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+slidesEl.addEventListener('touchmove', e => { endX = e.touches[0].clientX; });
+slidesEl.addEventListener('touchend', () => {
+  const diff = startX - endX;
+  if(diff > 50){ nextSlide(); } 
+  else if(diff < -50){ prevSlide(); }
+});
+
+
+/* ===== Background Music Toggle ===== */
+function toggleMusic(){
+  const music = document.getElementById("bg-music");
+
+  if(music.paused){
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
 </script>
 
 </body>
