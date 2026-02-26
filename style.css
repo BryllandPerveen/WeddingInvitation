@@ -1,315 +1,200 @@
-/* =========================
-   GLOBAL RESET
-========================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bryll & Perveen | Wedding</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+  <div class="logo">B & P</div>
+  <div class="nav-links">
+    <a href="#story">Story</a>
+    <a href="#details">Details</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#location">Location</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" style="background-image: url('https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac');">
+  <div class="hero-content">
+    <h1>Bryll & Perveen</h1>
+    <p>August 28, 2026 • 3:00 PM</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+  </div>
+</header>
+
+<!-- ================= STORY ================= -->
+<section id="story" class="story">
+  <h2>Our Story</h2>
+  <p>
+    From a simple hello to forever. What started as a beautiful connection
+    became a lifetime promise. We invite you to celebrate our love
+    as we begin this new chapter together.
+  </p>
+</section>
+
+<!-- ================= DETAILS ================= -->
+<section id="details" class="details">
+  <h2>Wedding Details</h2>
+
+  <p><strong>Ceremony</strong><br>
+  Iglesia ni Cristo<br>
+  District of Laoag City, Ilocos Norte<br>
+  3:00 PM</p>
+
+  <br>
+
+  <p><strong>Reception</strong><br>
+  ARABELLA Events Place<br>
+  F. Julian Street, Pila Road Barangay 2,<br>
+  Laoag City, Philippines, 2900</p>
+
+  <br>
+
+  <p><strong>Dress Code:</strong> Formal Pastel Attire</p>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section id="rsvp" class="rsvp">
+  <h2>RSVP</h2>
+
+  <!-- Replace action link with your Google Form if needed -->
+  <form action="#" method="POST">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+
+    <select required>
+      <option value="">Will you attend?</option>
+      <option>Joyfully Accept</option>
+      <option>Respectfully Decline</option>
+    </select>
+
+    <button type="submit">Submit RSVP</button>
+  </form>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf" alt="Gallery Image 1">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Gallery Image 2">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Gallery Image 3">
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <button onclick="prevSlide()">Prev</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section id="location" class="map">
+  <h2>Location</h2>
+
+  <iframe
+    src="https://maps.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&t=&z=15&ie=UTF8&iwloc=&output=embed">
+  </iframe>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>With love, Bryll & Perveen</p>
+</footer>
+
+<!-- ================= BACKGROUND MUSIC ================= -->
+<audio id="bg-music" loop>
+  <source src="piano.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+/* ===== Countdown ===== */
+const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
+
+setInterval(function(){
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + " Days • " +
+    hours + " Hours • " +
+    minutes + " Minutes • " +
+    seconds + " Seconds";
+
+}, 1000);
+
+
+/* ===== Scroll Fade Animation ===== */
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", function(){
+  sections.forEach(section => {
+    const position = section.getBoundingClientRect().top;
+    if(position < window.innerHeight - 100){
+      section.classList.add("show");
+    }
+  });
+});
+
+
+/* ===== Slider ===== */
+let index = 0;
+const totalSlides = 3;
+
+function showSlide(){
+  document.getElementById("slides").style.transform =
+    "translateX(-" + index * 100 + "%)";
 }
 
-html{
-  scroll-behavior:smooth;
+function nextSlide(){
+  index = (index + 1) % totalSlides;
+  showSlide();
 }
 
-body{
-  font-family:'Montserrat', sans-serif;
-  color:#333;
-  overflow-x:hidden;
-  line-height:1.6;
+function prevSlide(){
+  index = (index - 1 + totalSlides) % totalSlides;
+  showSlide();
 }
 
-/* =========================
-   COLORS
-========================= */
-:root{
-  --rose-gold:#B76E79;
-  --dusty-blue:#7A9CC6;
-  --sage:#CFE3D4;
-  --pastel-yellow:#FFF4B8;
-  --soft-white:#ffffff;
-}
 
-/* =========================
-   NAVIGATION
-========================= */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  background:rgba(0,0,0,0.35);
-  backdrop-filter:blur(8px);
-  z-index:1000;
-}
+/* ===== Background Music Toggle ===== */
+function toggleMusic(){
+  const music = document.getElementById("bg-music");
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
-  letter-spacing:2px;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:var(--pastel-yellow);
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-.hero{
-  height:100vh;
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  color:white;
-  padding:20px;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:800px;
-}
-
-.hero h1{
-  font-family:'Great Vibes', cursive;
-  font-size:90px;
-}
-
-.hero p{
-  letter-spacing:4px;
-  margin-top:15px;
-}
-
-.countdown{
-  margin-top:20px;
-  font-size:18px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-section{
-  padding:120px 80px;
-  text-align:center;
-}
-
-h2{
-  font-family:'Playfair Display', serif;
-  font-size:40px;
-  margin-bottom:25px;
-}
-
-.story{
-  background:var(--sage);
-}
-
-.details{
-  background:#f8f8f8;
-}
-
-.rsvp{
-  background:var(--dusty-blue);
-  color:white;
-}
-
-.gallery{
-  background:white;
-}
-
-.map{
-  background:#f4f4f4;
-}
-
-/* =========================
-   RSVP FORM
-========================= */
-.rsvp form{
-  max-width:500px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.rsvp input,
-.rsvp select{
-  padding:12px;
-  border:none;
-  border-radius:6px;
-  font-size:14px;
-}
-
-.rsvp button{
-  padding:12px;
-  background:var(--rose-gold);
-  border:none;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.rsvp button:hover{
-  background:#9f5964;
-}
-
-/* =========================
-   GALLERY SLIDER
-========================= */
-.slider{
-  position:relative;
-  max-width:900px;
-  margin:auto;
-  overflow:hidden;
-}
-
-.slides{
-  display:flex;
-  transition:transform 0.6s ease;
-}
-
-.slides img{
-  width:100%;
-  flex-shrink:0;
-  border-radius:10px;
-}
-
-/* =========================
-   MAP
-========================= */
-.map iframe{
-  width:100%;
-  height:400px;
-  border:0;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-  padding:60px 20px;
-  text-align:center;
-  background:#111;
-  color:white;
-}
-
-/* =========================
-   FADE IN ANIMATION
-========================= */
-section{
-  opacity:0;
-  transform:translateY(50px);
-  transition:all 1s ease;
-}
-
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-/* Large Tablets */
-@media(max-width:1024px){
-  section{
-    padding:100px 40px;
-  }
-
-  nav{
-    padding:20px 30px;
-  }
-
-  .hero h1{
-    font-size:70px;
+  if(music.paused){
+    music.play();
+  } else {
+    music.pause();
   }
 }
 
-/* Tablets */
-@media(max-width:768px){
+</script>
 
-  nav{
-    flex-direction:column;
-    gap:10px;
-    padding:15px 20px;
-  }
-
-  nav a{
-    margin-left:10px;
-    font-size:13px;
-  }
-
-  section{
-    padding:80px 25px;
-  }
-
-  .hero{
-    background-attachment:scroll; /* Fix parallax issue on mobile */
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
-
-  h2{
-    font-size:30px;
-  }
-
-  .countdown{
-    font-size:16px;
-  }
-
-  .map iframe{
-    height:300px;
-  }
-}
-
-/* Small Phones */
-@media(max-width:480px){
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .hero p{
-    font-size:14px;
-    letter-spacing:2px;
-  }
-
-  section{
-    padding:70px 20px;
-  }
-
-  nav{
-    padding:10px;
-  }
-
-  nav a{
-    font-size:12px;
-  }
-
-  .rsvp input,
-  .rsvp select,
-  .rsvp button{
-    font-size:13px;
-  }
-}
+</body>
+</html>
