@@ -61,7 +61,7 @@ footer{padding:60px 20px;text-align:center;background:#111;color:white;}
 /* Tiny Floating Flowers - Scattered & Drifting */
 .floating-floral{
   position:fixed;
-  width:25px;      /* tiny size */
+  width:30px;      /* tiny size */
   height:auto;
   z-index:1;
   pointer-events:none;
