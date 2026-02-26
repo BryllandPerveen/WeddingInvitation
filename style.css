@@ -56,7 +56,7 @@ nav a{
   font-size:80px;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{
   padding:120px 80px;
   text-align:center;
@@ -68,24 +68,24 @@ h2{
 }
 
 /* RSVP */
-.rsvp{
+#rsvp{
   background:#7A9CC6;
   color:white;
 }
-.rsvp form{
+#rsvp form{
   max-width:400px;
   margin:auto;
   display:flex;
   flex-direction:column;
   gap:15px;
 }
-.rsvp input,
-.rsvp select{
+#rsvp input,
+#rsvp select{
   padding:12px;
   border:none;
   border-radius:6px;
 }
-.rsvp button{
+#rsvp button{
   padding:12px;
   border:none;
   background:#B76E79;
@@ -116,8 +116,7 @@ footer{
   text-align:center;
 }
 
-/* ================= PETALS ================= */
-
+/* PETAL SYSTEM */
 .petal-container{
   position:fixed;
   top:0;
@@ -131,22 +130,26 @@ footer{
 
 .petal{
   position:absolute;
-  top:-50px;
+  top:-60px;
   opacity:0;
-  animation:fall linear forwards;
+  animation-name:fall;
+  animation-timing-function:linear;
+  animation-iteration-count:1;
 }
 
 @keyframes fall{
   0%{
-    transform:translateY(0) translateX(0) rotate(0deg);
+    transform:translate3d(0,0,0) rotate(0deg);
     opacity:0;
   }
-  10%{opacity:1;}
+  10%{
+    opacity:1;
+  }
   50%{
-    transform:translateY(50vh) translateX(40px) rotate(180deg);
+    transform:translate3d(40px,50vh,0) rotate(180deg);
   }
   100%{
-    transform:translateY(110vh) translateX(-60px) rotate(360deg);
+    transform:translate3d(-60px,110vh,0) rotate(360deg);
     opacity:0;
   }
 }
