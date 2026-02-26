@@ -61,12 +61,12 @@ footer{padding:60px 20px;text-align:center;background:#111;color:white;}
 /* Tiny Floating Flowers - Scattered & Drifting */
 .floating-floral{
   position:fixed;
-  width:10px;      /* tiny size */
+  width:20px;      /* tiny size */
   height:auto;
   z-index:1;
   pointer-events:none;
   opacity:0.6;
-  animation:floatRot 35s infinite ease-in-out alternate;
+  animation:floatRot 10s infinite ease-in-out alternate;
 }
 
 /* Side & scattered positions + random delays */
