@@ -1,1 +1,315 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Montserrat', sans-serif;
+  color:#333;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* =========================
+   COLORS
+========================= */
+:root{
+  --rose-gold:#B76E79;
+  --dusty-blue:#7A9CC6;
+  --sage:#CFE3D4;
+  --pastel-yellow:#FFF4B8;
+  --soft-white:#ffffff;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+  letter-spacing:2px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--pastel-yellow);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:white;
+  padding:20px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+.hero h1{
+  font-family:'Great Vibes', cursive;
+  font-size:90px;
+}
+
+.hero p{
+  letter-spacing:4px;
+  margin-top:15px;
+}
+
+.countdown{
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+  padding:120px 80px;
+  text-align:center;
+}
+
+h2{
+  font-family:'Playfair Display', serif;
+  font-size:40px;
+  margin-bottom:25px;
+}
+
+.story{
+  background:var(--sage);
+}
+
+.details{
+  background:#f8f8f8;
+}
+
+.rsvp{
+  background:var(--dusty-blue);
+  color:white;
+}
+
+.gallery{
+  background:white;
+}
+
+.map{
+  background:#f4f4f4;
+}
+
+/* =========================
+   RSVP FORM
+========================= */
+.rsvp form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.rsvp input,
+.rsvp select{
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.rsvp button{
+  padding:12px;
+  background:var(--rose-gold);
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.rsvp button:hover{
+  background:#9f5964;
+}
+
+/* =========================
+   GALLERY SLIDER
+========================= */
+.slider{
+  position:relative;
+  max-width:900px;
+  margin:auto;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  transition:transform 0.6s ease;
+}
+
+.slides img{
+  width:100%;
+  flex-shrink:0;
+  border-radius:10px;
+}
+
+/* =========================
+   MAP
+========================= */
+.map iframe{
+  width:100%;
+  height:400px;
+  border:0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  padding:60px 20px;
+  text-align:center;
+  background:#111;
+  color:white;
+}
+
+/* =========================
+   FADE IN ANIMATION
+========================= */
+section{
+  opacity:0;
+  transform:translateY(50px);
+  transition:all 1s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Large Tablets */
+@media(max-width:1024px){
+  section{
+    padding:100px 40px;
+  }
+
+  nav{
+    padding:20px 30px;
+  }
+
+  .hero h1{
+    font-size:70px;
+  }
+}
+
+/* Tablets */
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:10px;
+    padding:15px 20px;
+  }
+
+  nav a{
+    margin-left:10px;
+    font-size:13px;
+  }
+
+  section{
+    padding:80px 25px;
+  }
+
+  .hero{
+    background-attachment:scroll; /* Fix parallax issue on mobile */
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  h2{
+    font-size:30px;
+  }
+
+  .countdown{
+    font-size:16px;
+  }
+
+  .map iframe{
+    height:300px;
+  }
+}
+
+/* Small Phones */
+@media(max-width:480px){
+
+  .hero h1{
+    font-size:36px;
+  }
+
+  .hero p{
+    font-size:14px;
+    letter-spacing:2px;
+  }
+
+  section{
+    padding:70px 20px;
+  }
+
+  nav{
+    padding:10px;
+  }
+
+  nav a{
+    font-size:12px;
+  }
+
+  .rsvp input,
+  .rsvp select,
+  .rsvp button{
+    font-size:13px;
+  }
+}
