@@ -193,6 +193,25 @@ function toggleMusic(){
     music.pause();
   }
 }
+    /* ===== Floating Animated Florals ===== */
+.floating-floral{
+  position:fixed;
+  width:120px;
+  height:120px;
+  z-index:1;
+  pointer-events:none;
+  animation: floatAnim 20s infinite ease-in-out alternate;
+}
+
+.f1{top:10%; left:5%; animation-duration:25s;}
+.f2{top:50%; left:80%; animation-duration:30s;}
+.f3{top:70%; left:20%; animation-duration:35s;}
+
+@keyframes floatAnim{
+  0% {transform: translateY(0px) translateX(0px) rotate(0deg);}
+  50% {transform: translateY(-20px) translateX(15px) rotate(15deg);}
+  100% {transform: translateY(0px) translateX(0px) rotate(0deg);}
+}
 
 </script>
 
