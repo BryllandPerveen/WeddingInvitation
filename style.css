@@ -1,145 +1,146 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* ---------------- GLOBAL ---------------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffafc;
+  color: #333;
+  overflow-x: hidden;
 }
 
-body{
-  font-family:'Montserrat',sans-serif;
-  overflow-x:hidden;
-  color:#333;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
 }
 
-/* NAV */
-nav{
-  position:fixed;
-  width:100%;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background:rgba(0,0,0,0.35);
-  backdrop-filter:blur(8px);
-  z-index:1000;
-}
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:25px;
-  font-size:14px;
+/* ---------------- HERO ---------------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('image/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:white;
-  position:relative;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.4);
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-}
-.hero h1{
-  font-family:'Great Vibes',cursive;
-  font-size:80px;
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  color: #b76e79; /* rose gold */
+  margin-bottom: 10px;
 }
 
-/* SECTION */
-section{
-  padding:120px 80px;
-  text-align:center;
-}
-h2{
-  font-family:'Playfair Display',serif;
-  font-size:36px;
-  margin-bottom:20px;
+.hero p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
-/* RSVP */
-#rsvp{
-  background:#7A9CC6;
-  color:white;
-}
-#rsvp form{
-  max-width:400px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-#rsvp input,
-#rsvp select{
-  padding:12px;
-  border:none;
-  border-radius:6px;
-}
-#rsvp button{
-  padding:12px;
-  border:none;
-  background:#B76E79;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
+/* ---------------- COUNTDOWN ---------------- */
+.countdown {
+  font-size: 22px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #b76e79; /* rose gold */
+  line-height: 1.5;
+  word-break: break-word;
 }
 
-/* GALLERY */
-.slider{
-  max-width:800px;
-  margin:auto;
-  overflow:hidden;
-}
-.slides{
-  display:flex;
-}
-.slides img{
-  width:100%;
-  flex-shrink:0;
+/* ---------------- SAVE THE DATE ---------------- */
+.save-date {
+  font-size: 24px;
+  letter-spacing: 4px;
+  color: #f0c987; /* pastel yellow */
+  margin-bottom: 20px;
 }
 
-/* FOOTER */
-footer{
-  padding:60px;
-  background:#111;
-  color:white;
-  text-align:center;
+/* ---------------- VENUE ---------------- */
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
-/* PETAL SYSTEM */
+.venue-box {
+  margin-bottom: 40px;
+}
+
+iframe {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  border: none;
+}
+
+/* ---------------- SLIDESHOW ---------------- */
+.slideshow {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* ---------------- RSVP BUTTON ---------------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #a2c6d5; /* powder blue */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* ---------------- PETALS ---------------- */
 .petal-container{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.petal{
-  position:absolute;
-  top:-60px;
-  opacity:0;
-  animation-name:fall;
-  animation-timing-function:linear;
-  animation-iteration-count:1;
+.petal {
+  position: absolute;
+  top: -60px;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
 }
 
 @keyframes fall{
   0%{
-    transform:translate3d(0,0,0) rotate(0deg);
+    transform: translate3d(0,0,0) rotate(0deg);
     opacity:0;
   }
   10%{
@@ -154,9 +155,20 @@ footer{
   }
 }
 
-/* RESPONSIVE */
+/* ---------------- RESPONSIVE ---------------- */
 @media(max-width:768px){
-  nav{padding:15px 20px;}
-  .hero h1{font-size:48px;}
-  section{padding:80px 25px;}
+  .hero h1{
+    font-size: 40px;
+  }
+  .hero p{
+    font-size: 16px;
+  }
+  .countdown{
+    font-size: 14px;      /* smaller font for mobile */
+    line-height: 1.6;     /* more spacing */
+    word-break: break-word; 
+  }
+  .slide img{
+    height: 250px;
+  }
 }
