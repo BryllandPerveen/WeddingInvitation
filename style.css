@@ -1,15 +1,24 @@
 /* ================= GLOBAL RESET ================= */
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 html{scroll-behavior:smooth;}
-body{font-family:'Montserrat',sans-serif;color:#333;overflow-x:hidden;line-height:1.6;}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:#333;
+  overflow-x:hidden;
+  line-height:1.6;
+  background:#fff;
+}
 
-/* ================= COLORS ================= */
+/* ================= COLOR VARIABLES ================= */
 :root{
   --rose-gold:#B76E79;
   --dusty-blue:#7A9CC6;
   --sage:#CFE3D4;
   --pastel-yellow:#FFF4B8;
-  --soft-white:#fff;
 }
 
 /* ================= NAVIGATION ================= */
@@ -55,10 +64,23 @@ nav a:hover{color:var(--pastel-yellow);}
   inset:0;
   background:rgba(0,0,0,0.45);
 }
-.hero-content{position:relative;z-index:2;max-width:800px;}
-.hero h1{font-family:'Great Vibes',cursive;font-size:90px;}
-.hero p{letter-spacing:4px;margin-top:15px;}
-.countdown{margin-top:20px;font-size:18px;}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:90px;
+}
+.hero p{
+  letter-spacing:4px;
+  margin-top:15px;
+}
+.countdown{
+  margin-top:20px;
+  font-size:18px;
+}
 
 /* ================= SECTIONS ================= */
 section{
@@ -68,15 +90,22 @@ section{
   transform:translateY(50px);
   transition:all 1s ease;
 }
-section.show{opacity:1;transform:translateY(0);}
-h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:40px;
+  margin-bottom:25px;
+}
 .story{background:var(--sage);}
 .details{background:#f8f8f8;}
 .rsvp{background:var(--dusty-blue);color:white;}
 .gallery{background:white;}
 .map{background:#f4f4f4;}
 
-/* ================= RSVP FORM ================= */
+/* ================= RSVP ================= */
 .rsvp form{
   max-width:500px;
   margin:auto;
@@ -84,7 +113,8 @@ h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
   flex-direction:column;
   gap:15px;
 }
-.rsvp input,.rsvp select{
+.rsvp input,
+.rsvp select{
   padding:12px;
   border:none;
   border-radius:6px;
@@ -99,7 +129,9 @@ h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
   cursor:pointer;
   transition:.3s;
 }
-.rsvp button:hover{background:#9f5964;}
+.rsvp button:hover{
+  background:#9f5964;
+}
 
 /* ================= GALLERY SLIDER ================= */
 .slider{
@@ -119,7 +151,11 @@ h2{font-family:'Playfair Display',serif;font-size:40px;margin-bottom:25px;}
 }
 
 /* ================= MAP ================= */
-.map iframe{width:100%;height:400px;border:0;}
+.map iframe{
+  width:100%;
+  height:400px;
+  border:0;
+}
 
 /* ================= FOOTER ================= */
 footer{
@@ -132,7 +168,8 @@ footer{
 /* ================= FALLING FLOWERS ================= */
 .falling-floral{
   position:fixed;
-  width:30px;      /* tiny size */
+  top:-60px;
+  width:28px;              /* SAME SIZE everywhere */
   height:auto;
   z-index:1;
   pointer-events:none;
@@ -142,40 +179,39 @@ footer{
   animation-iteration-count:infinite;
 }
 
-/* Positions & random delays/durations */
+/* Left & Right edge distribution */
 .f1{left:2%; animation-duration:12s; animation-delay:0s;}
 .f2{right:3%; animation-duration:14s; animation-delay:2s;}
-.f3{left:5%; animation-duration:16s; animation-delay:4s;}
-.f4{right:7%; animation-duration:15s; animation-delay:6s;}
+.f3{left:4%; animation-duration:16s; animation-delay:4s;}
+.f4{right:6%; animation-duration:15s; animation-delay:6s;}
 .f5{left:1%; animation-duration:13s; animation-delay:3s;}
 .f6{right:2%; animation-duration:14s; animation-delay:5s;}
 .f7{left:3%; animation-duration:17s; animation-delay:1s;}
 .f8{right:4%; animation-duration:16s; animation-delay:7s;}
 .f9{left:2%; animation-duration:15s; animation-delay:2s;}
 .f10{right:3%; animation-duration:13s; animation-delay:4s;}
-.f11{left:4%; animation-duration:14s; animation-delay:6s;}
+.f11{left:5%; animation-duration:14s; animation-delay:6s;}
 .f12{right:2%; animation-duration:12s; animation-delay:3s;}
 
-/* Falling + horizontal drift + fade out */
+/* Falling + drifting + fading */
 @keyframes fallFade{
   0%{
-    transform: translateY(-50px) rotate(0deg) translateX(0px);
+    transform:translateY(0) translateX(0) rotate(0deg);
     opacity:0;
   }
-  25%{opacity:1;}
-  50%{
-    transform: translateY(25%) rotate(15deg) translateX(10px);
+  10%{opacity:.9;}
+  40%{
+    transform:translateY(40vh) translateX(10px) rotate(15deg);
   }
-  75%{opacity:0.7;}
+  70%{
+    transform:translateY(75vh) translateX(-10px) rotate(25deg);
+    opacity:.6;
+  }
   100%{
-    transform: translateY(100vh) rotate(30deg) translateX(-10px);
+    transform:translateY(110vh) translateX(5px) rotate(35deg);
     opacity:0;
   }
 }
-
-/* Keep size same for all screens */
-@media(max-width:768px){ .falling-floral{width:30px;} }
-@media(max-width:480px){ .falling-floral{width:30px;} }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:1024px){
@@ -199,5 +235,4 @@ footer{
   section{padding:70px 20px;}
   nav{padding:10px;}
   nav a{font-size:12px;}
-  .rsvp input,.rsvp select,.rsvp button{font-size:13px;}
 }
