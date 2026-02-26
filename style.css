@@ -164,7 +164,7 @@ iframe {
     font-size: 16px;
   }
   .countdown{
-    font-size: 14px;      /* smaller font for mobile */
+    font-size: 10px;      /* smaller font for mobile */
     line-height: 1.6;     /* more spacing */
     word-break: break-word; 
   }
