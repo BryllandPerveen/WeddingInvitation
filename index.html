@@ -3,74 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bryll & Perveen | Wedding Invitation</title>
+<title>Bryll & Perveen | Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= GLOBAL ================= */
-
+/* ---------------- GLOBAL ---------------- */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #111, #1c1c1c);
-  color: #f5f5f5;
-  text-align: center;
+  background: #fffafc;
+  color: #333;
   overflow-x: hidden;
 }
 
-.section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
 h1, h2 {
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
 }
 
-/* ================= HERO ================= */
-
+/* ---------------- HERO ---------------- */
 .hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  animation: fadeIn 2s ease forwards;
+  align-items: center;
+  text-align: center;
+  background-image: url('image/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .hero h1 {
+  font-family: 'Great Vibes', cursive;
   font-size: 60px;
-  font-weight: 600;
+  color: #b76e79; /* rose gold */
+  margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 20px;
-  letter-spacing: 4px;
-}
-
-/* ================= COUNTDOWN ================= */
-
-.countdown {
-  font-size: 22px;
-  margin-top: 20px;
+  color: #555;
+  margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
-/* ================= SAVE THE DATE ================= */
+/* ---------------- COUNTDOWN ---------------- */
+.countdown {
+  font-size: 22px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #b76e79; /* rose gold */
+}
 
+/* ---------------- SAVE THE DATE ---------------- */
 .save-date {
   font-size: 24px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
+  color: #f0c987; /* pastel yellow */
   margin-bottom: 20px;
 }
 
-/* ================= VENUE ================= */
+/* ---------------- VENUE ---------------- */
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
 
 .venue-box {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 iframe {
@@ -81,8 +86,7 @@ iframe {
   border: none;
 }
 
-/* ================= SLIDESHOW ================= */
-
+/* ---------------- SLIDESHOW ---------------- */
 .slideshow {
   position: relative;
   max-width: 700px;
@@ -97,8 +101,9 @@ iframe {
 
 .slide img {
   width: 100%;
-  height: 450px;
+  height: 400px;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .fade {
@@ -110,29 +115,66 @@ iframe {
   to {opacity: 1}
 }
 
-/* ================= BUTTON ================= */
-
+/* ---------------- RSVP BUTTON ---------------- */
 .btn {
   display: inline-block;
   padding: 14px 28px;
-  background: #d4af37;
-  color: black;
+  background: #a2c6d5; /* powder blue */
+  color: #fff;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 25px;
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* ---------------- PETALS ---------------- */
+.petal-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
+.petal {
+  position: absolute;
+  top: -60px;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+@keyframes fall{
+  0%{
+    transform: translate3d(0,0,0) rotate(0deg);
+    opacity:0;
+  }
+  10%{
+    opacity:1;
+  }
+  50%{
+    transform:translate3d(40px,50vh,0) rotate(180deg);
+  }
+  100%{
+    transform:translate3d(-60px,110vh,0) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:768px){
+  .hero h1{font-size:48px;}
+  .slide img{height:250px;}
+}
 </style>
 </head>
 <body>
+
+<!-- PETALS -->
+<div class="petal-container"></div>
 
 <!-- HERO -->
 <div class="hero">
@@ -146,22 +188,14 @@ iframe {
 <div class="section">
   <h2>Ceremony</h2>
   <div class="venue-box">
-    Iglesia ni Cristo<br>
-    District of Laoag City, Ilocos Norte
-
-    <iframe 
-    src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed">
-    </iframe>
+    Iglesia ni Cristo<br>District of Laoag City, Ilocos Norte
+    <iframe src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed"></iframe>
   </div>
 
   <h2>Reception</h2>
   <div class="venue-box">
-    ARABELLA Events Place<br>
-    F. Julian Street, Pila Road Barangay 2, Laoag City, Philippines
-
-    <iframe 
-    src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed">
-    </iframe>
+    ARABELLA Events Place<br>F. Julian Street, Pila Road Barangay 2, Laoag City, Philippines
+    <iframe src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed"></iframe>
   </div>
 </div>
 
@@ -169,23 +203,10 @@ iframe {
 <div class="section">
   <h2>Our Moments</h2>
   <div class="slideshow">
-
-    <div class="slide fade">
-      <img src="photo1.jpg">
-    </div>
-
-    <div class="slide fade">
-      <img src="photo2.jpg">
-    </div>
-
-    <div class="slide fade">
-      <img src="photo3.jpg">
-    </div>
-
-    <div class="slide fade">
-      <img src="photo4.jpg">
-    </div>
-
+    <div class="slide fade"><img src="photo1.jpg"></div>
+    <div class="slide fade"><img src="photo2.jpg"></div>
+    <div class="slide fade"><img src="photo3.jpg"></div>
+    <div class="slide fade"><img src="photo4.jpg"></div>
   </div>
 </div>
 
@@ -196,45 +217,49 @@ iframe {
 </div>
 
 <script>
-
-/* ================= COUNTDOWN ================= */
-
+// ---------------- COUNTDOWN ----------------
 const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-
 const countdown = setInterval(function() {
-
   const now = new Date().getTime();
   const distance = weddingDate - now;
-
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
   document.getElementById("countdown").innerHTML =
-    days + " Days • " + hours + " Hours • "
-    + minutes + " Minutes • " + seconds + " Seconds";
-
+    days + " Days • " + hours + " Hours • " + minutes + " Minutes • " + seconds + " Seconds";
 }, 1000);
 
-/* ================= SLIDESHOW ================= */
-
+// ---------------- SLIDESHOW ----------------
 let slideIndex = 0;
 showSlides();
-
 function showSlides() {
-  let i;
   let slides = document.getElementsByClassName("slide");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  for (let i=0;i<slides.length;i++){ slides[i].style.display = "none"; }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 4000);
+  if(slideIndex>slides.length){slideIndex=1;}
+  slides[slideIndex-1].style.display="block";
+  setTimeout(showSlides,4000);
 }
 
-</script>
+// ---------------- PETALS ----------------
+const petalContainer = document.querySelector('.petal-container');
+const petalImages = ['image/flower1.png','image/flower2.png','image/flower3.png'];
 
+function spawnPetal(){
+  const petal = document.createElement("img");
+  petal.src = petalImages[Math.floor(Math.random()*petalImages.length)];
+  petal.classList.add("petal");
+  petal.style.left = Math.random()*100+'vw';
+  const size = Math.random()*15 + 10;
+  petal.style.width = size+'px';
+  const duration = Math.random()*5 + 8;
+  petal.style.animationDuration = duration+'s';
+  petalContainer.appendChild(petal);
+  setTimeout(()=>{petal.remove();}, duration*1000);
+}
+setInterval(spawnPetal, 600);
+
+</script>
 </body>
 </html>
