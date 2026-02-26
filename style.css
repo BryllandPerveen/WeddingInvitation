@@ -129,39 +129,53 @@ footer{
   color:white;
 }
 
-/* ================= FLOATING TINY FLOWERS ================= */
-.floating-floral{
+/* ================= FALLING FLOWERS ================= */
+.falling-floral{
   position:fixed;
-  width:30px;       /* Tiny size for all screens */
+  width:30px;      /* tiny size */
   height:auto;
   z-index:1;
   pointer-events:none;
-  opacity:0.6;
-  animation:floatRot 35s infinite ease-in-out alternate;
+  opacity:0;
+  animation-name:fallFade;
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
 }
 
-/* 12 scattered flowers along left and right sides */
-.f1{top:5%; left:2%; animation-delay:0s;}
-.f2{top:12%; right:3%; animation-delay:2s;}
-.f3{top:18%; left:4%; animation-delay:4s;}
-.f4{top:25%; right:5%; animation-delay:6s;}
-.f5{top:30%; left:1%; animation-delay:3s;}
-.f6{top:40%; right:2%; animation-delay:5s;}
-.f7{top:50%; left:3%; animation-delay:1s;}
-.f8{top:60%; right:4%; animation-delay:7s;}
-.f9{top:68%; left:2%; animation-delay:2s;}
-.f10{top:75%; right:3%; animation-delay:4s;}
-.f11{top:82%; left:4%; animation-delay:6s;}
-.f12{top:90%; right:2%; animation-delay:3s;}
+/* Positions & random delays/durations */
+.f1{left:2%; animation-duration:12s; animation-delay:0s;}
+.f2{right:3%; animation-duration:14s; animation-delay:2s;}
+.f3{left:5%; animation-duration:16s; animation-delay:4s;}
+.f4{right:7%; animation-duration:15s; animation-delay:6s;}
+.f5{left:1%; animation-duration:13s; animation-delay:3s;}
+.f6{right:2%; animation-duration:14s; animation-delay:5s;}
+.f7{left:3%; animation-duration:17s; animation-delay:1s;}
+.f8{right:4%; animation-duration:16s; animation-delay:7s;}
+.f9{left:2%; animation-duration:15s; animation-delay:2s;}
+.f10{right:3%; animation-duration:13s; animation-delay:4s;}
+.f11{left:4%; animation-duration:14s; animation-delay:6s;}
+.f12{right:2%; animation-duration:12s; animation-delay:3s;}
 
-/* Floating + Rotating Animation */
-@keyframes floatRot{
-  0%{transform: translateY(0px) rotate(0deg);}
-  25%{transform: translateY(-10px) rotate(10deg);}
-  50%{transform: translateY(-5px) rotate(-10deg);}
-  75%{transform: translateY(5px) rotate(5deg);}
-  100%{transform: translateY(0px) rotate(0deg);}
+/* Falling + horizontal drift + fade out */
+@keyframes fallFade{
+  0%{
+    transform: translateY(-50px) rotate(0deg) translateX(0px);
+    opacity:0;
+  }
+  25%{opacity:1;}
+  50%{
+    transform: translateY(25%) rotate(15deg) translateX(10px);
+  }
+  75%{opacity:0.7;}
+  100%{
+    transform: translateY(100vh) rotate(30deg) translateX(-10px);
+    opacity:0;
+  }
 }
+
+/* Keep size same for all screens */
+@media(max-width:768px){ .falling-floral{width:30px;} }
+@media(max-width:480px){ .falling-floral{width:30px;} }
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:1024px){
