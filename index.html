@@ -8,29 +8,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- ================= ENVELOPE INTRO ================= -->
 
 <div id="envelopeIntro" class="envelope-intro">
   <div class="envelope-wrapper">
-    <div class="envelope">
+    <div class="envelope" id="envelope">
       <div class="flap"></div>
       <div class="letter">
         <h2>Bryll & Perveen</h2>
         <p>August 28, 2026</p>
-        <button onclick="openEnvelope()">Open Invitation</button>
+        <button id="openBtn">Open Invitation</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ================= MAIN WEBSITE ================= -->
+<!-- ================= MAIN CONTENT ================= -->
 
 <div id="mainContent" style="display:none;">
 
 <div id="petals-container"></div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <p class="save-date">Save the Date</p>
@@ -40,6 +42,7 @@
   </div>
 </section>
 
+<!-- VENUE -->
 <section class="venue">
   <h2>Ceremony</h2>
   <p>
@@ -47,8 +50,12 @@
     District of Laoag City<br>
     Ilocos Norte
   </p>
+
   <div class="map">
-    <iframe src="https://www.google.com/maps?q=Iglesia+ni+Cristo+Laoag+City&output=embed"></iframe>
+    <iframe 
+      src="https://www.google.com/maps?q=Iglesia+ni+Cristo+Laoag+City&output=embed"
+      loading="lazy">
+    </iframe>
   </div>
 
   <h2>Reception</h2>
@@ -57,23 +64,95 @@
     F. Julian Street, Pila Road<br>
     Barangay 2, Laoag City, Philippines, 2900
   </p>
+
   <div class="map">
-    <iframe src="https://www.google.com/maps?q=ARABELLA+Events+Place+Laoag&output=embed"></iframe>
+    <iframe 
+      src="https://www.google.com/maps?q=ARABELLA+Events+Place+Laoag&output=embed"
+      loading="lazy">
+    </iframe>
   </div>
 </section>
 
+<!-- ================= NUPTIALS ================= -->
+
+<section class="nuptials">
+  <h2>✨ Nuptials</h2>
+
+  <div class="two-columns">
+    <div>
+      <h3>Principal Sponsors</h3>
+      <ul>
+        <li>Name 1</li>
+        <li>Name 2</li>
+        <li>Name 3</li>
+        <li>Name 4</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Secondary Sponsors</h3>
+      <ul>
+        <li>Name 1</li>
+        <li>Name 2</li>
+        <li>Name 3</li>
+        <li>Name 4</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENTOURAGE ================= -->
+
+<section class="entourage">
+  <h2>✨ Entourage</h2>
+
+  <div class="two-columns">
+    <div>
+      <h3>Groom’s Parents</h3>
+      <p>Names Here</p>
+
+      <h3>Best Man</h3>
+      <p>Name Here</p>
+
+      <h3>Groomsmen</h3>
+      <p>Names Here</p>
+
+      <h3>Ring Bearers</h3>
+      <p>Names Here</p>
+    </div>
+
+    <div>
+      <h3>Bride’s Parents</h3>
+      <p>Names Here</p>
+
+      <h3>Maid of Honor</h3>
+      <p>Name Here</p>
+
+      <h3>Bridesmaids</h3>
+      <p>Names Here</p>
+
+      <h3>Flower Girls</h3>
+      <p>Names Here</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
 <section class="gallery">
   <h2>Our Moments</h2>
   <div class="slideshow">
-    <img src="image/gallery1.jpg" class="slide active">
-    <img src="image/gallery2.jpg" class="slide">
-    <img src="image/gallery3.jpg" class="slide">
+    <img src="image/gallery1.jpg" class="slide active" alt="">
+    <img src="image/gallery2.jpg" class="slide" alt="">
+    <img src="image/gallery3.jpg" class="slide" alt="">
   </div>
 </section>
 
+<!-- RSVP -->
 <section class="rsvp">
   <h2>RSVP</h2>
-  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="rsvp-btn">Confirm Attendance</a>
+  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="rsvp-btn">
+    Confirm Attendance
+  </a>
 </section>
 
 <footer>
@@ -82,51 +161,69 @@
 
 </div>
 
+<!-- ================= SCRIPTS ================= -->
+
 <script>
 
-// OPEN ENVELOPE
-function openEnvelope(){
-  document.querySelector(".envelope").classList.add("open");
-  setTimeout(()=>{
-    document.getElementById("envelopeIntro").style.display="none";
-    document.getElementById("mainContent").style.display="block";
-  },1200);
-}
+/* ENVELOPE OPEN */
+document.getElementById("openBtn").addEventListener("click", function(){
+  document.getElementById("envelope").classList.add("open");
 
-// COUNTDOWN
+  setTimeout(function(){
+    document.getElementById("envelopeIntro").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  }, 1000);
+});
+
+/* COUNTDOWN */
 const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-setInterval(()=>{
+
+setInterval(function(){
   const now = new Date().getTime();
   const distance = weddingDate - now;
+
   const days = Math.floor(distance/(1000*60*60*24));
   const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
   const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-  document.getElementById("countdown").innerHTML =
-  days+" Days • "+hours+" Hours • "+minutes+" Minutes";
+
+  const countdownEl = document.getElementById("countdown");
+  if(countdownEl){
+    countdownEl.innerHTML = days+" Days • "+hours+" Hours • "+minutes+" Minutes";
+  }
 },1000);
 
-// SLIDESHOW
-let slides=document.querySelectorAll(".slide");
-let index=0;
-setInterval(()=>{
-  slides[index].classList.remove("active");
-  index=(index+1)%slides.length;
-  slides[index].classList.add("active");
-},4000);
+/* SLIDESHOW */
+let slides = document.querySelectorAll(".slide");
+let currentIndex = 0;
 
-// PETALS
-function createPetal(){
-  const petal=document.createElement("img");
-  const flowers=["image/flower1.png","image/flower2.png","image/flower3.png"];
-  petal.src=flowers[Math.floor(Math.random()*flowers.length)];
-  petal.classList.add("petal");
-  petal.style.left=Math.random()*100+"vw";
-  petal.style.width=(12+Math.random()*12)+"px";
-  petal.style.animationDuration=(8+Math.random()*5)+"s";
-  document.getElementById("petals-container").appendChild(petal);
-  setTimeout(()=>petal.remove(),13000);
+if(slides.length > 0){
+  setInterval(function(){
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }, 4000);
 }
-setInterval(createPetal,900);
+
+/* PETALS */
+function createPetal(){
+  const petal = document.createElement("img");
+  const flowers = ["image/flower1.png","image/flower2.png","image/flower3.png"];
+
+  petal.src = flowers[Math.floor(Math.random()*flowers.length)];
+  petal.classList.add("petal");
+
+  petal.style.left = Math.random()*100 + "vw";
+  petal.style.width = (12 + Math.random()*10) + "px";
+  petal.style.animationDuration = (8 + Math.random()*5) + "s";
+
+  document.getElementById("petals-container").appendChild(petal);
+
+  setTimeout(function(){
+    petal.remove();
+  },13000);
+}
+
+setInterval(createPetal, 900);
 
 </script>
 
