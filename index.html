@@ -3,276 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bryll & Perveen | Wedding</title>
+<title>Bryll & Perveen Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
-
-/* ---------------- GLOBAL ---------------- */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #fffafc;
-  color: #333;
-  overflow-x: hidden;
-}
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-/* ---------------- HERO ---------------- */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url('image/hero.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.hero h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 60px;
-  color: #b76e79; /* rose gold */
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
-}
-
-/* ---------------- COUNTDOWN ---------------- */
-.countdown {
-  font-size: 22px;
-  margin-top: 20px;
-  font-weight: bold;
-  color: #b76e79; /* rose gold */
-  line-height: 1.5;
-  word-break: break-word;
-}
-
-/* ---------------- SAVE THE DATE ---------------- */
-.save-date {
-  font-size: 24px;
-  letter-spacing: 4px;
-  color: #f0c987; /* pastel yellow */
-  margin-bottom: 20px;
-}
-
-/* ---------------- VENUE ---------------- */
-.section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.venue-box {
-  margin-bottom: 40px;
-}
-
-iframe {
-  margin-top: 20px;
-  width: 100%;
-  height: 300px;
-  border-radius: 15px;
-  border: none;
-}
-
-/* ---------------- SLIDESHOW ---------------- */
-.slideshow {
-  position: relative;
-  max-width: 700px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-.slide {
-  display: none;
-}
-
-.slide img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.fade {
-  animation: fade 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* ---------------- RSVP BUTTON ---------------- */
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  background: #a2c6d5; /* powder blue */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 25px;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-/* ---------------- PETALS ---------------- */
-.petal-container{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.petal {
-  position: absolute;
-  top: -60px;
-  pointer-events: none;
-  animation-name: fall;
-  animation-timing-function: linear;
-}
-
-@keyframes fall{
-  0%{
-    transform: translate3d(0,0,0) rotate(0deg);
-    opacity:0;
-  }
-  10%{
-    opacity:1;
-  }
-  50%{
-    transform:translate3d(40px,50vh,0) rotate(180deg);
-  }
-  100%{
-    transform:translate3d(-60px,110vh,0) rotate(360deg);
-    opacity:0;
-  }
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-@media(max-width:768px){
-  .hero h1{
-    font-size: 40px;
-  }
-  .hero p{
-    font-size: 16px;
-  }
-  .countdown{
-    font-size: 18px;
-    line-height: 1.5;
-    word-break: break-word;
-  }
-  .slide img{
-    height: 250px;
-  }
-}
-</style>
 </head>
 <body>
 
-<!-- PETALS -->
-<div class="petal-container"></div>
+<!-- Floating Petals -->
+<div id="petals-container"></div>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="save-date">SAVE THE DATE</div>
-  <h1>Bryll & Perveen</h1>
-  <p>August 28, 2026 • 3:00 PM</p>
-  <div class="countdown" id="countdown"></div>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <p class="save-date">Save the Date</p>
+    <h1>Bryll & Perveen</h1>
+    <p class="date">August 28, 2026 • 3:00 PM</p>
+    <div id="countdown" class="countdown"></div>
+  </div>
+</section>
 
-<!-- CEREMONY -->
-<div class="section">
+<!-- FORMAL INVITATION -->
+<section class="invitation">
+  <p class="invite-line">You are invited to celebrate the wedding of</p>
+  <h2 class="couple-names">Bryll <span>&</span> Perveen</h2>
+  <p class="wedding-date-formal">
+    Friday, the Twenty-Eighth of August<br>
+    Two Thousand Twenty-Six<br>
+    at Three O’Clock in the Afternoon
+  </p>
+</section>
+
+<!-- VENUE -->
+<section class="venue">
   <h2>Ceremony</h2>
-  <div class="venue-box">
-    Iglesia ni Cristo<br>District of Laoag City, Ilocos Norte
-    <iframe src="https://www.google.com/maps?q=Iglesia%20ni%20Cristo%20Laoag%20City&output=embed"></iframe>
+  <p>
+    Iglesia ni Cristo<br>
+    District of Laoag City<br>
+    Ilocos Norte
+  </p>
+  <div class="map">
+    <iframe src="https://www.google.com/maps?q=Iglesia+ni+Cristo+Laoag+City&output=embed"></iframe>
   </div>
 
   <h2>Reception</h2>
-  <div class="venue-box">
-    ARABELLA Events Place<br>F. Julian Street, Pila Road Barangay 2, Laoag City, Philippines
-    <iframe src="https://www.google.com/maps?q=ARABELLA%20Events%20Place%20Laoag&output=embed"></iframe>
+  <p>
+    ARABELLA Events Place<br>
+    F. Julian Street, Pila Road<br>
+    Barangay 2, Laoag City, Philippines, 2900
+  </p>
+  <div class="map">
+    <iframe src="https://www.google.com/maps?q=ARABELLA+Events+Place+Laoag&output=embed"></iframe>
   </div>
-</div>
+</section>
 
-<!-- SLIDESHOW -->
-<div class="section">
+<!-- GALLERY -->
+<section class="gallery">
   <h2>Our Moments</h2>
   <div class="slideshow">
-    <div class="slide fade"><img src="photo1.jpg"></div>
-    <div class="slide fade"><img src="photo2.jpg"></div>
-    <div class="slide fade"><img src="photo3.jpg"></div>
-    <div class="slide fade"><img src="photo4.jpg"></div>
+    <img src="image/gallery1.jpg" class="slide active">
+    <img src="image/gallery2.jpg" class="slide">
+    <img src="image/gallery3.jpg" class="slide">
   </div>
-</div>
+</section>
 
 <!-- RSVP -->
-<div class="section">
+<section class="rsvp">
   <h2>RSVP</h2>
-  <a href="YOUR_GOOGLE_FORM_LINK" class="btn">Confirm Attendance</a>
-</div>
+  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="rsvp-btn">Confirm Attendance</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>With Love, Bryll & Perveen</p>
+</footer>
 
 <script>
-// ---------------- COUNTDOWN ----------------
+// Countdown
 const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-const countdown = setInterval(function() {
+setInterval(function(){
   const now = new Date().getTime();
   const distance = weddingDate - now;
+
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
   document.getElementById("countdown").innerHTML =
-    days + " Days • " + hours + " Hours • " + minutes + " Minutes • " + seconds + " Seconds";
-}, 1000);
+  days + " Days • " + hours + " Hours • " + minutes + " Minutes";
+},1000);
 
-// ---------------- SLIDESHOW ----------------
-let slideIndex = 0;
-showSlides();
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
-  for (let i=0;i<slides.length;i++){ slides[i].style.display = "none"; }
-  slideIndex++;
-  if(slideIndex>slides.length){slideIndex=1;}
-  slides[slideIndex-1].style.display="block";
-  setTimeout(showSlides,4000);
-}
+// Slideshow
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+setInterval(()=>{
+  slides[index].classList.remove("active");
+  index = (index+1)%slides.length;
+  slides[index].classList.add("active");
+},4000);
 
-// ---------------- PETALS ----------------
-const petalContainer = document.querySelector('.petal-container');
-const petalImages = ['image/flower1.png','image/flower2.png','image/flower3.png'];
-
-function spawnPetal(){
+// Petals
+function createPetal(){
   const petal = document.createElement("img");
-  petal.src = petalImages[Math.floor(Math.random()*petalImages.length)];
+  const flowers = ["image/flower1.png","image/flower2.png","image/flower3.png"];
+  petal.src = flowers[Math.floor(Math.random()*flowers.length)];
   petal.classList.add("petal");
-  petal.style.left = Math.random()*100+'vw';
-  const size = Math.random()*15 + 10;
-  petal.style.width = size+'px';
-  const duration = Math.random()*5 + 8;
-  petal.style.animationDuration = duration+'s';
-  petalContainer.appendChild(petal);
-  setTimeout(()=>{petal.remove();}, duration*1000);
+
+  petal.style.left = Math.random()*100 + "vw";
+  petal.style.animationDuration = (8 + Math.random()*5) + "s";
+  petal.style.width = (15 + Math.random()*15) + "px";
+
+  document.getElementById("petals-container").appendChild(petal);
+
+  setTimeout(()=>petal.remove(),13000);
 }
-setInterval(spawnPetal, 600);
+setInterval(createPetal,800);
 </script>
 
 </body>
