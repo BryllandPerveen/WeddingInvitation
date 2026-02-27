@@ -118,40 +118,37 @@ iframe {
   font-weight: bold;
 }
 
-/* ---------------- PETALS ---------------- */
-.petal-container{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
+/* ---------------- DREAMY WIND PETALS ---------------- */
 .petal {
   position: absolute;
   top: -60px;
   pointer-events: none;
-  animation-name: fall;
+  animation-name: dreamyFall;
   animation-timing-function: linear;
+  animation-iteration-count: 1;
+  will-change: transform;
 }
 
-@keyframes fall{
+@keyframes dreamyFall{
   0%{
     transform: translate3d(0,0,0) rotate(0deg);
-    opacity:0;
+    opacity: 0;
   }
   10%{
-    opacity:1;
+    opacity: 1;
+  }
+  25%{
+    transform: translate3d(30px,25vh,0) rotate(90deg);
   }
   50%{
-    transform:translate3d(40px,50vh,0) rotate(180deg);
+    transform: translate3d(-40px,50vh,0) rotate(180deg);
+  }
+  75%{
+    transform: translate3d(35px,75vh,0) rotate(270deg);
   }
   100%{
-    transform:translate3d(-60px,110vh,0) rotate(360deg);
-    opacity:0;
+    transform: translate3d(-60px,110vh,0) rotate(360deg);
+    opacity: 0;
   }
 }
 
