@@ -1,24 +1,45 @@
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 font-family:'Montserrat',sans-serif;
 color:#5c4a72;
-text-align:center;
 background:#fdfbff;
-overflow-x:hidden;
+
+scroll-snap-type:y mandatory;
+overflow-y:scroll;
+height:100vh;
+}
+
+/* PANELS */
+.panel{
+height:100vh;
+scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 30px;
+box-sizing:border-box;
+}
+
+.content{
+max-width:620px;
+margin:auto;
 }
 
 /* NAV */
 nav{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
+padding:18px 60px;
 display:flex;
 justify-content:space-between;
-padding:20px 60px;
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(8px);
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
@@ -29,91 +50,90 @@ margin-left:25px;
 text-decoration:none;
 color:#5c4a72;
 font-size:14px;
+letter-spacing:1px;
 }
 
 /* HERO */
-.hero h1{
+h1{
 font-family:'Great Vibes',cursive;
-font-size:85px;
+font-size:90px;
 margin:0;
 }
 
-.sub{letter-spacing:3px;}
+.sub{
+letter-spacing:4px;
+margin:15px 0 25px;
+}
+
+h2{
+font-family:'Playfair Display',serif;
+margin:25px 0 15px;
+}
 
 /* COUNTDOWN */
 #countdown{
-margin-top:20px;
-font-size:18px;
-letter-spacing:2px;
-}
-
-/* SECTIONS */
-.section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:120px 20px;
-max-width:700px;
-margin:auto;
+margin-top:25px;
+letter-spacing:3px;
+font-size:20px;
 }
 
 /* BUTTON */
 .btn{
-margin-top:15px;
 display:inline-block;
-padding:12px 26px;
-border:1px solid #d8cfe4;
+margin-top:18px;
+padding:14px 34px;
 border-radius:30px;
+border:1px solid #d8cfe4;
 text-decoration:none;
 color:#5c4a72;
 }
 
-/* SIDE FLORALS – FIXED */
+/* FLORAL SIDE */
 .floral{
 position:fixed;
 top:0;
 height:100%;
-width:auto;
-opacity:.25;
+opacity:.18;
 pointer-events:none;
 z-index:-1;
 }
 
-.left{left:-30px;}
-.right{right:-30px;}
+.left{left:-80px;}
+.right{right:-80px;}
 
 /* FLOATING FLOWERS */
 .petals span{
 position:fixed;
 top:-50px;
+width:14px;
+height:14px;
 background-size:contain;
 background-repeat:no-repeat;
 animation:fall linear infinite;
-opacity:.35;
+opacity:.25;
 }
 
-/* DIFFERENT FLOWERS */
-.petals span:nth-child(1){left:5%; width:12px; height:12px; background-image:url("image/flower1.png"); animation-duration:22s;}
-.petals span:nth-child(2){left:15%; width:16px; height:16px; background-image:url("image/flower2.png"); animation-duration:18s;}
-.petals span:nth-child(3){left:25%; width:14px; height:14px; background-image:url("image/flower3.png"); animation-duration:25s;}
-.petals span:nth-child(4){left:35%; width:10px; height:10px; background-image:url("image/flower1.png"); animation-duration:20s;}
-.petals span:nth-child(5){left:50%; width:18px; height:18px; background-image:url("image/flower2.png"); animation-duration:26s;}
-.petals span:nth-child(6){left:60%; width:12px; height:12px; background-image:url("image/flower3.png"); animation-duration:19s;}
-.petals span:nth-child(7){left:70%; width:15px; height:15px; background-image:url("image/flower1.png"); animation-duration:24s;}
-.petals span:nth-child(8){left:80%; width:11px; height:11px; background-image:url("image/flower2.png"); animation-duration:21s;}
-.petals span:nth-child(9){left:90%; width:13px; height:13px; background-image:url("image/flower3.png"); animation-duration:23s;}
-.petals span:nth-child(10){left:95%; width:17px; height:17px; background-image:url("image/flower1.png"); animation-duration:27s;}
+.petals span:nth-child(1){left:10%; background-image:url("image/flower1.png"); animation-duration:22s;}
+.petals span:nth-child(2){left:25%; background-image:url("image/flower2.png"); animation-duration:18s;}
+.petals span:nth-child(3){left:40%; background-image:url("image/flower3.png"); animation-duration:25s;}
+.petals span:nth-child(4){left:55%; background-image:url("image/flower1.png"); animation-duration:20s;}
+.petals span:nth-child(5){left:70%; background-image:url("image/flower2.png"); animation-duration:26s;}
+.petals span:nth-child(6){left:85%; background-image:url("image/flower3.png"); animation-duration:19s;}
+.petals span:nth-child(7){left:50%; background-image:url("image/flower1.png"); animation-duration:24s;}
+.petals span:nth-child(8){left:30%; background-image:url("image/flower2.png"); animation-duration:21s;}
 
 @keyframes fall{
-0%{transform:translateY(0) rotate(0);}
-100%{transform:translateY(110vh) rotate(360deg);}
+to{transform:translateY(110vh) rotate(360deg);}
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
-.hero h1{font-size:55px;}
+h1{font-size:56px;}
+
+body{
+scroll-snap-type:y proximity;
+}
 
 nav{
 padding:15px 20px;
@@ -121,7 +141,5 @@ flex-direction:column;
 }
 
 .menu{margin-top:10px;}
-
-.floral{opacity:.15;}
 
 }
