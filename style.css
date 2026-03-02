@@ -1,65 +1,72 @@
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:'Montserrat',sans-serif;
   background:#f9f6fb;
   color:#5c4a72;
   text-align:center;
-  overflow-x:hidden;
 }
 
-/* MONOGRAM */
-.monogram{
-  font-family:'Great Vibes',cursive;
-  font-size:42px;
-  margin-top:30px;
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 40px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  z-index:1000;
 }
 
-/* NAMES */
-.name{
+.logo{
+  height:55px;
+}
+
+.menu a{
+  margin-left:25px;
+  text-decoration:none;
+  color:#5c4a72;
+  font-size:14px;
+}
+
+/* BANNER SECTIONS */
+.banner{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:120px 20px 80px;
+}
+
+h1{
   font-family:'Great Vibes',cursive;
-  font-size:95px;
+  font-size:90px;
   margin:0;
 }
 
-.and{
+h2{
   font-family:'Playfair Display',serif;
-  font-size:24px;
-  margin:10px 0;
 }
 
-.sub{
+.tagline{
   letter-spacing:3px;
-}
-
-/* DIVIDER */
-.divider{
-  width:120px;
-  height:1px;
-  background:#d8cfe4;
-  margin:60px auto;
 }
 
 /* BUTTON */
 .btn{
   display:inline-block;
   margin-top:15px;
-  padding:12px 26px;
+  padding:12px 28px;
   border:1px solid #bcaad6;
+  border-radius:30px;
   text-decoration:none;
   color:#5c4a72;
-  border-radius:30px;
-  font-size:14px;
-}
-
-/* SECTIONS */
-section{
-  padding:60px 20px;
-  max-width:800px;
-  margin:auto;
-}
-
-h2{
-  font-family:'Playfair Display',serif;
 }
 
 /* COLUMNS */
@@ -68,65 +75,28 @@ h2{
   justify-content:center;
   gap:60px;
   flex-wrap:wrap;
-  text-align:left;
 }
 
 /* COLORS */
 .colors span{
-  display:inline-block;
   width:35px;
   height:35px;
+  display:inline-block;
   border-radius:50%;
   margin:8px;
 }
 
-/* FLORAL SIDE */
-.floral{
-  position:fixed;
-  top:0;
-  height:100%;
-  z-index:-1;
-}
-
-.left{left:0;}
-.right{right:0;}
-
-/* FLOATING FLOWERS – SLOW & ELEGANT */
-.petals span{
-  position:fixed;
-  top:-50px;
-  width:18px;
-  height:18px;
-  background:url("image/flower1.png") no-repeat center/contain;
-  animation:fall linear infinite;
-  opacity:0.6;
-}
-
-.petals span:nth-child(2n){
-  background:url("image/flower2.png") no-repeat center/contain;
-}
-
-.petals span:nth-child(3n){
-  background:url("image/flower3.png") no-repeat center/contain;
-}
-
-.petals span:nth-child(1){left:10%;animation-duration:22s;}
-.petals span:nth-child(2){left:25%;animation-duration:18s;}
-.petals span:nth-child(3){left:40%;animation-duration:24s;}
-.petals span:nth-child(4){left:55%;animation-duration:20s;}
-.petals span:nth-child(5){left:70%;animation-duration:26s;}
-.petals span:nth-child(6){left:85%;animation-duration:19s;}
-.petals span:nth-child(7){left:50%;animation-duration:23s;}
-.petals span:nth-child(8){left:30%;animation-duration:21s;}
-
-@keyframes fall{
-  0%{transform:translateY(0) rotate(0);}
-  100%{transform:translateY(110vh) rotate(360deg);}
-}
-
 /* MOBILE */
 @media(max-width:768px){
-  .name{font-size:60px;}
-  .columns{flex-direction:column;text-align:center;}
-  .floral{opacity:0.2;}
+
+  h1{font-size:55px;}
+
+  nav{
+    flex-direction:column;
+  }
+
+  .menu{
+    margin-top:10px;
+  }
+
 }
