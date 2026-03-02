@@ -1,200 +1,159 @@
-/* ================= GENERAL ================= */
-
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #fffaf6;
-  color: #5a4a4a;
-  text-align: center;
-  overflow-x: hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
+body{
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+  color:#333;
 }
 
-/* ================= SECTION BASE ================= */
-
-section {
-  position: relative;
-  padding: 120px 20px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
 }
 
-/* Soft overlay */
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 250, 246, 0.82);
-  backdrop-filter: blur(4px);
-  z-index: 0;
+/* HERO */
+.hero{
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:80px;
 }
 
-section > * {
-  position: relative;
-  z-index: 1;
+/* SECTIONS */
+section{
+  padding:120px 80px;
+  text-align:center;
+}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+  margin-bottom:20px;
 }
 
-/* ================= ENVELOPE INTRO ================= */
-
-.envelope-intro {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1600&q=80");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+/* RSVP */
+.rsvp{
+  background:#7A9CC6;
+  color:white;
+}
+.rsvp form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+.rsvp input,
+.rsvp select{
+  padding:12px;
+  border:none;
+  border-radius:6px;
+}
+.rsvp button{
+  padding:12px;
+  border:none;
+  background:#B76E79;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-.envelope-intro::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.85);
+/* GALLERY */
+.slider{
+  max-width:800px;
+  margin:auto;
+  overflow:hidden;
+}
+.slides{
+  display:flex;
+}
+.slides img{
+  width:100%;
+  flex-shrink:0;
 }
 
-.envelope-wrapper {
-  position: relative;
-  z-index: 2;
-}
-
-.envelope {
-  width: 320px;
-  height: 220px;
-  background: #f8e1e7;
-  position: relative;
-  border-radius: 8px;
-  transition: 1s;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.flap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #f4cbd4;
-  clip-path: polygon(0 0,100% 0,50% 60%);
-  transform-origin: top;
-  transition: 1s;
-}
-
-.envelope.open .flap {
-  transform: rotateX(180deg);
-}
-
-.letter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-}
-
-/* ================= HERO ================= */
-.hero {
-  height: 100vh;
-  background-image: url("assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ================= VENUE ================= */
-.venue {
-  background-image: url("assets/venue.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= NUPTIALS ================= */
-.nuptials {
-  background-image: url("assets/nuptials.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= ENTOURAGE ================= */
-.entourage {
-  background-image: url("assets/entourage.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= GALLERY ================= */
-.gallery {
-  background-image: url("assets/gallery.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= RSVP ================= */
-.rsvp {
-  background-image: url("assets/rsvp.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= ENVELOPE ================= */
-.envelope-intro {
-  background-image: url("assets/envelope.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-/* ================= FADE IN ================= */
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+/* FOOTER */
+footer{
+  padding:60px;
+  background:#111;
+  color:white;
+  text-align:center;
 }
 
 /* ================= PETALS ================= */
 
-#petals-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
+.petal-container{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
 }
 
-.petal {
-  position: absolute;
-  top: -50px;
-  animation: fall linear forwards;
+.petal{
+  position:absolute;
+  top:-50px;
+  opacity:0;
+  animation:fall linear forwards;
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
+@keyframes fall{
+  0%{
+    transform:translateY(0) translateX(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{opacity:1;}
+  50%{
+    transform:translateY(50vh) translateX(40px) rotate(180deg);
+  }
+  100%{
+    transform:translateY(110vh) translateX(-60px) rotate(360deg);
+    opacity:0;
   }
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  h1 {
-    font-size: 34px;
-  }
-
-  .two-columns {
-    gap: 40px;
-    text-align: center;
-  }
-
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:15px 20px;}
+  .hero h1{font-size:48px;}
+  section{padding:80px 25px;}
 }
