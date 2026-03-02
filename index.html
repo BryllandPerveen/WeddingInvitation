@@ -3,131 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<title>Bryll & Perveen Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Petal Container -->
-<div class="petal-container"></div>
+<!-- FLORAL SIDE BORDERS -->
+<img src="image/floral-left.png" class="floral left">
+<img src="image/floral-right.png" class="floral right">
 
-<!-- Navigation -->
-<nav>
-  <div class="logo">A & B</div>
-  <div>
-    <a href="#story">Story</a>
-    <a href="#details">Details</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#rsvp">RSVP</a>
+<!-- HERO / NAMES -->
+<header>
+  <h1>Bryll</h1>
+  <p class="and">and</p>
+  <h1>Perveen</h1>
+  <p class="sub">Are getting married</p>
+</header>
+
+<!-- INVITATION -->
+<section>
+  <h2>You are invited to celebrate the wedding of</h2>
+
+  <p class="date">Friday • August 28, 2026 • 3:00 PM</p>
+
+  <p>
+    Iglesia Ni Cristo<br>
+    District of Laoag City, Ilocos Norte
+  </p>
+
+  <p class="reception">
+    Reception to follow at 5:00 PM<br>
+    Arabella Events Place<br>
+    F. Julian Street, Laoag City
+  </p>
+</section>
+
+<!-- PRINCIPAL SPONSORS -->
+<section>
+  <h2>Principal Sponsors</h2>
+
+  <div class="columns">
+    <ul>
+      <li>Mr. Lorem Ipsum</li>
+      <li>Mr. Lorem Ipsum</li>
+      <li>Mr. Lorem Ipsum</li>
+    </ul>
+
+    <ul>
+      <li>Mr. Lorem Ipsum</li>
+      <li>Mr. Lorem Ipsum</li>
+      <li>Mr. Lorem Ipsum</li>
+    </ul>
   </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero" style="background-image:url('image/hero.jpg');">
-  <div class="hero-content">
-    <h1>Anna & Ben</h1>
-    <p>ARE GETTING MARRIED</p>
-    <div class="countdown" id="countdown"></div>
-  </div>
 </section>
 
-<!-- Story -->
-<section id="story" class="story">
-  <h2>Our Story</h2>
-  <p>A beautiful journey that started with friendship and grew into forever.</p>
-</section>
+<!-- ENTOURAGE -->
+<section>
+  <h2>Entourage</h2>
 
-<!-- Details -->
-<section id="details" class="details">
-  <h2>Wedding Details</h2>
-  <p>June 25, 2026</p>
-  <p>St. Mary's Church</p>
-  <p>Reception at Grand Hall</p>
-</section>
+  <div class="columns">
+    <div>
+      <h3>Groom’s Parents</h3>
+      <p>Randy D. Atienza<br>Eliza B. Atienza</p>
 
-<!-- Gallery -->
-<section id="gallery" class="gallery">
-  <h2>Gallery</h2>
-  <div class="slider">
-    <div class="slides">
-      <img src="image/gallery1.jpg">
-      <img src="image/gallery2.jpg">
-      <img src="image/gallery3.jpg">
+      <h3>Best Man</h3>
+      <p>Mr. Lorem Ipsum</p>
+    </div>
+
+    <div>
+      <h3>Bride’s Parents</h3>
+      <p>Pedro F. Castillo<br>Imelda A. Castillo</p>
+
+      <h3>Maid of Honor</h3>
+      <p>Ms. Lorem Ipsum</p>
     </div>
   </div>
 </section>
 
-<!-- RSVP -->
-<section id="rsvp" class="rsvp">
-  <h2>RSVP</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <select required>
-      <option value="">Will you attend?</option>
-      <option>Yes, with joy!</option>
-      <option>Sadly, no</option>
-    </select>
-    <button type="submit">Submit</button>
-  </form>
+<!-- ATTIRE -->
+<section>
+  <h2>Attire Guide</h2>
+
+  <p>Mixed Pastel Casual</p>
+
+  <div class="colors">
+    <span style="background:#e8b4b8"></span>
+    <span style="background:#f3e5ab"></span>
+    <span style="background:#c9e4de"></span>
+    <span style="background:#d6cadd"></span>
+    <span style="background:#cfe0c3"></span>
+  </div>
+
+  <p>
+    Kindly wear semi-formal attire in pastel shades.
+    Please refrain from wearing black.
+  </p>
 </section>
 
-<!-- Footer -->
+<!-- GIFTS -->
+<section>
+  <h2>In place of gifts</h2>
+  <p>
+    Celebrating with you is the greatest gift we could ask for.
+    If you wish to give something more,
+    a monetary gift would be warmly appreciated.
+  </p>
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2>Kindly RSVP</h2>
+  <p>Kindly confirm your attendance through our RSVP link.</p>
+</section>
+
 <footer>
-  With love, Anna & Ben
+  With love, Bryll & Perveen
 </footer>
-
-<!-- Countdown Script -->
-<script>
-const weddingDate = new Date("June 25, 2026 15:00:00").getTime();
-const countdown = document.getElementById("countdown");
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  countdown.innerHTML = days + " Days " + hours + " Hours " + minutes + " Minutes";
-}, 1000);
-</script>
-
-<!-- Falling Petals Script -->
-<script>
-const petalContainer = document.querySelector('.petal-container');
-
-const flowerImages = [
-  "image/flower1.png",
-  "image/flower2.png",
-  "image/flower3.png"
-];
-
-function createPetal(){
-  const petal = document.createElement("img");
-  petal.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
-  petal.classList.add("petal");
-
-  petal.style.left = Math.random() * 100 + "vw";
-
-  const size = Math.random() * 25 + 15;
-  petal.style.width = size + "px";
-
-  const duration = Math.random() * 5 + 8;
-  petal.style.animationDuration = duration + "s";
-
-  petalContainer.appendChild(petal);
-
-  setTimeout(() => {
-    petal.remove();
-  }, duration * 1000);
-}
-
-setInterval(createPetal, 500);
-</script>
 
 </body>
 </html>
