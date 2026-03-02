@@ -8,6 +8,7 @@ body{
   background:#f9f6fb;
   color:#5c4a72;
   text-align:center;
+  overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -19,9 +20,9 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:10px 40px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  padding:12px 40px;
   z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -35,7 +36,7 @@ nav{
   font-size:14px;
 }
 
-/* BANNER SECTIONS */
+/* BANNERS */
 .banner{
   min-height:100vh;
   display:flex;
@@ -69,21 +70,48 @@ h2{
   color:#5c4a72;
 }
 
-/* COLUMNS */
-.columns{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  flex-wrap:wrap;
+/* FLORAL SIDE */
+.floral{
+  position:fixed;
+  top:0;
+  height:100%;
+  z-index:-1;
 }
 
-/* COLORS */
-.colors span{
-  width:35px;
-  height:35px;
-  display:inline-block;
-  border-radius:50%;
-  margin:8px;
+.left{left:0;}
+.right{right:0;}
+
+/* FLOATING FLOWERS */
+.petals span{
+  position:fixed;
+  top:-50px;
+  width:18px;
+  height:18px;
+  background:url("image/flower1.png") no-repeat center/contain;
+  animation:fall linear infinite;
+  opacity:0.6;
+}
+
+.petals span:nth-child(2n){
+  background:url("image/flower2.png") no-repeat center/contain;
+}
+
+.petals span:nth-child(3n){
+  background:url("image/flower3.png") no-repeat center/contain;
+}
+
+.petals span:nth-child(1){left:10%;animation-duration:22s;}
+.petals span:nth-child(2){left:25%;animation-duration:18s;}
+.petals span:nth-child(3){left:40%;animation-duration:24s;}
+.petals span:nth-child(4){left:55%;animation-duration:20s;}
+.petals span:nth-child(5){left:70%;animation-duration:26s;}
+.petals span:nth-child(6){left:85%;animation-duration:19s;}
+.petals span:nth-child(7){left:50%;animation-duration:23s;}
+.petals span:nth-child(8){left:30%;animation-duration:21s;}
+
+@keyframes fall{
+  0%{transform:translateY(0) rotate(0);}
+  100%{transform:translateY(110vh) rotate(360deg);}
 }
 
 /* MOBILE */
@@ -97,6 +125,10 @@ h2{
 
   .menu{
     margin-top:10px;
+  }
+
+  .floral{
+    opacity:0.2;
   }
 
 }
