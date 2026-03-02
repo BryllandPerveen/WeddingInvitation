@@ -103,73 +103,54 @@ section > * {
 }
 
 /* ================= HERO ================= */
-
 .hero {
   height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1600&q=80");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 1.5s ease forwards;
+  background-image: url("assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ================= VENUE ================= */
-
 .venue {
-  background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("assets/venue.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================= NUPTIALS ================= */
-
 .nuptials {
-  background-image: url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("assets/nuptials.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================= ENTOURAGE ================= */
-
 .entourage {
-  background-image: url("https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("assets/entourage.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================= GALLERY ================= */
-
 .gallery {
-  background-image: url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=80");
-}
-
-.slideshow {
-  max-width: 600px;
-  margin: auto;
-}
-
-.slide {
-  width: 100%;
-  display: none;
-  border-radius: 16px;
-}
-
-.slide.active {
-  display: block;
+  background-image: url("assets/gallery.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================= RSVP ================= */
-
 .rsvp {
-  background-image: url("https://images.unsplash.com/photo-1494989940723-e8e51635b782?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("assets/rsvp.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.rsvp-btn {
-  display: inline-block;
-  padding: 14px 34px;
-  background: #b76e79;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-
-.rsvp-btn:hover {
-  background: #9d5c66;
+/* ================= ENVELOPE ================= */
+.envelope-intro {
+  background-image: url("assets/envelope.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ================= FADE IN ================= */
