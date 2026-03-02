@@ -1,6 +1,4 @@
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
@@ -8,6 +6,7 @@ font-family:'Montserrat',sans-serif;
 color:#5c4a72;
 text-align:center;
 background:#fdfbff;
+overflow-x:hidden;
 }
 
 /* NAV */
@@ -18,20 +17,34 @@ top:0;
 display:flex;
 justify-content:space-between;
 padding:20px 60px;
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(6px);
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(8px);
 z-index:1000;
 }
 
-.logo{
-height:55px;
-}
+.logo{height:55px;}
 
 .menu a{
 margin-left:25px;
 text-decoration:none;
 color:#5c4a72;
 font-size:14px;
+}
+
+/* HERO */
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:85px;
+margin:0;
+}
+
+.sub{letter-spacing:3px;}
+
+/* COUNTDOWN */
+#countdown{
+margin-top:20px;
+font-size:18px;
+letter-spacing:2px;
 }
 
 /* SECTIONS */
@@ -45,21 +58,6 @@ max-width:700px;
 margin:auto;
 }
 
-.hero h1{
-font-family:'Great Vibes',cursive;
-font-size:85px;
-margin:0;
-}
-
-.sub{
-letter-spacing:3px;
-margin:10px 0;
-}
-
-h2{
-font-family:'Playfair Display',serif;
-}
-
 /* BUTTON */
 .btn{
 margin-top:15px;
@@ -71,36 +69,45 @@ text-decoration:none;
 color:#5c4a72;
 }
 
-/* FLORAL SIDE */
+/* SIDE FLORALS – FIXED */
 .floral{
 position:fixed;
 top:0;
 height:100%;
+width:auto;
+opacity:.25;
+pointer-events:none;
 z-index:-1;
-opacity:.8;
 }
 
-.left{left:0;}
-.right{right:0;}
+.left{left:-30px;}
+.right{right:-30px;}
 
-/* FLOWERS */
+/* FLOATING FLOWERS */
 .petals span{
 position:fixed;
 top:-50px;
-width:14px;
-height:14px;
-background:url("image/flower1.png") center/contain no-repeat;
-animation:fall 25s linear infinite;
-opacity:.4;
+background-size:contain;
+background-repeat:no-repeat;
+animation:fall linear infinite;
+opacity:.35;
 }
 
-.petals span:nth-child(2){left:25%;}
-.petals span:nth-child(3){left:50%;}
-.petals span:nth-child(4){left:75%;}
-.petals span:nth-child(5){left:90%;}
+/* DIFFERENT FLOWERS */
+.petals span:nth-child(1){left:5%; width:12px; height:12px; background-image:url("image/flower1.png"); animation-duration:22s;}
+.petals span:nth-child(2){left:15%; width:16px; height:16px; background-image:url("image/flower2.png"); animation-duration:18s;}
+.petals span:nth-child(3){left:25%; width:14px; height:14px; background-image:url("image/flower3.png"); animation-duration:25s;}
+.petals span:nth-child(4){left:35%; width:10px; height:10px; background-image:url("image/flower1.png"); animation-duration:20s;}
+.petals span:nth-child(5){left:50%; width:18px; height:18px; background-image:url("image/flower2.png"); animation-duration:26s;}
+.petals span:nth-child(6){left:60%; width:12px; height:12px; background-image:url("image/flower3.png"); animation-duration:19s;}
+.petals span:nth-child(7){left:70%; width:15px; height:15px; background-image:url("image/flower1.png"); animation-duration:24s;}
+.petals span:nth-child(8){left:80%; width:11px; height:11px; background-image:url("image/flower2.png"); animation-duration:21s;}
+.petals span:nth-child(9){left:90%; width:13px; height:13px; background-image:url("image/flower3.png"); animation-duration:23s;}
+.petals span:nth-child(10){left:95%; width:17px; height:17px; background-image:url("image/flower1.png"); animation-duration:27s;}
 
 @keyframes fall{
-to{transform:translateY(110vh) rotate(360deg);}
+0%{transform:translateY(0) rotate(0);}
+100%{transform:translateY(110vh) rotate(360deg);}
 }
 
 /* MOBILE */
@@ -114,5 +121,7 @@ flex-direction:column;
 }
 
 .menu{margin-top:10px;}
+
+.floral{opacity:.15;}
 
 }
