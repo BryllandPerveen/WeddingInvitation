@@ -3,228 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bryll & Perveen Wedding</title>
+<title>Our Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= ENVELOPE INTRO ================= -->
+<!-- Petal Container -->
+<div class="petal-container"></div>
 
-<div id="envelopeIntro" class="envelope-intro">
-  <div class="envelope-wrapper">
-    <div class="envelope" id="envelope">
-      <div class="flap"></div>
-      <div class="letter">
-        <h2>Bryll & Perveen</h2>
-        <p>August 28, 2026</p>
-        <button id="openBtn">Open Invitation</button>
-      </div>
-    </div>
+<!-- Navigation -->
+<nav>
+  <div class="logo">A & B</div>
+  <div>
+    <a href="#story">Story</a>
+    <a href="#details">Details</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#rsvp">RSVP</a>
   </div>
-</div>
+</nav>
 
-<!-- ================= MAIN CONTENT ================= -->
-
-<div id="mainContent" style="display:none;">
-
-<div id="petals-container"></div>
-
-<!-- HERO -->
-<section class="hero">
+<!-- Hero Section -->
+<section class="hero" style="background-image:url('image/hero.jpg');">
   <div class="hero-content">
-    <p class="save-date">Save the Date</p>
-    <h1>Bryll & Perveen</h1>
-    <p class="date">August 28, 2026 • 3:00 PM</p>
-    <div id="countdown" class="countdown"></div>
+    <h1>Anna & Ben</h1>
+    <p>ARE GETTING MARRIED</p>
+    <div class="countdown" id="countdown"></div>
   </div>
 </section>
 
-<!-- VENUE -->
-<section class="venue">
-  <h2>Ceremony</h2>
-  <p>
-    Iglesia ni Cristo<br>
-    District of Laoag City<br>
-    Ilocos Norte
-  </p>
-
-  <div class="map">
-    <iframe 
-      src="https://www.google.com/maps?q=Iglesia+ni+Cristo+Laoag+City&output=embed"
-      loading="lazy">
-    </iframe>
-  </div>
-
-  <h2>Reception</h2>
-  <p>
-    ARABELLA Events Place<br>
-    F. Julian Street, Pila Road<br>
-    Barangay 2, Laoag City, Philippines, 2900
-  </p>
-
-  <div class="map">
-    <iframe 
-      src="https://www.google.com/maps?q=ARABELLA+Events+Place+Laoag&output=embed"
-      loading="lazy">
-    </iframe>
-  </div>
+<!-- Story -->
+<section id="story" class="story">
+  <h2>Our Story</h2>
+  <p>A beautiful journey that started with friendship and grew into forever.</p>
 </section>
 
-<!-- ================= NUPTIALS ================= -->
-
-<section class="nuptials">
-  <h2>✨ Nuptials</h2>
-
-  <div class="two-columns">
-    <div>
-      <h3>Principal Sponsors</h3>
-      <ul>
-        <li>Name 1</li>
-        <li>Name 2</li>
-        <li>Name 3</li>
-        <li>Name 4</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Secondary Sponsors</h3>
-      <ul>
-        <li>Name 1</li>
-        <li>Name 2</li>
-        <li>Name 3</li>
-        <li>Name 4</li>
-      </ul>
-    </div>
-  </div>
+<!-- Details -->
+<section id="details" class="details">
+  <h2>Wedding Details</h2>
+  <p>June 25, 2026</p>
+  <p>St. Mary's Church</p>
+  <p>Reception at Grand Hall</p>
 </section>
 
-<!-- ================= ENTOURAGE ================= -->
-
-<section class="entourage">
-  <h2>✨ Entourage</h2>
-
-  <div class="two-columns">
-    <div>
-      <h3>Groom’s Parents</h3>
-      <p>Names Here</p>
-
-      <h3>Best Man</h3>
-      <p>Name Here</p>
-
-      <h3>Groomsmen</h3>
-      <p>Names Here</p>
-
-      <h3>Ring Bearers</h3>
-      <p>Names Here</p>
+<!-- Gallery -->
+<section id="gallery" class="gallery">
+  <h2>Gallery</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="image/gallery1.jpg">
+      <img src="image/gallery2.jpg">
+      <img src="image/gallery3.jpg">
     </div>
-
-    <div>
-      <h3>Bride’s Parents</h3>
-      <p>Names Here</p>
-
-      <h3>Maid of Honor</h3>
-      <p>Name Here</p>
-
-      <h3>Bridesmaids</h3>
-      <p>Names Here</p>
-
-      <h3>Flower Girls</h3>
-      <p>Names Here</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery">
-  <h2>Our Moments</h2>
-  <div class="slideshow">
-    <img src="image/gallery1.jpg" class="slide active" alt="">
-    <img src="image/gallery2.jpg" class="slide" alt="">
-    <img src="image/gallery3.jpg" class="slide" alt="">
   </div>
 </section>
 
 <!-- RSVP -->
-<section class="rsvp">
+<section id="rsvp" class="rsvp">
   <h2>RSVP</h2>
-  <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="rsvp-btn">
-    Confirm Attendance
-  </a>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <select required>
+      <option value="">Will you attend?</option>
+      <option>Yes, with joy!</option>
+      <option>Sadly, no</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
 </section>
 
+<!-- Footer -->
 <footer>
-  <p>With Love, Bryll & Perveen</p>
+  With love, Anna & Ben
 </footer>
 
-</div>
-
-<!-- ================= SCRIPTS ================= -->
-
+<!-- Countdown Script -->
 <script>
+const weddingDate = new Date("June 25, 2026 15:00:00").getTime();
+const countdown = document.getElementById("countdown");
 
-/* ENVELOPE OPEN */
-document.getElementById("openBtn").addEventListener("click", function(){
-  document.getElementById("envelope").classList.add("open");
-
-  setTimeout(function(){
-    document.getElementById("envelopeIntro").style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-  }, 1000);
-});
-
-/* COUNTDOWN */
-const weddingDate = new Date("August 28, 2026 15:00:00").getTime();
-
-setInterval(function(){
+setInterval(() => {
   const now = new Date().getTime();
   const distance = weddingDate - now;
 
-  const days = Math.floor(distance/(1000*60*60*24));
-  const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-  const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-  const countdownEl = document.getElementById("countdown");
-  if(countdownEl){
-    countdownEl.innerHTML = days+" Days • "+hours+" Hours • "+minutes+" Minutes";
-  }
-},1000);
+  countdown.innerHTML = days + " Days " + hours + " Hours " + minutes + " Minutes";
+}, 1000);
+</script>
 
-/* SLIDESHOW */
-let slides = document.querySelectorAll(".slide");
-let currentIndex = 0;
+<!-- Falling Petals Script -->
+<script>
+const petalContainer = document.querySelector('.petal-container');
 
-if(slides.length > 0){
-  setInterval(function(){
-    slides[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add("active");
-  }, 4000);
-}
+const flowerImages = [
+  "image/flower1.png",
+  "image/flower2.png",
+  "image/flower3.png"
+];
 
-/* PETALS */
 function createPetal(){
   const petal = document.createElement("img");
-  const flowers = ["image/flower1.png","image/flower2.png","image/flower3.png"];
-
-  petal.src = flowers[Math.floor(Math.random()*flowers.length)];
+  petal.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
   petal.classList.add("petal");
 
-  petal.style.left = Math.random()*100 + "vw";
-  petal.style.width = (12 + Math.random()*10) + "px";
-  petal.style.animationDuration = (8 + Math.random()*5) + "s";
+  petal.style.left = Math.random() * 100 + "vw";
 
-  document.getElementById("petals-container").appendChild(petal);
+  const size = Math.random() * 25 + 15;
+  petal.style.width = size + "px";
 
-  setTimeout(function(){
+  const duration = Math.random() * 5 + 8;
+  petal.style.animationDuration = duration + "s";
+
+  petalContainer.appendChild(petal);
+
+  setTimeout(() => {
     petal.remove();
-  },13000);
+  }, duration * 1000);
 }
 
-setInterval(createPetal, 900);
-
+setInterval(createPetal, 500);
 </script>
 
 </body>
