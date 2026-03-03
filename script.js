@@ -87,6 +87,30 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Countdown Timer
+const weddingDate = new Date("August 26, 2026 15:00:00").getTime();
+
+const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown").innerHTML = "We're Married! 💍";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}, 1000);
+
 console.log('CJJR Wedding Website Loaded! 💒');
 console.log('✅ Paths: public/image.png & public/audio.mp3');
 console.log('✅ Hero spacing improved for desktop');
