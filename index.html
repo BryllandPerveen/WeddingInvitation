@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryll & Perveen - Wedding Invitation</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="flowers"></div>
+
+<div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle">♫</button>
+    <span class="music-text">Play Music</span>
+</div>
+
+<audio id="backgroundMusic" loop>
+    <source src="public/audio.mp3" type="audio/mpeg">
+</audio>
+
+<header id="header">
+<nav>
+<div class="logo">B & P</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#story">Our Story</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#entourage">Entourage</a></li>
+<li><a href="#sponsors">Sponsors</a></li>
+</ul>
+<div class="mobile-menu" id="mobileMenu">
+<span></span><span></span><span></span>
+</div>
+</nav>
+</header>
+
+<section id="home" class="hero"
+style="background-image: linear-gradient(rgba(108,142,191,0.4), rgba(156,175,136,0.5)), url('public/image.png');">
+<div class="hero-overlay"></div>
+<div class="hero-content">
+
+<p class="pre-title">You are cordially invited</p>
+
+<h1 class="names">
+Bryll<br><span>&</span><br>Perveen
+</h1>
+
+<div class="divider"></div>
+
+<div id="countdown" class="countdown">
+<div><span id="days">00</span><small>Days</small></div>
+<div><span id="hours">00</span><small>Hours</small></div>
+<div><span id="minutes">00</span><small>Minutes</small></div>
+<div><span id="seconds">00</span><small>Seconds</small></div>
+</div>
+
+<div class="date-display">April 23, 2026 • 3:00 PM</div>
+
+<a href="#details" class="cta-button">View Details</a>
+</div>
+
+<div class="scroll-indicator"><span></span></div>
+</section>
+
+<footer>
+<div class="container">
+<p class="footer-names">Bryll & Perveen</p>
+<p class="footer-date">April 23, 2026 • 3:00 PM</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
