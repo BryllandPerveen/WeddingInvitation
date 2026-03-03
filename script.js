@@ -1,23 +1,29 @@
-const weddingDate = new Date("April 23, 2026 15:00:00").getTime();
+// Countdown
+const weddingDate=new Date("April 23, 2026 15:00:00").getTime();
 
-const countdownFunction = setInterval(function () {
+setInterval(()=>{
+const now=new Date().getTime();
+const distance=weddingDate-now;
 
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
+document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerText=Math.floor((distance%(1000*60))/1000);
+},1000);
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Floating Flowers
+const container=document.querySelector('.flowers');
+const icons=["🌸","🌼","🌷"];
 
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+function createFlower(){
+const flower=document.createElement("div");
+flower.classList.add("flower");
+flower.innerText=icons[Math.floor(Math.random()*icons.length)];
+flower.style.left=Math.random()*100+"vw";
+flower.style.fontSize=(18+Math.random()*20)+"px";
+flower.style.animationDuration=(8+Math.random()*6)+"s";
+container.appendChild(flower);
+setTimeout(()=>flower.remove(),14000);
+}
 
-    if (distance < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("countdown").innerHTML = "We Are Married! 💍";
-    }
-
-}, 1000);
+setInterval(createFlower,900);
