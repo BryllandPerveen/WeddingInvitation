@@ -1,16 +1,16 @@
 /* Root Variables */
 :root {
-    --sage-green: #9CAF88;
-    --olive-green: #6B8E23;
-    --sage-light: #D9E4C7;
-    --sage-lighter: #EFF3EA;
-    --olive-dark: #556B2F;
-    --olive-darker: #3d4f21;
+    --sage-green: #C7D9C1;
+    --olive-green: #8DAA91;
+    --sage-light: #F4F7F3;
+    --sage-lighter: #FAFBF9;
+    --olive-dark: #6E8B74;
+    --olive-darker: #4F6B56;
     --white: #FFFFFF;
-    --off-white: #FAFAFA;
-    --text-dark: #2C3E2D;
-    --text-light: #5A6C5B;
-    --gold-accent: #C9A961;
+    --off-white: #FCFCFC;
+    --text-dark: #3A4A3F;
+    --text-light: #6B7D70;
+    --gold-accent: #E6B8AF; /* rose gold */
 }
 
 /* Reset & Base */
