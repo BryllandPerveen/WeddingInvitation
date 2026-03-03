@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clark & Jovie - Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle">
+            <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+            </svg>
+        </button>
+        <span class="music-text">Play Music</span>
+    </div>
+    <audio id="backgroundMusic" loop>
+        <source src="public/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <header id="header">
+        <nav>
+            <div class="logo">C & J</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#entourage">Entourage</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero with corrected path to public/ folder + improved desktop spacing -->
+    <section id="home" class="hero" style="background-image: linear-gradient(rgba(85, 107, 47, 0.4), rgba(156, 175, 136, 0.5)), url('public/image.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="pre-title">Together with their families</p>
+            <h1 class="names">Clark Jayson<br><span>&</span><br>Jovie Rose</h1>
+            <div class="divider"></div>
+            <p class="invitation-text">Invite you to celebrate their wedding</p>
+            <div class="date-display">April 23, 2026 • 3:00 PM</div>
+            <a href="#details" class="cta-button">View Details</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <section id="story" class="story-section">
+        <div class="container">
+            <h2 data-aos="fade-up">A Love Rooted in Grace</h2>
+            <div class="story-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="story-text">
+                    <p>In the quiet fields of Mariano Marcos State University, where seeds of learning were sown, two hearts found the gentle rhythm of love. Clark Jayson of Paoay, Ilocos Norte, and Jovie Rose of Luna, Apayao, once walked the same paths as humble students of horticulture—tending plants by day, nurturing dreams by night.</p>
+
+                    <p>As the seasons changed, what began as friendship blossomed into something Heaven itself seemed to nurture. Through the soil of patience and the sunlight of faith, love took root—steadfast, enduring, and true.</p>
+
+                    <div class="scripture">
+                        <div class="quote-icon">"</div>
+                        <blockquote>And now abideth faith, hope, charity, these three; but the greatest of these is charity.</blockquote>
+                        <cite>— 1 Corinthians 13:13 (KJV)</cite>
+                    </div>
+
+                    <p>With hearts joined in the Lord's perfect timing, Clark and Jovie now open a new chapter—to grow together in faith, to harvest the joy of a shared life, and to bloom in God's everlasting love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="details-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Wedding Details</h2>
+            <div class="details-grid">
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon">📅</div>
+                    <h3>When</h3>
+                    <p class="detail-main">April 23, 2026</p>
+                    <p class="detail-sub">3:00 PM</p>
+                </div>
+
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon">📍</div>
+                    <h3>Where</h3>
+                    <p class="detail-main">MMSU Hostel Function Hall</p>
+                    <p class="detail-sub">3H55+4JM, Manor, City of Batac, Ilocos Norte</p>
+                </div>
+
+                <div class="detail-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon">🎨</div>
+                    <h3>Motif</h3>
+                    <p class="detail-main">Sage Green & Olive Green</p>
+                    <p class="detail-sub">Ladies and gentlemen are kindly requested to incorporate any touch of sage green or olive green in their attire.</p>
+                </div>
+            </div>
+
+            <div class="map-section" data-aos="fade-up" data-aos-delay="400">
+                <h3>Get Directions</h3>
+                <div class="qr-container">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo0WMBph-KkhaBKVjzvCjTqLQg0OloqJQWvMxmfG3g5Gm1jtGyDxhN9e2oYBn-LXccGRHuu8-TKBKjaAlviLX9lVwBAprFphSDcTDK8PbTyxvXSZKdIF6QHyja5gGIZO_N5fKdaJQ=s1360-w1360-h1020-rw" alt="Scan QR Code for Directions" class="qr-image">
+                    <p class="qr-text">Scan QR code for directions</p>
+                </div>
+                <a href="https://www.google.com/maps/place/3H55+4JM" target="_blank" class="map-button">Open in Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="entourage" class="entourage-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Entourage</h2>
+
+            <div class="principal-entourage" data-aos="fade-up" data-aos-delay="100">
+                <div class="entourage-row">
+                    <div class="entourage-card">
+                        <h3>Best Man</h3>
+                        <p>Jomar F. Cabuntucan</p>
+                    </div>
+                    <div class="entourage-card">
+                        <h3>Maid of Honor</h3>
+                        <p>Valerie Patricio</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="secondary-entourage" data-aos="fade-up" data-aos-delay="200">
+                <div class="entourage-group">
+                    <h3>Candle</h3>
+                    <ul>
+                        <li>Keshley Elicia Rein Macamos</li>
+                        <li>Jan Kirk Patrick Gaspar</li>
+                    </ul>
+                </div>
+
+                <div class="entourage-group">
+                    <h3>Veil</h3>
+                    <ul>
+                        <li>Adrielle M. Infante</li>
+                        <li>Kimuel Jediah Rapha Macamos</li>
+                    </ul>
+                </div>
+
+                <div class="entourage-group">
+                    <h3>Cord</h3>
+                    <ul>
+                        <li>Jericah Shekyna Rebadulla</li>
+                        <li>Jurie Nhell Galut</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wedding-party" data-aos="fade-up" data-aos-delay="300">
+                <div class="party-column">
+                    <h3>Bridesmaids</h3>
+                    <ul>
+                        <li>Shine April Pagdilao</li>
+                        <li>Destrine Infante</li>
+                        <li>April Joy Galut</li>
+                    </ul>
+                </div>
+
+                <div class="party-column">
+                    <h3>Groomsmen</h3>
+                    <ul>
+                        <li>John Maier G. Inonog</li>
+                        <li>Kadmiel Jeil Rand Macamos</li>
+                        <li>Elcid Mark A. Infante</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flower-ring-bearers" data-aos="fade-up" data-aos-delay="400">
+                <div class="bearer-group">
+                    <h3>Flower Girls</h3>
+                    <ul>
+                        <li>Keziah Eliza Patrize M. Gaspar</li>
+                        <li>Ceanna Art P. Mamuri</li>
+                        <li>Gianni Elise P. Macamos</li>
+                        <li>Jemaica Gwenn D. Egme</li>
+                        <li>Brianna Kyrene S. Ladip</li>
+                        <li>Alisha Mayna P. Paranada</li>
+                    </ul>
+                </div>
+
+                <div class="bearer-group">
+                    <h3>Ring Bearer</h3>
+                    <ul>
+                        <li>Zabdiel P. Addun</li>
+                    </ul>
+                </div>
+
+                <div class="bearer-group">
+                    <h3>Coin Bearer</h3>
+                    <ul>
+                        <li>Viel Zaxton Lumeding</li>
+                    </ul>
+                </div>
+
+                <div class="bearer-group">
+                    <h3>Bible Bearer</h3>
+                    <ul>
+                        <li>Brayden Kyd S. Ladip</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsors" class="sponsors-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Principal Sponsors</h2>
+            <div class="sponsors-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="sponsor-column">
+                    <ul>
+                        <li>Mr. and Mrs. Frederick T. Sacayanan</li>
+                        <li>Mr. and Mrs. James Macamos</li>
+                        <li>Mr. and Mrs. Jenelyn Macamos</li>
+                        <li>Mr. and Mrs. Julius Ragual</li>
+                        <li>Mr. and Mrs. Frederick Infante</li>
+                        <li>Judge and Mrs. Neljoe Cortes</li>
+                        <li>Mr. and Mrs. Jackson Daduyo</li>
+                        <li>Mr. Jerome S. Sunico</li>
+                        <li>Mr. Elmer Abucay</li>
+                        <li>Mr. Diego Sacayanan Jr.</li>
+                        <li>Mr. and Mrs. Homer Navarro</li>
+                        <li>Mr. and Mrs. Jose R. Pacol</li>
+                        <li>Mr. and Mrs. Gillferm Riel F. Dahuya</li>
+                        <li>Mr. and Mrs. Romeo Pacol</li>
+                        <li>Mr. and Mrs. Rogie Lumbo Sr.</li>
+                    </ul>
+                </div>
+                <div class="sponsor-column">
+                    <ul>
+                        <li>Mr. and Mrs. Robi Domingo</li>
+                        <li>Mr. and Mrs. Lilibeth Agraan</li>
+                        <li>Mrs. Ma. Teressa Bermudez</li>
+                        <li>Mr. and Mrs. Arlyn Dumayas</li>
+                        <li>Mr. and Mrs. Julius Parucha</li>
+                        <li>Mr. and Mrs. Larry Abundo</li>
+                        <li>Mr. and Mrs. Jeremiah Cacayorin</li>
+                        <li>Ex Vice Mayor Jessie Gaspar</li>
+                        <li>Mr. and Mrs. Nena Mabanag</li>
+                        <li>Mr. and Mrs. Felirose Agraan</li>
+                        <li>Hon. and Mrs. Edgar Bangsil</li>
+                        <li>Engr. and Mrs. Reymel Sedantes</li>
+                        <li>Ms. Remy Espiritu</li>
+                        <li>Mr. and Mrs. Antonio Palaspas</li>
+                        <li>Mr. and Mrs. Herminia Galano</li>
+                        <li>Mr. and Mrs. James Alegado</li>
+                        <li>Mr. and Mrs. Roselyn Macatbag</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-names">Clark Jayson & Jovie Rose</p>
+            <p class="footer-date">April 23, 2026 • 3:00 PM</p>
+            <p class="footer-copyright">&copy; 2026 CJJR Wedding. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
