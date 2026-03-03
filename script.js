@@ -1,93 +1,102 @@
-// Initialize AOS
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100,
-    easing: 'ease-in-out'
-});
+:root {
+    --sage-green: #9CAF88;
+    --olive-green: #6B8E23;
+    --olive-dark: #556B2F;
+    --white: #FFFFFF;
+    --gold-accent: #C9A961;
+}
 
-// Music Player
-const musicToggle = document.getElementById('musicToggle');
-const backgroundMusic = document.getElementById('backgroundMusic');
-const musicText = document.querySelector('.music-text');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-let isPlaying = false;
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--olive-dark);
+    color: var(--white);
+}
 
-// Music Toggle Button
-musicToggle.addEventListener('click', () => {
-    if (isPlaying) {
-        backgroundMusic.pause();
-        musicToggle.classList.remove('playing');
-        musicText.textContent = 'Play Music';
-        isPlaying = false;
-    } else {
-        backgroundMusic.play().then(() => {
-            musicToggle.classList.add('playing');
-            musicText.textContent = 'Playing Music';
-            isPlaying = true;
-        }).catch(error => {
-            console.log('Music play error:', error);
-            alert('Unable to play music. Please check if audio.mp3 exists in public/ folder.');
-        });
-    }
-});
+header {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    z-index: 100;
+}
 
-// Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobileMenu');
-const navLinks = document.getElementById('navLinks');
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--gold-accent);
+}
 
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+.hero-content {
+    max-width: 800px;
+}
 
-// Header scroll effect
-const header = document.getElementById('header');
+.pre-title {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+.names {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+.names span {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--gold-accent);
+}
 
-        if (target) {
-            const headerOffset = 60;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+.divider {
+    width: 100px;
+    height: 2px;
+    background: var(--gold-accent);
+    margin: 1.5rem auto;
+}
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
+.countdown div {
+    text-align: center;
+}
 
-console.log('CJJR Wedding Website Loaded! 💒');
-console.log('✅ Paths: public/image.png & public/audio.mp3');
-console.log('✅ Hero spacing improved for desktop');
-console.log('📱 Files needed in public/ folder');
+.countdown span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.countdown small {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.date-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
