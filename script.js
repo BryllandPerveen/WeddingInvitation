@@ -88,6 +88,6 @@ document.addEventListener('click', (e) => {
 });
 
 console.log('CJJR Wedding Website Loaded! 💒');
-console.log('✅ Paths: public/image.png & public/audio.mp3');
+console.log('✅ Paths: image/banner.png & public/audio.mp3');
 console.log('✅ Hero spacing improved for desktop');
 console.log('📱 Files needed in public/ folder');
