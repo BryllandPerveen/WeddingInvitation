@@ -1,51 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bryll & Perveen - Wedding Invitation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bryll & Perveen - Wedding Invitation</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- Floating Flowers -->
+<div class="flowers"></div>
+
+<!-- Music -->
+<div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle">♫</button>
+    <span class="music-text">Play Music</span>
+</div>
+
+<audio id="backgroundMusic" loop>
+    <source src="public/audio.mp3" type="audio/mpeg">
+</audio>
+
 <header id="header">
-    <nav>
-        <div class="logo">B & P</div>
-    </nav>
+<nav>
+<div class="logo">Bryll & Perveen</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#story">Story</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#entourage">Entourage</a></li>
+<li><a href="#sponsors">Sponsors</a></li>
+</ul>
+</nav>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero">
-    <div class="hero-content">
+<div class="hero-content">
 
-        <p class="pre-title">You are cordially invited</p>
+<p class="pre-title">You are cordially invited</p>
 
-        <h1 class="names">
-            Bryll<br>
-            <span>&</span><br>
-            Perveen
-        </h1>
+<h1 class="names">
+Bryll<br><span>&</span><br>Perveen
+</h1>
 
-        <div class="divider"></div>
+<div class="divider"></div>
 
-        <!-- Countdown Timer -->
-        <div id="countdown" class="countdown">
-            <div><span id="days">00</span><small>Days</small></div>
-            <div><span id="hours">00</span><small>Hours</small></div>
-            <div><span id="minutes">00</span><small>Minutes</small></div>
-            <div><span id="seconds">00</span><small>Seconds</small></div>
-        </div>
+<div id="countdown" class="countdown">
+<div><span id="days">00</span><small>Days</small></div>
+<div><span id="hours">00</span><small>Hours</small></div>
+<div><span id="minutes">00</span><small>Minutes</small></div>
+<div><span id="seconds">00</span><small>Seconds</small></div>
+</div>
 
-        <div class="date-display">
-            April 23, 2026 • 3:00 PM
-        </div>
+<div class="date-display">
+April 23, 2026 • 3:00 PM
+</div>
 
-    </div>
+</div>
 </section>
 
+<!-- STORY -->
+<section id="story" class="section">
+<h2>Our Love Story</h2>
+<p>
+Bryll and Perveen’s journey began with friendship, strengthened by faith, and nurtured through seasons of growth.
+Their love is rooted in grace, patience, and unwavering devotion.
+</p>
+</section>
+
+<!-- DETAILS -->
+<section id="details" class="section alt">
+<h2>Wedding Details</h2>
+<p><strong>Date:</strong> April 23, 2026</p>
+<p><strong>Time:</strong> 3:00 PM</p>
+<p><strong>Venue:</strong> MMSU Hostel Function Hall, City of Batac</p>
+<p><strong>Motif:</strong> Sage Green & Dusty Blue</p>
+</section>
+
+<!-- ENTOURAGE -->
+<section id="entourage" class="section">
+<h2>Entourage</h2>
+<p>Family and closest friends stand beside Bryll & Perveen on this special day.</p>
+</section>
+
+<!-- SPONSORS -->
+<section id="sponsors" class="section alt">
+<h2>Principal Sponsors</h2>
+<p>With gratitude to the beloved sponsors supporting Bryll & Perveen.</p>
+</section>
+
+<footer>
+<p class="footer-names">Bryll & Perveen</p>
+<p>April 23, 2026 • 3:00 PM</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
