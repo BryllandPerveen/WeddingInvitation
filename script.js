@@ -128,30 +128,43 @@ const flowers = [
     "image/flower3.png"
 ];
 
-function createFlower() {
+function createFlower(){
 
-    const flower = document.createElement("img");
+const flower = document.createElement("img");
 
-    flower.src = flowers[Math.floor(Math.random() * flowers.length)];
+flower.src = flowers[Math.floor(Math.random()*flowers.length)];
 
-    flower.classList.add("flower");
+flower.classList.add("flower");
 
-    flower.style.left = Math.random() * 100 + "vw";
+const leftLanes=[2,4,6,8];
+const rightLanes=[92,94,96,98];
 
-    flower.style.width = 15 + Math.random() * 20 + "px";
+const side=Math.random()<0.5;
 
-    const duration = 8 + Math.random() * 6;
+if(side){
 
-    flower.style.animationDuration = duration + "s";
-    flower.style.animationTimingFunction = "ease-in-out";
+flower.style.left=leftLanes[Math.floor(Math.random()*leftLanes.length)]+"vw";
+flower.style.animation="fall-left linear forwards";
 
-    flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+}else{
 
-    flowerContainer.appendChild(flower);
+flower.style.left=rightLanes[Math.floor(Math.random()*rightLanes.length)]+"vw";
+flower.style.animation="fall-right linear forwards";
 
-    setTimeout(() => {
-        flower.remove();
-    }, duration * 1000);
+}
+
+const duration=12+Math.random()*6;
+
+flower.style.animationDuration=duration+"s";
+
+flower.style.width=14+Math.random()*10+"px";
+
+flowerContainer.appendChild(flower);
+
+setTimeout(()=>{
+flower.remove();
+},duration*1000);
+
 }
 
 // generate flowers continuously
