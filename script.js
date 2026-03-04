@@ -118,6 +118,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// Flower Falling Animation
+
+const flowerContainer = document.getElementById("flower-container");
+
+const flowers = [
+    "image/flower1.png",
+    "image/flower2.png",
+    "image/flower3.png"
+];
+
+function createFlower() {
+
+    const flower = document.createElement("img");
+
+    flower.src = flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.classList.add("flower");
+
+    flower.style.left = Math.random() * 100 + "vw";
+
+    flower.style.width = 15 + Math.random() * 20 + "px";
+
+    const duration = 8 + Math.random() * 6;
+
+    flower.style.animationDuration = duration + "s";
+
+    flower.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    flowerContainer.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, duration * 1000);
+}
+
+// generate flowers continuously
+setInterval(createFlower, 600);
+
 
 console.log('CJJR Wedding Website Loaded! 💒');
 console.log('✅ Paths: image/banner.png & public/audio.mp3');
