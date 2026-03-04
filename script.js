@@ -139,17 +139,17 @@ flower.classList.add("flower");
 const leftLanes=[2,4,6,8];
 const rightLanes=[92,94,96,98];
 
-const side=Math.random()<0.5;
+const side = Math.random() < 0.5;
 
 if(side){
 
-flower.style.left=leftLanes[Math.floor(Math.random()*leftLanes.length)]+"vw";
-flower.style.animation="fall-left linear forwards";
+flower.style.left = Math.random()*20 + "vw";
+flower.style.animation = "fall-left linear forwards";
 
 }else{
 
-flower.style.left=rightLanes[Math.floor(Math.random()*rightLanes.length)]+"vw";
-flower.style.animation="fall-right linear forwards";
+flower.style.left = 80 + Math.random()*20 + "vw";
+flower.style.animation = "fall-right linear forwards";
 
 }
 
