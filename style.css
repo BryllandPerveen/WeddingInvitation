@@ -166,18 +166,17 @@ opacity:1;
 }
 
 50%{
-transform: translateY(50vh) translateX(20px) rotate(180deg);
+transform: translateY(50vh) translateX(-40px) rotate(180deg);
 }
 
 100%{
-transform: translateY(110vh) translateX(35px) rotate(360deg);
+transform: translateY(110vh) translateX(-70px) rotate(360deg);
 opacity:0;
 }
 
 }
 
 
-/* RIGHT SIDE FLOWERS */
 
 @keyframes fall-right {
 
@@ -191,11 +190,11 @@ opacity:1;
 }
 
 50%{
-transform: translateY(50vh) translateX(-20px) rotate(180deg);
+transform: translateY(50vh) translateX(40px) rotate(180deg);
 }
 
 100%{
-transform: translateY(110vh) translateX(-35px) rotate(360deg);
+transform: translateY(110vh) translateX(70px) rotate(360deg);
 opacity:0;
 }
 
