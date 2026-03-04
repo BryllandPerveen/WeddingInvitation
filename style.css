@@ -104,6 +104,42 @@ body {
     white-space: nowrap;
 }
 
+
+/* Prenup Gallery */
+
+.gallery-section{
+padding:6rem 2rem;
+background:var(--sage-lighter);
+text-align:center;
+}
+
+.gallery-section h2{
+font-family:'Playfair Display',serif;
+font-size:clamp(2.5rem,5vw,3.5rem);
+color:var(--olive-dark);
+margin-bottom:3rem;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
 /* Directions wrapper fix */
 
 .directions-wrapper{
