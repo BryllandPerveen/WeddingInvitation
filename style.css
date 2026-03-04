@@ -158,7 +158,7 @@ body {
 @keyframes fall {
 
     0% {
-        transform: translateY(-50px) rotate(0deg);
+        transform: translateY(-50px) translateX(0px) rotate(0deg);
         opacity: 0;
     }
 
@@ -166,12 +166,20 @@ body {
         opacity: 1;
     }
 
-    80% {
-        opacity: 0.8;
+    25% {
+        transform: translateY(25vh) translateX(-20px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(20px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateY(75vh) translateX(-25px) rotate(270deg);
     }
 
     100% {
-        transform: translateY(110vh) rotate(360deg);
+        transform: translateY(110vh) translateX(15px) rotate(360deg);
         opacity: 0;
     }
 
