@@ -104,6 +104,36 @@ body {
     white-space: nowrap;
 }
 
+/* Directions wrapper fix */
+
+.directions-wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin:40px auto;
+    max-width:800px;   /* keeps section centered */
+}
+
+/* Direction card */
+
+.map-card{
+    background:var(--sage-lighter);
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Make images responsive */
+
+.qr-image{
+    width:100%;
+    max-width:250px;
+    height:auto;
+    margin:auto;
+    display:block;
+}
+
 /* Falling Flowers */
 
 .flower-container {
