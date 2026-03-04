@@ -143,6 +143,7 @@ function createFlower() {
     const duration = 8 + Math.random() * 6;
 
     flower.style.animationDuration = duration + "s";
+    flower.style.animationTimingFunction = "ease-in-out";
 
     flower.style.transform = `rotate(${Math.random() * 360}deg)`;
 
