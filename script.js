@@ -203,6 +203,45 @@ behavior: "smooth"
 
 });
 
+/* CINEMATIC AUTO SLIDE */
+
+let autoSlide;
+
+function startAutoSlide(){
+
+autoSlide = setInterval(()=>{
+
+carousel.scrollBy({
+left:320,
+behavior:"smooth"
+});
+
+if(carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5){
+carousel.scrollTo({
+left:0,
+behavior:"smooth"
+});
+}
+
+},3500); // speed of slideshow
+
+}
+
+function stopAutoSlide(){
+clearInterval(autoSlide);
+}
+
+/* start automatically */
+startAutoSlide();
+
+/* pause when user interacts */
+
+carousel.addEventListener("mouseenter",stopAutoSlide);
+carousel.addEventListener("mouseleave",startAutoSlide);
+
+carousel.addEventListener("touchstart",stopAutoSlide);
+carousel.addEventListener("touchend",startAutoSlide);
+
 /* PRENUP LIGHTBOX */
 
 const galleryImages = document.querySelectorAll("#galleryCarousel img");
