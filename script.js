@@ -170,6 +170,38 @@ flower.remove();
 // generate flowers continuously
 setInterval(createFlower, 600);
 
+/* PRENUP GALLERY CAROUSEL */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const carousel = document.getElementById("galleryCarousel");
+
+const nextBtn = document.querySelector(".carousel-btn.next");
+const prevBtn = document.querySelector(".carousel-btn.prev");
+
+if(nextBtn && prevBtn && carousel){
+
+nextBtn.addEventListener("click", () => {
+
+carousel.scrollBy({
+left: 320,
+behavior: "smooth"
+});
+
+});
+
+prevBtn.addEventListener("click", () => {
+
+carousel.scrollBy({
+left: -320,
+behavior: "smooth"
+});
+
+});
+
+}
+
+});
 
 console.log('CJJR Wedding Website Loaded! 💒');
 console.log('✅ Paths: image/banner.png & public/audio.mp3');
