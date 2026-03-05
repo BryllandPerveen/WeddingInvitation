@@ -278,6 +278,53 @@ display:none;
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
+    /* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+}
+
+.lightbox-close{
+position:absolute;
+top:25px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.lightbox-prev,
+.lightbox-next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(255,255,255,.8);
+border:none;
+font-size:28px;
+width:50px;
+height:50px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.lightbox-prev{ left:40px; }
+.lightbox-next{ right:40px; }
+
 /* Make images responsive */
 
 .qr-image{
