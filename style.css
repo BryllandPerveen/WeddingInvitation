@@ -12,6 +12,46 @@
     --text-light: #5A6C5B;
     --gold-accent: #C9A961;
 }
+ /* Carousel*/
+const carousel = document.getElementById("galleryCarousel");
+const images = carousel.querySelectorAll("img");
+
+function updateActive(){
+
+let center = carousel.scrollLeft + carousel.offsetWidth/2;
+
+images.forEach(img=>{
+
+let box = img.offsetLeft + img.offsetWidth/2;
+
+if(Math.abs(center-box) < img.offsetWidth/2){
+
+img.classList.add("active");
+
+}else{
+
+img.classList.remove("active");
+
+}
+
+});
+
+}
+
+carousel.addEventListener("scroll",updateActive);
+
+updateActive();
+
+/* arrow buttons */
+
+document.querySelector(".next").onclick=()=>{
+carousel.scrollBy({left:320,behavior:"smooth"});
+};
+
+document.querySelector(".prev").onclick=()=>{
+carousel.scrollBy({left:-320,behavior:"smooth"});
+};
+
 
 /* Reset & Base */
 * {
