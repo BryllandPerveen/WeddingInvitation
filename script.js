@@ -6,68 +6,102 @@ AOS.init({
     easing: 'ease-in-out'
 });
 
-// Music Player
+
+// =============================
+// MUSIC PLAYER
+// =============================
+
 const musicToggle = document.getElementById('musicToggle');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const musicText = document.querySelector('.music-text');
 
 let isPlaying = false;
 
-// Music Toggle Button
 musicToggle.addEventListener('click', () => {
+
     if (isPlaying) {
+
         backgroundMusic.pause();
         musicToggle.classList.remove('playing');
         musicText.textContent = 'Play Music';
         isPlaying = false;
+
     } else {
+
         backgroundMusic.play().then(() => {
+
             musicToggle.classList.add('playing');
             musicText.textContent = 'Playing Music';
             isPlaying = true;
+
         }).catch(error => {
+
             console.log('Music play error:', error);
-            alert('Unable to play music. Please check if audio.mp3 exists in public/ folder.');
+
         });
+
     }
+
 });
 
-// Mobile Menu Toggle
+
+// =============================
+// MOBILE MENU
+// =============================
+
 const mobileMenu = document.getElementById('mobileMenu');
 const navLinks = document.getElementById('navLinks');
 
 mobileMenu.addEventListener('click', () => {
+
     mobileMenu.classList.toggle('active');
     navLinks.classList.toggle('active');
+
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-links a').forEach(link => {
+
     link.addEventListener('click', () => {
+
         mobileMenu.classList.remove('active');
         navLinks.classList.remove('active');
+
     });
+
 });
 
-// Header scroll effect
+
+// =============================
+// HEADER SCROLL EFFECT
+// =============================
+
 const header = document.getElementById('header');
 
 window.addEventListener('scroll', () => {
+
     if (window.pageYOffset > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
+
 });
 
 
-// Smooth scroll for anchor links
+// =============================
+// SMOOTH SCROLL
+// =============================
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
     anchor.addEventListener('click', function (e) {
+
         e.preventDefault();
+
         const target = document.querySelector(this.getAttribute('href'));
 
         if (target) {
+
             const headerOffset = 60;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -76,56 +110,60 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+
         }
+
     });
+
 });
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !navLinks.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        navLinks.classList.remove('active');
-    }
-});
-// Countdown
+
+// =============================
+// COUNTDOWN TIMER
+// =============================
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const weddingDate = new Date("2026-08-26T15:00:00").getTime();
+const weddingDate = new Date("2026-08-26T15:00:00").getTime();
 
-    function updateCountdown() {
+function updateCountdown(){
 
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+const now = new Date().getTime();
+const distance = weddingDate - now;
 
-        if (distance <= 0) {
-            document.getElementById("countdown").innerHTML = "Today is the Wedding Day!";
-            return;
-        }
+if(distance <= 0){
+document.getElementById("countdown").innerHTML = "Today is the Wedding Day!";
+return;
+}
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
 
-        document.getElementById("days").textContent = days;
-        document.getElementById("hours").textContent = hours;
-        document.getElementById("minutes").textContent = minutes;
-        document.getElementById("seconds").textContent = seconds;
-    }
+document.getElementById("days").textContent = days;
+document.getElementById("hours").textContent = hours;
+document.getElementById("minutes").textContent = minutes;
+document.getElementById("seconds").textContent = seconds;
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
 
 });
 
-// Flower Falling Animation
+
+// =============================
+// FLOWER ANIMATION
+// =============================
 
 const flowerContainer = document.getElementById("flower-container");
 
 const flowers = [
-    "image/flower1.png",
-    "image/flower2.png",
-    "image/flower3.png"
+"image/flower1.png",
+"image/flower2.png",
+"image/flower3.png"
 ];
 
 function createFlower(){
@@ -135,9 +173,6 @@ const flower = document.createElement("img");
 flower.src = flowers[Math.floor(Math.random()*flowers.length)];
 
 flower.classList.add("flower");
-
-const leftLanes=[2,4,6,8];
-const rightLanes=[92,94,96,98];
 
 const side = Math.random() < 0.5;
 
@@ -153,11 +188,10 @@ flower.style.animation = "fall-right linear forwards";
 
 }
 
-const duration=12+Math.random()*6;
+const duration = 12 + Math.random()*6;
 
-flower.style.animationDuration=duration+"s";
-
-flower.style.width=14+Math.random()*10+"px";
+flower.style.animationDuration = duration + "s";
+flower.style.width = 14 + Math.random()*10 + "px";
 
 flowerContainer.appendChild(flower);
 
@@ -167,10 +201,12 @@ flower.remove();
 
 }
 
-// generate flowers continuously
-setInterval(createFlower, 600);
+setInterval(createFlower,600);
 
-/* PRENUP GALLERY + LIGHTBOX */
+
+// =============================
+// PRENUP CAROUSEL
+// =============================
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -178,97 +214,114 @@ const carousel = document.getElementById("galleryCarousel");
 const nextBtn = document.querySelector(".carousel-btn.next");
 const prevBtn = document.querySelector(".carousel-btn.prev");
 
-/* CAROUSEL ARROWS */
+if(!carousel) return;
 
-if(nextBtn && prevBtn && carousel){
 
-nextBtn.addEventListener("click", ()=>{
-carousel.scrollBy({ left:320, behavior:"smooth" });
+// ARROW CONTROLS
+
+if(nextBtn){
+
+nextBtn.addEventListener("click",()=>{
+
+carousel.scrollBy({
+left:320,
+behavior:"smooth"
 });
 
-prevBtn.addEventListener("click", ()=>{
-carousel.scrollBy({ left:-320, behavior:"smooth" });
 });
 
 }
 
-/* AUTO SLIDE */
+if(prevBtn){
 
-let autoSlide;
+prevBtn.addEventListener("click",()=>{
 
-function startAutoSlide(){
+carousel.scrollBy({
+left:-320,
+behavior:"smooth"
+});
 
-autoSlide = setInterval(()=>{
-
-carousel.scrollBy({ left:320, behavior:"smooth" });
-
-if(carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5){
-carousel.scrollTo({ left:0, behavior:"smooth" });
-}
-
-},3500);
+});
 
 }
 
-function stopAutoSlide(){
-clearInterval(autoSlide);
+
+// DUPLICATE IMAGES FOR LOOP
+
+const items = Array.from(carousel.children);
+
+items.forEach(item=>{
+const clone = item.cloneNode(true);
+carousel.appendChild(clone);
+});
+
+
+// CONTINUOUS AUTO SCROLL
+
+let speed = 0.5;
+
+function autoScroll(){
+
+carousel.scrollLeft += speed;
+
+if(carousel.scrollLeft >= carousel.scrollWidth/2){
+carousel.scrollLeft = 0;
 }
 
-if(carousel){
-startAutoSlide();
+requestAnimationFrame(autoScroll);
 
-carousel.addEventListener("mouseenter",stopAutoSlide);
-carousel.addEventListener("mouseleave",startAutoSlide);
-
-carousel.addEventListener("touchstart",stopAutoSlide);
-carousel.addEventListener("touchend",startAutoSlide);
 }
 
-/* LIGHTBOX */
+autoScroll();
+
+
+// PAUSE ON HOVER
+
+carousel.addEventListener("mouseenter",()=>{speed=0;});
+carousel.addEventListener("mouseleave",()=>{speed=0.5;});
+
+});
+
+
+// =============================
+// LIGHTBOX
+// =============================
+
+document.addEventListener("DOMContentLoaded", function(){
 
 const galleryImages = document.querySelectorAll("#galleryCarousel img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
+const closeBtn = document.querySelector(".lightbox-close");
 
-const nextLight = document.querySelector(".lightbox-next");
-const prevLight = document.querySelector(".lightbox-prev");
-const closeLight = document.querySelector(".lightbox-close");
-
-let currentIndex = 0;
-
-galleryImages.forEach((img,index)=>{
+galleryImages.forEach(img=>{
 
 img.addEventListener("click",()=>{
+
 lightbox.style.display="flex";
 lightboxImg.src = img.src;
-currentIndex=index;
-});
 
 });
 
-if(closeLight){
-closeLight.onclick=()=>{
+});
+
+if(closeBtn){
+
+closeBtn.addEventListener("click",()=>{
 lightbox.style.display="none";
-};
+});
+
 }
 
-if(nextLight){
-nextLight.onclick=()=>{
-currentIndex=(currentIndex+1)%galleryImages.length;
-lightboxImg.src=galleryImages[currentIndex].src;
-};
-}
+lightbox.addEventListener("click",(e)=>{
 
-if(prevLight){
-prevLight.onclick=()=>{
-currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;
-lightboxImg.src=galleryImages[currentIndex].src;
-};
+if(e.target === lightbox){
+lightbox.style.display="none";
 }
 
 });
 
-console.log('CJJR Wedding Website Loaded! 💒');
-console.log('✅ Paths: image/banner.png & public/audio.mp3');
-console.log('✅ Hero spacing improved for desktop');
-console.log('📱 Files needed in public/ folder');
+});
+
+
+console.log("Wedding Website Loaded 💒");
