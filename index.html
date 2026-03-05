@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bryll & Perveen - Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bryll & Perveen - Wedding Invitation</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-<!-- floating petals -->
-    <div class="flower-container" id="flower-container"></div>
-    <!-- Music Player -->
-    <div class="music-player" id="musicPlayer">
-        <button class="music-toggle" id="musicToggle">
-            <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-            </svg>
-            <svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-            </svg>
-        </button>
-        <span class="music-text">Play Music</span>
-    </div>
-    <audio id="backgroundMusic" loop>
-        <source src="public/audio.mp3" type="audio/mpeg">
-    </audio>
 
-    <header id="header">
-        <nav>
-            <div class="logo">B & P</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Pre-Wedding</a></li>
-                <li><a href="#details">Details</a></li>
-                <li><a href="#entourage">Entourage</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
-            </ul>
-            <div class="mobile-menu" id="mobileMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+<div class="flower-container" id="flower-container"></div>
 
-    <!-- Hero with corrected path to public/ folder + improved desktop spacing -->
-    <section id="home" class="hero" style="background-image: linear-gradient(rgba(70,40,25,0.65), rgba(110,70,45,0.6)), url('image/banner.png');"
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="pre-title">You are cordially invited to the wedding of</p>
-            <h1 class="names">Bryll<br><span>&</span><br>Perveen</h1>
-            <div class="divider"></div>
+<div class="music-player" id="musicPlayer">
+<button class="music-toggle" id="musicToggle">
+<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<path d="M8 5v14l11-7z"/>
+</svg>
+
+<svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+</svg>
+
+</button>
+<span class="music-text">Play Music</span>
+</div>
+
+<audio id="backgroundMusic" loop>
+<source src="public/audio.mp3" type="audio/mpeg">
+</audio>
+
+<header id="header">
+<nav>
+
+<div class="logo">B & P</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#gallery">Pre-Wedding</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#entourage">Entourage</a></li>
+<li><a href="#sponsors">Sponsors</a></li>
+</ul>
+
+<div class="mobile-menu" id="mobileMenu">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+</header>
+
+
+<section id="home" class="hero"
+style="background-image: linear-gradient(rgba(70,40,25,0.65), rgba(110,70,45,0.6)), url('image/banner.png');">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<p class="pre-title">You are cordially invited to the wedding of</p>
+
+<h1 class="names">
+Bryll<br>
+<span>&</span><br>
+Perveen
+</h1>
+
+<div class="divider"></div>
 
 <div class="countdown" id="countdown">
-    <span id="days">0</span> Days •
-    <span id="hours">0</span> Hours •
-    <span id="minutes">0</span> Minutes •
-    <span id="seconds">0</span> Seconds
+<span id="days">0</span> Days •
+<span id="hours">0</span> Hours •
+<span id="minutes">0</span> Minutes •
+<span id="seconds">0</span> Seconds
 </div>
-<div class="date-display">August 26, 2026 • 3:00 PM</div>
-            
-            <a href="#details" class="cta-button">View Details</a>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
+
+<div class="date-display">
+August 26, 2026 • 3:00 PM
+</div>
+
+<a href="#details" class="cta-button">View Details</a>
+
+</div>
+
+<div class="scroll-indicator">
+<span></span>
+</div>
+
+</section>
+
 
 <section id="gallery" class="gallery-section">
 
@@ -100,253 +129,42 @@
 
 </section>
 
-  <section id="details" class="details-section">
-    <div class="container">
 
-        <h2 data-aos="fade-up">Wedding Details</h2>
+<section id="details" class="details-section">
 
-        <!-- DETAILS GRID -->
-        <div class="details-grid">
+<div class="container">
 
-            <!-- WHEN -->
-            <div class="detail-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon">📅</div>
-                <h3>When</h3>
-                <p class="detail-main">August 28, 2026</p>
-                <p class="detail-sub">3:00 PM</p>
-            </div>
+<h2 data-aos="fade-up">Wedding Details</h2>
 
-            <!-- WHERE -->
-            <div class="detail-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon">📍</div>
-                <h3>Ceremony</h3>
-                <p class="detail-main">Iglesia ni Cristo</p>
-                <p class="detail-sub">
-                    District of Laoag City, Ilocos Norte
-                </p>
-                <h3> class="detail-main">Reception</h3>
-                <p class="detail-sub">
-                    ARABELLA Events Place
-                </p>
-            </div>
+<div class="details-grid">
 
-            <!-- MOTIF -->
-            <div class="detail-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon">🎨</div>
-                <h3>Motif</h3>
-                <p class="detail-main">
-                    Rose Gold, Pastel Yellow, Powder Blue
-                </p>
-                <p class="detail-sub">
-                    Semi-formal attire in pastel shades, kindly refrain from wearing black and white.
-                </p>
-            </div>
+<div class="detail-card">
+<div class="icon">📅</div>
+<h3>When</h3>
+<p class="detail-main">August 28, 2026</p>
+<p class="detail-sub">3:00 PM</p>
+</div>
 
-        </div>
+<div class="detail-card">
 
+<div class="icon">📍</div>
 
-        <!-- DIRECTIONS SECTION (OUTSIDE GRID) -->
-        <div class="directions-wrapper" data-aos="fade-up" data-aos-delay="400">
+<h3>Ceremony</h3>
+<p class="detail-main">Iglesia ni Cristo</p>
+<p class="detail-sub">District of Laoag City, Ilocos Norte</p>
 
-            <!-- Ceremony -->
-            <div class="map-card">
-                <h3>Ceremony Location</h3>
+<h3 class="detail-main">Reception</h3>
+<p class="detail-sub">ARABELLA Events Place</p>
 
-                <div class="qr-container">
-                    <img src="image/church.png"
-                         alt="Church Directions"
-                         class="qr-image">
-                </div>
+</div>
 
-                <a href="https://maps.app.goo.gl/fTpwmA2fZW3qZp1YA"
-                   target="_blank"
-                   class="map-button">
-                   Open Ceremony in Google Maps
-                </a>
-            </div>
+</div>
 
-            <!-- Reception -->
-            <div class="map-card">
-                <h3>Reception Location</h3>
+</div>
 
-                <div class="qr-container">
-                    <img src="image/venue.png"
-                         alt="Reception Directions"
-                         class="qr-image">
-                </div>
-
-                <a href="https://maps.app.goo.gl/4uTAMCxULk9W5ZF68"
-                   target="_blank"
-                   class="map-button">
-                   Open Reception in Google Maps
-                </a>
-            </div>
-
-        </div>
-
-    </div>
 </section>
 
-    <section id="entourage" class="entourage-section">
-        <div class="container">
-            <h2 data-aos="fade-up">Entourage</h2>
 
-            <div class="principal-entourage" data-aos="fade-up" data-aos-delay="100">
-                <div class="entourage-row">
-                    <div class="entourage-card">
-                        <h3>Best Man</h3>
-                        <p>Jomar F. Cabuntucan</p>
-                    </div>
-                    <div class="entourage-card">
-                        <h3>Maid of Honor</h3>
-                        <p>Valerie Patricio</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="secondary-entourage" data-aos="fade-up" data-aos-delay="200">
-                <div class="entourage-group">
-                    <h3>Candle</h3>
-                    <ul>
-                        <li>Keshley Elicia Rein Macamos</li>
-                        <li>Jan Kirk Patrick Gaspar</li>
-                    </ul>
-                </div>
-
-                <div class="entourage-group">
-                    <h3>Veil</h3>
-                    <ul>
-                        <li>Adrielle M. Infante</li>
-                        <li>Kimuel Jediah Rapha Macamos</li>
-                    </ul>
-                </div>
-
-                <div class="entourage-group">
-                    <h3>Cord</h3>
-                    <ul>
-                        <li>Jericah Shekyna Rebadulla</li>
-                        <li>Jurie Nhell Galut</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="wedding-party" data-aos="fade-up" data-aos-delay="300">
-                <div class="party-column">
-                    <h3>Bridesmaids</h3>
-                    <ul>
-                        <li>Shine April Pagdilao</li>
-                        <li>Destrine Infante</li>
-                        <li>April Joy Galut</li>
-                    </ul>
-                </div>
-
-                <div class="party-column">
-                    <h3>Groomsmen</h3>
-                    <ul>
-                        <li>John Maier G. Inonog</li>
-                        <li>Kadmiel Jeil Rand Macamos</li>
-                        <li>Elcid Mark A. Infante</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="flower-ring-bearers" data-aos="fade-up" data-aos-delay="400">
-                <div class="bearer-group">
-                    <h3>Flower Girls</h3>
-                    <ul>
-                        <li>Keziah Eliza Patrize M. Gaspar</li>
-                        <li>Ceanna Art P. Mamuri</li>
-                        <li>Gianni Elise P. Macamos</li>
-                        <li>Jemaica Gwenn D. Egme</li>
-                        <li>Brianna Kyrene S. Ladip</li>
-                        <li>Alisha Mayna P. Paranada</li>
-                    </ul>
-                </div>
-
-                <div class="bearer-group">
-                    <h3>Ring Bearer</h3>
-                    <ul>
-                        <li>Zabdiel P. Addun</li>
-                    </ul>
-                </div>
-
-                <div class="bearer-group">
-                    <h3>Coin Bearer</h3>
-                    <ul>
-                        <li>Viel Zaxton Lumeding</li>
-                    </ul>
-                </div>
-
-                <div class="bearer-group">
-                    <h3>Bible Bearer</h3>
-                    <ul>
-                        <li>Brayden Kyd S. Ladip</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sponsors" class="sponsors-section">
-        <div class="container">
-            <h2 data-aos="fade-up">Principal Sponsors</h2>
-            <div class="sponsors-grid" data-aos="fade-up" data-aos-delay="100">
-                <div class="sponsor-column">
-                    <ul>
-                        <li>Mr. and Mrs. Frederick T. Sacayanan</li>
-                        <li>Mr. and Mrs. James Macamos</li>
-                        <li>Mr. and Mrs. Jenelyn Macamos</li>
-                        <li>Mr. and Mrs. Julius Ragual</li>
-                        <li>Mr. and Mrs. Frederick Infante</li>
-                        <li>Judge and Mrs. Neljoe Cortes</li>
-                        <li>Mr. and Mrs. Jackson Daduyo</li>
-                        <li>Mr. Jerome S. Sunico</li>
-                        <li>Mr. Elmer Abucay</li>
-                        <li>Mr. Diego Sacayanan Jr.</li>
-                        <li>Mr. and Mrs. Homer Navarro</li>
-                        <li>Mr. and Mrs. Jose R. Pacol</li>
-                        <li>Mr. and Mrs. Gillferm Riel F. Dahuya</li>
-                        <li>Mr. and Mrs. Romeo Pacol</li>
-                        <li>Mr. and Mrs. Rogie Lumbo Sr.</li>
-                    </ul>
-                </div>
-                <div class="sponsor-column">
-                    <ul>
-                        <li>Mr. and Mrs. Robi Domingo</li>
-                        <li>Mr. and Mrs. Lilibeth Agraan</li>
-                        <li>Mrs. Ma. Teressa Bermudez</li>
-                        <li>Mr. and Mrs. Arlyn Dumayas</li>
-                        <li>Mr. and Mrs. Julius Parucha</li>
-                        <li>Mr. and Mrs. Larry Abundo</li>
-                        <li>Mr. and Mrs. Jeremiah Cacayorin</li>
-                        <li>Ex Vice Mayor Jessie Gaspar</li>
-                        <li>Mr. and Mrs. Nena Mabanag</li>
-                        <li>Mr. and Mrs. Felirose Agraan</li>
-                        <li>Hon. and Mrs. Edgar Bangsil</li>
-                        <li>Engr. and Mrs. Reymel Sedantes</li>
-                        <li>Ms. Remy Espiritu</li>
-                        <li>Mr. and Mrs. Antonio Palaspas</li>
-                        <li>Mr. and Mrs. Herminia Galano</li>
-                        <li>Mr. and Mrs. James Alegado</li>
-                        <li>Mr. and Mrs. Roselyn Macatbag</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p class="footer-names">Bryll & Perveen</p>
-            <p class="footer-date">August 26, 2026 • 3:00 PM</p>
-            <p class="footer-copyright">&copy; 2026 CJJR Wedding. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="script.js"></script>
-</body>
-    
 <div class="lightbox" id="lightbox">
 
 <span class="lightbox-close">&times;</span>
@@ -358,5 +176,25 @@
 
 </div>
 
-    
+
+<footer>
+
+<div class="container">
+
+<p class="footer-names">Bryll & Perveen</p>
+<p class="footer-date">August 26, 2026 • 3:00 PM</p>
+
+<p class="footer-copyright">
+© 2026 CJJR Wedding. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+
+</body>
 </html>
