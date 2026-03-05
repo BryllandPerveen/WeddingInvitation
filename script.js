@@ -170,40 +170,29 @@ flower.remove();
 // generate flowers continuously
 setInterval(createFlower, 600);
 
-/* PRENUP GALLERY CAROUSEL */
+/* PRENUP GALLERY + LIGHTBOX */
 
 document.addEventListener("DOMContentLoaded", function(){
 
 const carousel = document.getElementById("galleryCarousel");
-
 const nextBtn = document.querySelector(".carousel-btn.next");
 const prevBtn = document.querySelector(".carousel-btn.prev");
 
+/* CAROUSEL ARROWS */
+
 if(nextBtn && prevBtn && carousel){
 
-nextBtn.addEventListener("click", () => {
-
-carousel.scrollBy({
-left: 320,
-behavior: "smooth"
+nextBtn.addEventListener("click", ()=>{
+carousel.scrollBy({ left:320, behavior:"smooth" });
 });
 
-});
-
-prevBtn.addEventListener("click", () => {
-
-carousel.scrollBy({
-left: -320,
-behavior: "smooth"
-});
-
+prevBtn.addEventListener("click", ()=>{
+carousel.scrollBy({ left:-320, behavior:"smooth" });
 });
 
 }
 
-});
-
-/* CINEMATIC AUTO SLIDE */
+/* AUTO SLIDE */
 
 let autoSlide;
 
@@ -211,19 +200,13 @@ function startAutoSlide(){
 
 autoSlide = setInterval(()=>{
 
-carousel.scrollBy({
-left:320,
-behavior:"smooth"
-});
+carousel.scrollBy({ left:320, behavior:"smooth" });
 
 if(carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5){
-carousel.scrollTo({
-left:0,
-behavior:"smooth"
-});
+carousel.scrollTo({ left:0, behavior:"smooth" });
 }
 
-},3500); // speed of slideshow
+},3500);
 
 }
 
@@ -231,18 +214,17 @@ function stopAutoSlide(){
 clearInterval(autoSlide);
 }
 
-/* start automatically */
+if(carousel){
 startAutoSlide();
-
-/* pause when user interacts */
 
 carousel.addEventListener("mouseenter",stopAutoSlide);
 carousel.addEventListener("mouseleave",startAutoSlide);
 
 carousel.addEventListener("touchstart",stopAutoSlide);
 carousel.addEventListener("touchend",startAutoSlide);
+}
 
-/* PRENUP LIGHTBOX */
+/* LIGHTBOX */
 
 const galleryImages = document.querySelectorAll("#galleryCarousel img");
 const lightbox = document.getElementById("lightbox");
@@ -257,32 +239,34 @@ let currentIndex = 0;
 galleryImages.forEach((img,index)=>{
 
 img.addEventListener("click",()=>{
-
 lightbox.style.display="flex";
 lightboxImg.src = img.src;
 currentIndex=index;
-
 });
 
 });
 
+if(closeLight){
 closeLight.onclick=()=>{
 lightbox.style.display="none";
 };
+}
 
+if(nextLight){
 nextLight.onclick=()=>{
-
 currentIndex=(currentIndex+1)%galleryImages.length;
 lightboxImg.src=galleryImages[currentIndex].src;
-
 };
+}
 
+if(prevLight){
 prevLight.onclick=()=>{
-
 currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;
 lightboxImg.src=galleryImages[currentIndex].src;
-
 };
+}
+
+});
 
 console.log('CJJR Wedding Website Loaded! 💒');
 console.log('✅ Paths: image/banner.png & public/audio.mp3');
