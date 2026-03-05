@@ -203,6 +203,48 @@ behavior: "smooth"
 
 });
 
+/* PRENUP LIGHTBOX */
+
+const galleryImages = document.querySelectorAll("#galleryCarousel img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+const nextLight = document.querySelector(".lightbox-next");
+const prevLight = document.querySelector(".lightbox-prev");
+const closeLight = document.querySelector(".lightbox-close");
+
+let currentIndex = 0;
+
+galleryImages.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+lightboxImg.src = img.src;
+currentIndex=index;
+
+});
+
+});
+
+closeLight.onclick=()=>{
+lightbox.style.display="none";
+};
+
+nextLight.onclick=()=>{
+
+currentIndex=(currentIndex+1)%galleryImages.length;
+lightboxImg.src=galleryImages[currentIndex].src;
+
+};
+
+prevLight.onclick=()=>{
+
+currentIndex=(currentIndex-1+galleryImages.length)%galleryImages.length;
+lightboxImg.src=galleryImages[currentIndex].src;
+
+};
+
 console.log('CJJR Wedding Website Loaded! 💒');
 console.log('✅ Paths: image/banner.png & public/audio.mp3');
 console.log('✅ Hero spacing improved for desktop');
