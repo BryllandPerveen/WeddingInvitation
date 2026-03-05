@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,41 +13,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
 
+
+<!-- FLOWER CONTAINER -->
 <div class="flower-container" id="flower-container"></div>
 
+
+<!-- MUSIC PLAYER -->
 <div class="music-player" id="musicPlayer">
+
 <button class="music-toggle" id="musicToggle">
-<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+
+<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 <path d="M8 5v14l11-7z"/>
 </svg>
 
-<svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
 </svg>
 
 </button>
+
 <span class="music-text">Play Music</span>
+
 </div>
+
 
 <audio id="backgroundMusic" loop>
 <source src="public/audio.mp3" type="audio/mpeg">
 </audio>
 
+
+
+<!-- HEADER -->
+
 <header id="header">
+
 <nav>
 
 <div class="logo">B & P</div>
 
 <ul class="nav-links" id="navLinks">
+
 <li><a href="#home">Home</a></li>
 <li><a href="#gallery">Pre-Wedding</a></li>
 <li><a href="#details">Details</a></li>
 <li><a href="#entourage">Entourage</a></li>
 <li><a href="#sponsors">Sponsors</a></li>
+
 </ul>
 
 <div class="mobile-menu" id="mobileMenu">
@@ -55,8 +74,12 @@
 </div>
 
 </nav>
+
 </header>
 
+
+
+<!-- HERO -->
 
 <section id="home" class="hero"
 style="background-image: linear-gradient(rgba(70,40,25,0.65), rgba(110,70,45,0.6)), url('image/banner.png');">
@@ -65,7 +88,9 @@ style="background-image: linear-gradient(rgba(70,40,25,0.65), rgba(110,70,45,0.6
 
 <div class="hero-content">
 
-<p class="pre-title">You are cordially invited to the wedding of</p>
+<p class="pre-title">
+You are cordially invited to the wedding of
+</p>
 
 <h1 class="names">
 Bryll<br>
@@ -76,17 +101,24 @@ Perveen
 <div class="divider"></div>
 
 <div class="countdown" id="countdown">
+
 <span id="days">0</span> Days •
+
 <span id="hours">0</span> Hours •
+
 <span id="minutes">0</span> Minutes •
+
 <span id="seconds">0</span> Seconds
+
 </div>
 
 <div class="date-display">
-August 26, 2026 • 3:00 PM
+August 28, 2026 • 3:00 PM
 </div>
 
-<a href="#details" class="cta-button">View Details</a>
+<a href="#details" class="cta-button">
+View Details
+</a>
 
 </div>
 
@@ -97,11 +129,16 @@ August 26, 2026 • 3:00 PM
 </section>
 
 
+
+<!-- GALLERY -->
+
 <section id="gallery" class="gallery-section">
 
 <div class="container">
 
-<h2 data-aos="fade-up">Our Prenup Gallery</h2>
+<h2 data-aos="fade-up">
+Our Prenup Gallery
+</h2>
 
 <div class="carousel-wrapper">
 
@@ -130,31 +167,51 @@ August 26, 2026 • 3:00 PM
 </section>
 
 
+
+<!-- DETAILS -->
+
 <section id="details" class="details-section">
 
 <div class="container">
 
-<h2 data-aos="fade-up">Wedding Details</h2>
+<h2 data-aos="fade-up">
+Wedding Details
+</h2>
 
 <div class="details-grid">
 
 <div class="detail-card">
+
 <div class="icon">📅</div>
+
 <h3>When</h3>
-<p class="detail-main">August 28, 2026</p>
+
+<p class="detail-main">August 26, 2026</p>
+
 <p class="detail-sub">3:00 PM</p>
+
 </div>
+
 
 <div class="detail-card">
 
 <div class="icon">📍</div>
 
 <h3>Ceremony</h3>
-<p class="detail-main">Iglesia ni Cristo</p>
-<p class="detail-sub">District of Laoag City, Ilocos Norte</p>
 
-<h3 class="detail-main">Reception</h3>
-<p class="detail-sub">ARABELLA Events Place</p>
+<p class="detail-main">
+Iglesia ni Cristo
+</p>
+
+<p class="detail-sub">
+District of Laoag City, Ilocos Norte
+</p>
+
+<h3>Reception</h3>
+
+<p class="detail-main">
+ARABELLA Events Place
+</p>
 
 </div>
 
@@ -165,27 +222,140 @@ August 26, 2026 • 3:00 PM
 </section>
 
 
+
+<!-- ENTOURAGE -->
+
+<section id="entourage" class="entourage-section">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+Entourage
+</h2>
+
+<div class="entourage-row">
+
+<div class="entourage-card">
+
+<h3>Best Man</h3>
+
+<p>
+Jomar F. Cabuntucan
+</p>
+
+</div>
+
+<div class="entourage-card">
+
+<h3>Maid of Honor</h3>
+
+<p>
+Valerie Patricio
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SPONSORS -->
+
+<section id="sponsors" class="sponsors-section">
+
+<div class="container">
+
+<h2 data-aos="fade-up">
+Principal Sponsors
+</h2>
+
+<div class="sponsors-grid">
+
+
+<div class="sponsor-column">
+
+<ul>
+
+<li>Mr. and Mrs. Frederick T. Sacayanan</li>
+
+<li>Mr. and Mrs. James Macamos</li>
+
+<li>Mr. and Mrs. Jenelyn Macamos</li>
+
+<li>Mr. and Mrs. Julius Ragual</li>
+
+<li>Mr. and Mrs. Frederick Infante</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="sponsor-column">
+
+<ul>
+
+<li>Mr. and Mrs. Robi Domingo</li>
+
+<li>Mr. and Mrs. Lilibeth Agraan</li>
+
+<li>Mrs. Ma. Teressa Bermudez</li>
+
+<li>Mr. and Mrs. Arlyn Dumayas</li>
+
+<li>Mr. and Mrs. Julius Parucha</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- LIGHTBOX -->
+
 <div class="lightbox" id="lightbox">
 
-<span class="lightbox-close">&times;</span>
+<span class="lightbox-close">
+&times;
+</span>
 
 <img class="lightbox-img" id="lightboxImg">
 
 <button class="lightbox-prev">&#10094;</button>
+
 <button class="lightbox-next">&#10095;</button>
 
 </div>
 
 
+
+<!-- FOOTER -->
+
 <footer>
 
 <div class="container">
 
-<p class="footer-names">Bryll & Perveen</p>
-<p class="footer-date">August 26, 2026 • 3:00 PM</p>
+<p class="footer-names">
+Bryll & Perveen
+</p>
+
+<p class="footer-date">
+August 28, 2026 • 3:00 PM
+</p>
 
 <p class="footer-copyright">
-© 2026 CJJR Wedding. All rights reserved.
+© 2026 BRPV Wedding. All rights reserved.
 </p>
 
 </div>
@@ -193,8 +363,12 @@ August 26, 2026 • 3:00 PM
 </footer>
 
 
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
