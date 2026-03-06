@@ -397,6 +397,49 @@ margin-bottom:1rem;
 }
 
 /* ===============================
+ENTOURAGE GROUPS FIX
+=============================== */
+
+.entourage-group,
+.party-column,
+.bearer-group{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.entourage-group h3,
+.party-column h3,
+.bearer-group h3{
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+text-align:center;
+color:var(--olive-dark);
+}
+
+.entourage-group ul,
+.party-column ul,
+.bearer-group ul{
+list-style:none;
+padding:0;
+}
+
+.entourage-group li,
+.party-column li,
+.bearer-group li{
+padding:6px 0;
+border-bottom:1px solid var(--sage-light);
+font-size:0.95rem;
+}
+
+.entourage-group li:last-child,
+.party-column li:last-child,
+.bearer-group li:last-child{
+border-bottom:none;
+}
+
+/* ===============================
 FLOWERS
 =============================== */
 
