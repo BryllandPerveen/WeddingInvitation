@@ -168,7 +168,7 @@ margin-top:70px;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(rgba(70,40,25,.65),rgba(110,70,45,.6));
+background:linear-gradient(rgba(193,225,193,.75), rgba(193,225,193,.65));
 z-index:1;
 }
 
