@@ -14,23 +14,34 @@ easing:'ease-in-out'
 // MUSIC PLAYER
 // ======================
 
-const musicToggle=document.getElementById("musicToggle");
-const backgroundMusic=document.getElementById("backgroundMusic");
-const musicText=document.querySelector(".music-text");
+const musicToggle = document.getElementById("musicToggle");
+const backgroundMusic = document.getElementById("backgroundMusic");
 
-let isPlaying=false;
+const playIcon = document.querySelector(".play-icon");
+const pauseIcon = document.querySelector(".pause-icon");
+const musicLabel = document.getElementById("musicLabel");
 
-musicToggle.addEventListener("click",()=>{
+let isPlaying = false;
+
+musicToggle.addEventListener("click", () => {
 
 if(isPlaying){
+
 backgroundMusic.pause();
-musicText.textContent="Play Music";
-isPlaying=false;
+playIcon.classList.remove("hidden");
+pauseIcon.classList.add("hidden");
+musicLabel.textContent = "Play Music";
+
 }else{
+
 backgroundMusic.play();
-musicText.textContent="Playing Music";
-isPlaying=true;
+playIcon.classList.add("hidden");
+pauseIcon.classList.remove("hidden");
+musicLabel.textContent = "Pause Music";
+
 }
+
+isPlaying = !isPlaying;
 
 });
 
