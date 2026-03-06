@@ -23,17 +23,13 @@ let isPlaying=false;
 musicToggle.addEventListener("click",()=>{
 
 if(isPlaying){
-
 backgroundMusic.pause();
 musicText.textContent="Play Music";
 isPlaying=false;
-
 }else{
-
 backgroundMusic.play();
 musicText.textContent="Playing Music";
 isPlaying=true;
-
 }
 
 });
@@ -59,13 +55,11 @@ navLinks.classList.toggle("active");
 const header=document.getElementById("header");
 
 window.addEventListener("scroll",()=>{
-
 if(window.pageYOffset>50){
 header.classList.add("scrolled");
 }else{
 header.classList.remove("scrolled");
 }
-
 });
 
 
@@ -82,12 +76,10 @@ e.preventDefault();
 const target=document.querySelector(this.getAttribute("href"));
 
 if(target){
-
 window.scrollTo({
 top:target.offsetTop-60,
 behavior:"smooth"
 });
-
 }
 
 });
@@ -150,15 +142,11 @@ flower.classList.add("flower");
 const side=Math.random()<0.5;
 
 if(side){
-
 flower.style.left=Math.random()*20+"vw";
 flower.style.animation="fall-left linear forwards";
-
 }else{
-
 flower.style.left=80+Math.random()*20+"vw";
 flower.style.animation="fall-right linear forwards";
-
 }
 
 const duration=12+Math.random()*6;
@@ -185,48 +173,36 @@ const carousel=document.getElementById("galleryCarousel");
 const nextBtn=document.querySelector(".carousel-btn.next");
 const prevBtn=document.querySelector(".carousel-btn.prev");
 
+function scrollNext(){
+carousel.scrollBy({left:320,behavior:"smooth"});
+}
+
+function scrollPrev(){
+carousel.scrollBy({left:-320,behavior:"smooth"});
+}
+
 if(nextBtn){
-
-nextBtn.addEventListener("click",()=>{
-
-carousel.scrollBy({
-left:320,
-behavior:"smooth"
-});
-
-});
-
+nextBtn.addEventListener("click",scrollNext);
 }
 
 if(prevBtn){
-
-prevBtn.addEventListener("click",()=>{
-
-carousel.scrollBy({
-left:-320,
-behavior:"smooth"
-});
-
-});
-
+prevBtn.addEventListener("click",scrollPrev);
 }
 
 
+// ======================
 // AUTO SLIDE
+// ======================
 
 let autoSlide=setInterval(()=>{
 
-carousel.scrollBy({
-left:320,
-behavior:"smooth"
-});
+carousel.scrollBy({left:320,behavior:"smooth"});
 
-if(carousel.scrollLeft+carousel.clientWidth>=carousel.scrollWidth){
+if(carousel.scrollLeft+carousel.clientWidth>=carousel.scrollWidth-10){
 
-carousel.scrollTo({
-left:0,
-behavior:"smooth"
-});
+setTimeout(()=>{
+carousel.scrollTo({left:0,behavior:"smooth"});
+},800);
 
 }
 
@@ -241,16 +217,36 @@ const galleryImages=document.querySelectorAll("#galleryCarousel img");
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=document.getElementById("lightboxImg");
 const closeBtn=document.querySelector(".lightbox-close");
+const lightboxNext=document.querySelector(".lightbox-next");
+const lightboxPrev=document.querySelector(".lightbox-prev");
 
-galleryImages.forEach(img=>{
+let currentIndex=0;
+
+function showImage(index){
+
+if(index<0) index=galleryImages.length-1;
+if(index>=galleryImages.length) index=0;
+
+currentIndex=index;
+lightboxImg.src=galleryImages[currentIndex].src;
+
+}
+
+galleryImages.forEach((img,index)=>{
 
 img.addEventListener("click",()=>{
-
 lightbox.style.display="flex";
-lightboxImg.src=img.src;
+showImage(index);
+});
 
 });
 
+lightboxNext.addEventListener("click",()=>{
+showImage(currentIndex+1);
+});
+
+lightboxPrev.addEventListener("click",()=>{
+showImage(currentIndex-1);
 });
 
 closeBtn.addEventListener("click",()=>{
@@ -261,4 +257,29 @@ lightbox.addEventListener("click",(e)=>{
 if(e.target===lightbox){
 lightbox.style.display="none";
 }
+});
+
+
+// ======================
+// KEYBOARD NAVIGATION
+// ======================
+
+document.addEventListener("keydown",(e)=>{
+
+if(lightbox.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+showImage(currentIndex+1);
+}
+
+if(e.key==="ArrowLeft"){
+showImage(currentIndex-1);
+}
+
+if(e.key==="Escape"){
+lightbox.style.display="none";
+}
+
+}
+
 });
