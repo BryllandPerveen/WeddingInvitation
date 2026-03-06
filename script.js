@@ -170,43 +170,50 @@ setInterval(createFlower,600);
 // ======================
 
 const carousel=document.getElementById("galleryCarousel");
+
+// Duplicate images for seamless infinite loop
+carousel.innerHTML += carousel.innerHTML;
+
+let scrollSpeed = 0.3;
+
+function autoScroll(){
+carousel.scrollLeft += scrollSpeed;
+
+if(carousel.scrollLeft >= carousel.scrollWidth / 2){
+carousel.scrollLeft = 0;
+}
+
+requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
+
+// ======================
+// CAROUSEL BUTTONS
+// ======================
+
 const nextBtn=document.querySelector(".carousel-btn.next");
 const prevBtn=document.querySelector(".carousel-btn.prev");
 
-function scrollNext(){
-carousel.scrollBy({left:320,behavior:"smooth"});
-}
+nextBtn.addEventListener("click",()=>{
+carousel.scrollLeft += 350;
+});
 
-function scrollPrev(){
-carousel.scrollBy({left:-320,behavior:"smooth"});
-}
-
-if(nextBtn){
-nextBtn.addEventListener("click",scrollNext);
-}
-
-if(prevBtn){
-prevBtn.addEventListener("click",scrollPrev);
-}
+prevBtn.addEventListener("click",()=>{
+carousel.scrollLeft -= 350;
+});
 
 
-// ======================
-// AUTO SLIDE
-// ======================
+// Pause animation on hover
 
-let autoSlide=setInterval(()=>{
+carousel.addEventListener("mouseenter",()=>{
+scrollSpeed = 0;
+});
 
-carousel.scrollBy({left:320,behavior:"smooth"});
-
-if(carousel.scrollLeft+carousel.clientWidth>=carousel.scrollWidth-10){
-
-setTimeout(()=>{
-carousel.scrollTo({left:0,behavior:"smooth"});
-},800);
-
-}
-
-},4000);
+carousel.addEventListener("mouseleave",()=>{
+scrollSpeed = 0.3;
+});
 
 
 // ======================
