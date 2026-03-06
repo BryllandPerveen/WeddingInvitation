@@ -1,6 +1,6 @@
-/* ===============================
+/* =====================================================
 ROOT VARIABLES
-=============================== */
+===================================================== */
 
 :root{
 --sage-green:#9CAF88;
@@ -16,11 +16,13 @@ ROOT VARIABLES
 --gold-accent:#C9A961;
 }
 
-/* ===============================
+/* =====================================================
 RESET
-=============================== */
+===================================================== */
 
-*{
+*,
+*::before,
+*::after{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -34,13 +36,13 @@ body{
 font-family:'Lato',sans-serif;
 background:var(--off-white);
 color:var(--text-dark);
-overflow-x:hidden;
 line-height:1.7;
+overflow-x:hidden;
 }
 
-/* ===============================
-CONTAINER
-=============================== */
+/* =====================================================
+LAYOUT
+===================================================== */
 
 .container{
 max-width:1200px;
@@ -48,28 +50,28 @@ margin:auto;
 padding:0 2rem;
 }
 
-/* ===============================
+/* =====================================================
 HEADER
-=============================== */
+===================================================== */
 
 header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(255,255,255,0.97);
+background:rgba(255,255,255,.97);
 backdrop-filter:blur(10px);
 z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
 nav{
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:1rem 2rem;
+justify-content:space-between;
 max-width:1200px;
 margin:auto;
+padding:1rem 2rem;
 }
 
 .logo{
@@ -87,7 +89,7 @@ list-style:none;
 .nav-links a{
 text-decoration:none;
 color:var(--text-dark);
-font-size:0.9rem;
+font-size:.9rem;
 letter-spacing:.5px;
 text-transform:uppercase;
 position:relative;
@@ -121,9 +123,9 @@ height:2px;
 background:var(--olive-green);
 }
 
-/* ===============================
+/* =====================================================
 HERO
-=============================== */
+===================================================== */
 
 .hero{
 height:100vh;
@@ -185,9 +187,9 @@ transition:.3s;
 background:var(--olive-dark);
 }
 
-/* ===============================
+/* =====================================================
 GALLERY
-=============================== */
+===================================================== */
 
 .gallery-section{
 padding:6rem 2rem;
@@ -232,27 +234,27 @@ transition:.4s;
 
 .gallery-carousel img:hover{
 transform:scale(1.05);
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
+box-shadow:0 20px 40px rgba(0,0,0,.3);
 }
 
 .carousel-btn{
 position:absolute;
-background:white;
-border:none;
 width:50px;
 height:50px;
+border:none;
 border-radius:50%;
-cursor:pointer;
+background:white;
 font-size:26px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
 }
 
 .carousel-btn.prev{left:-20px;}
 .carousel-btn.next{right:-20px;}
 
-/* ===============================
+/* =====================================================
 DETAILS
-=============================== */
+===================================================== */
 
 .details-section{
 padding:6rem 2rem;
@@ -283,9 +285,9 @@ color:var(--olive-green);
 font-weight:700;
 }
 
-/* ===============================
-MAP SECTION
-=============================== */
+/* =====================================================
+MAP
+===================================================== */
 
 .directions-wrapper{
 display:grid;
@@ -319,9 +321,9 @@ border-radius:50px;
 text-decoration:none;
 }
 
-/* ===============================
+/* =====================================================
 ENTOURAGE
-=============================== */
+===================================================== */
 
 .entourage-section{
 padding:6rem 2rem;
@@ -340,7 +342,7 @@ background:white;
 padding:2rem;
 border-radius:15px;
 text-align:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.06);
+box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
 .secondary-entourage,
@@ -352,9 +354,47 @@ gap:2rem;
 margin-bottom:3rem;
 }
 
-/* ===============================
+.entourage-group,
+.party-column,
+.bearer-group{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.entourage-group h3,
+.party-column h3,
+.bearer-group h3{
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+text-align:center;
+color:var(--olive-dark);
+}
+
+.entourage-group ul,
+.party-column ul,
+.bearer-group ul{
+list-style:none;
+}
+
+.entourage-group li,
+.party-column li,
+.bearer-group li{
+padding:6px 0;
+border-bottom:1px solid var(--sage-light);
+font-size:.95rem;
+}
+
+.entourage-group li:last-child,
+.party-column li:last-child,
+.bearer-group li:last-child{
+border-bottom:none;
+}
+
+/* =====================================================
 SPONSORS
-=============================== */
+===================================================== */
 
 .sponsors-section{
 padding:6rem 2rem;
@@ -378,9 +418,9 @@ border-radius:6px;
 list-style:none;
 }
 
-/* ===============================
+/* =====================================================
 FOOTER
-=============================== */
+===================================================== */
 
 footer{
 background:var(--olive-darker);
@@ -396,52 +436,9 @@ color:var(--gold-accent);
 margin-bottom:1rem;
 }
 
-/* ===============================
-ENTOURAGE GROUPS FIX
-=============================== */
-
-.entourage-group,
-.party-column,
-.bearer-group{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 6px 20px rgba(0,0,0,0.06);
-}
-
-.entourage-group h3,
-.party-column h3,
-.bearer-group h3{
-font-family:'Playfair Display',serif;
-margin-bottom:10px;
-text-align:center;
-color:var(--olive-dark);
-}
-
-.entourage-group ul,
-.party-column ul,
-.bearer-group ul{
-list-style:none;
-padding:0;
-}
-
-.entourage-group li,
-.party-column li,
-.bearer-group li{
-padding:6px 0;
-border-bottom:1px solid var(--sage-light);
-font-size:0.95rem;
-}
-
-.entourage-group li:last-child,
-.party-column li:last-child,
-.bearer-group li:last-child{
-border-bottom:none;
-}
-
-/* ===============================
+/* =====================================================
 FLOWERS
-=============================== */
+===================================================== */
 
 .flower-container{
 position:fixed;
@@ -458,9 +455,9 @@ top:-50px;
 opacity:0;
 }
 
-/* ===============================
+/* =====================================================
 LIGHTBOX
-=============================== */
+===================================================== */
 
 .lightbox{
 position:fixed;
@@ -487,9 +484,9 @@ color:white;
 cursor:pointer;
 }
 
-/* ===============================
+/* =====================================================
 MOBILE
-=============================== */
+===================================================== */
 
 @media(max-width:768px){
 
