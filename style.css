@@ -691,22 +691,70 @@ MOBILE
 
 @media(max-width:768px){
 
-.nav-links{
-display:flex;
-gap:1rem;
-list-style:none;
-align-items:center;
-white-space:nowrap;
-overflow-x:auto;
-scrollbar-width:none;
+header{
+padding:6px 0;
 }
 
-.nav-links::-webkit-scrollbar{
-display:none;
+nav{
+flex-direction:column;
+gap:6px;
+padding:6px 10px;
+}
+
+/* top row: monogram + play music */
+
+.music-logo{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+/* monogram */
+
+.logo{
+font-size:1.5rem;
+line-height:1;
+}
+
+/* music */
+
+.music-control{
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:4px;
+}
+
+.music-header-btn svg{
+width:16px;
+height:16px;
+}
+
+.music-label{
+font-size:11px;
+margin:0;
+}
+
+/* navigation */
+
+.nav-links{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+white-space:nowrap;
+font-size:12px;
+}
+
+.nav-links a{
+font-size:12px;
 }
 
 .mobile-menu{
 display:none;
+}
+
 }
 
 .gallery-carousel img{
