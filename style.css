@@ -40,6 +40,11 @@ line-height:1.7;
 overflow-x:hidden;
 }
 
+html,body{
+overflow-x:hidden;
+width:100%;
+}
+
 /* =====================================================
 LAYOUT
 ===================================================== */
@@ -687,22 +692,22 @@ MOBILE
 @media(max-width:768px){
 
 .nav-links{
-position:fixed;
-top:0;
-right:-100%;
-width:70%;
-height:100vh;
-background:white;
-flex-direction:column;
-justify-content:center;
+display:flex;
+gap:1rem;
+list-style:none;
 align-items:center;
-gap:2rem;
-transition:.4s;
+white-space:nowrap;
+overflow-x:auto;
+scrollbar-width:none;
 }
 
-.nav-links.active{right:0;}
+.nav-links::-webkit-scrollbar{
+display:none;
+}
 
-.mobile-menu{display:flex;}
+.mobile-menu{
+display:none;
+}
 
 .gallery-carousel img{
 width:240px;
