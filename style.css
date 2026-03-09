@@ -686,30 +686,44 @@ MOBILE
 
 @media(max-width:768px){
 
-.nav-links{
-position:fixed;
-top:0;
-right:-100%;
-width:70%;
-height:100vh;
-background:white;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:2rem;
-transition:.4s;
+nav{
+padding:0.8rem 1rem;
 }
 
-.nav-links.active{right:0;}
+.logo{
+font-size:1.4rem;
+}
 
-.mobile-menu{display:flex;}
+/* keep nav in one line */
+
+.nav-links{
+display:flex;
+gap:1rem;
+list-style:none;
+align-items:center;
+white-space:nowrap;
+overflow-x:auto;
+scrollbar-width:none;
+}
+
+.nav-links::-webkit-scrollbar{
+display:none;
+}
+
+/* remove hamburger */
+
+.mobile-menu{
+display:none;
+}
 
 .gallery-carousel img{
 width:240px;
 height:320px;
 }
 
-.carousel-btn{display:none;}
+.carousel-btn{
+display:none;
+}
 
 .entourage-row,
 .secondary-entourage,
@@ -724,6 +738,8 @@ min-height:600px;
 }
 
 }
+
+/* small phones */
 
 @media(max-width:480px){
 
