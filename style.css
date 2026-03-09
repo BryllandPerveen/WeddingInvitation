@@ -686,6 +686,35 @@ background:rgba(0,0,0,.8);
 }
 
 /* =====================================================
+RSVP SECTION
+===================================================== */
+
+.rsvp-section{
+padding:6rem 2rem;
+background:var(--sage-lighter);
+text-align:center;
+}
+
+.rsvp-text{
+max-width:600px;
+margin:0 auto 2rem auto;
+color:var(--text-light);
+}
+
+.rsvp-form{
+max-width:700px;
+margin:auto;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-form iframe{
+border-radius:12px;
+}
+
+
+/* =====================================================
 MOBILE
 ===================================================== */
 
