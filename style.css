@@ -792,11 +792,19 @@ display:none;
 
 /* allow swipe gallery on mobile */
 
+@media(max-width:768px){
+
 .gallery-carousel{
-animation:none;
-overflow-x:auto;
+animation:none;           /* stop auto animation */
+overflow-x:auto;          /* allow horizontal swipe */
 scroll-behavior:smooth;
-width:100%;
+-webkit-overflow-scrolling:touch;
+}
+
+.gallery-carousel img{
+flex-shrink:0;
+}
+
 }
 
 .gallery-carousel img{
