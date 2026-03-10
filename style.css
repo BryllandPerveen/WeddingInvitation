@@ -720,8 +720,12 @@ MOBILE
 
 @media(max-width:768px){
 
-header{
-padding:6px 0;
+.container{
+max-width:100%;
+width:100%;
+padding:0 12px;
+}
+
 }
 
 nav{
