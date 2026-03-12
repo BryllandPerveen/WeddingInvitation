@@ -917,11 +917,21 @@ min-height:1400px;
 
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+.attire-section{
+padding:4rem 1rem;
+}
+
+.attire-wrapper{
+width:100%;
+}
 
 .attire-image{
 width:100%;
 max-width:100%;
+height:auto;
+border-radius:10px;
 }
 
 }
