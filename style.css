@@ -76,26 +76,26 @@ align-items:center;
 justify-content:space-between;
 max-width:1200px;
 margin:auto;
-padding:1rem 2rem;
+padding:1.6rem 2rem;
 }
 
 .logo{
 font-family:'Great Vibes',cursive;
-font-size:1.8rem;
+font-size:2.6rem;
 color:var(--olive-green);
 }
 
 .nav-links{
 display:flex;
-gap:2rem;
+gap:2.3rem;
 list-style:none;
 }
 
 .nav-links a{
 text-decoration:none;
 color:var(--text-dark);
-font-size:.9rem;
-letter-spacing:.5px;
+font-size:1.1rem;
+letter-spacing:1px;
 text-transform:uppercase;
 position:relative;
 }
@@ -697,7 +697,7 @@ fill:var(--olive-dark);
 }
 
 .music-label{
-font-size:10px;
+font-size:14px;
 margin-top:2px;
 color:var(--text-light);
 letter-spacing:.3px;
