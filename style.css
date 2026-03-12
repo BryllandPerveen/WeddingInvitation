@@ -936,6 +936,26 @@ border-radius:10px;
 
 }
 
+@media (max-width:768px){
+
+.gifts-section{
+padding:4rem 1rem;
+}
+
+.gifts-wrapper{
+width:100%;
+}
+
+.gifts-image{
+width:100%;
+max-width:100%;
+height:auto;
+border-radius:10px;
+}
+
+}
+
+
 /* HERO BREATHING EFFECT */
 
 .hero{
