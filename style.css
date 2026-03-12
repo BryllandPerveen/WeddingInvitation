@@ -468,6 +468,48 @@ border-bottom:none;
 }
 
 /* =====================================================
+PARENTS
+===================================================== */
+
+.parents-section{
+margin-bottom:3rem;
+text-align:center;
+}
+
+.parents-title{
+font-family:'Playfair Display',serif;
+font-size:1.4rem;
+color:var(--olive-dark);
+margin-bottom:20px;
+}
+
+.parents-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+max-width:700px;
+margin:auto;
+}
+
+.parent-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.parent-role{
+font-size:14px;
+color:var(--text-light);
+margin-bottom:8px;
+}
+
+.parent-names{
+font-weight:600;
+color:var(--text-dark);
+}
+
+/* =====================================================
 SPONSORS
 ===================================================== */
 
