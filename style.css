@@ -935,3 +935,23 @@ border-radius:10px;
 }
 
 }
+
+/* HERO BREATHING EFFECT */
+
+.hero{
+background-size:cover;
+background-position:center;
+animation:heroBreathing 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroBreathing{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.05);
+}
+
+}
