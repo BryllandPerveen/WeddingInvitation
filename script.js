@@ -102,7 +102,7 @@ behavior:"smooth"
 // COUNTDOWN
 // ======================
 
-const weddingDate=new Date("2026-08-26T15:00:00").getTime();
+const weddingDate=new Date("2026-08-28T15:00:00").getTime();
 
 function updateCountdown(){
 
