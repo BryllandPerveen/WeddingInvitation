@@ -422,11 +422,11 @@ text-align:center;
 }
 
 .gift-section img{
-max-width:420px;
-width:90%;
+width:80%;
+max-width:280px;
 height:auto;
 display:block;
-margin:auto;
+margin:0 auto;
 }
 
 /* =====================================================
@@ -960,8 +960,8 @@ padding:2rem 1rem;
 }
 
 .gift-section img{
-width:85%;
-max-width:320px;
+width:70%;
+max-width:240px;
 }
 
 }
