@@ -416,10 +416,15 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
 /* GIFT SECTION */
 
+.gifts-section{
+padding:5rem 2rem;
+background:white;
+text-align:center;
+}
 
 .gifts-image{
 width:100%;
-max-width:600px;
+max-width:520px;
 height:auto;
 display:block;
 margin:auto;
@@ -952,8 +957,8 @@ border-radius:10px;
 @media (max-width:768px){
 
 .gifts-image{
-width:70%;
-max-width:240px;
+width:90%;
+max-width:340px;
 }
 
 }
