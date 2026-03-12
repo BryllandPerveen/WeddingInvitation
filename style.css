@@ -392,6 +392,29 @@ text-decoration:none;
 }
 
 /* =====================================================
+ATTIRE GUIDE
+===================================================== */
+
+.attire-section{
+padding:6rem 2rem;
+background:var(--sage-lighter);
+text-align:center;
+}
+
+.attire-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.attire-image{
+max-width:900px;
+width:100%;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* =====================================================
 ENTOURAGE
 ===================================================== */
 
