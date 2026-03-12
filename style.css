@@ -916,3 +916,12 @@ min-height:1400px;
 }
 
 }
+
+@media(max-width:768px){
+
+.attire-image{
+width:100%;
+max-width:100%;
+}
+
+}
