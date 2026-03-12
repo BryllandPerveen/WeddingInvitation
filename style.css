@@ -417,12 +417,12 @@ box-shadow:0 10px 30px rgba(0,0,0,0.1);
 /* GIFT SECTION */
 
 
-.gift-section img{
-width:80%;
-max-width:280px;
+.gifts-image{
+width:60%;
+max-width:220px;
 height:auto;
 display:block;
-margin:0 auto;
+margin:auto;
 }
 
 /* =====================================================
@@ -951,8 +951,7 @@ border-radius:10px;
 
 @media (max-width:768px){
 
-
-.gift-section img{
+.gifts-image{
 width:70%;
 max-width:240px;
 }
