@@ -955,16 +955,6 @@ border-radius:10px;
 
 }
 
-@media (max-width:768px){
-
-.gifts-image{
-width:90%;
-max-width:360px;
-}
-
-}
-
-
 /* HERO BREATHING EFFECT */
 
 .hero{
