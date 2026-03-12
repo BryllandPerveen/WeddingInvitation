@@ -301,3 +301,12 @@ lightbox.style.display="none";
 }
 
 });
+
+@media(max-width:768px){
+
+.attire-image{
+width:100%;
+max-width:100%;
+}
+
+}
