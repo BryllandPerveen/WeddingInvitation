@@ -414,6 +414,21 @@ border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* GIFT SECTION */
+
+.gift-section{
+padding:3rem 1rem;
+text-align:center;
+}
+
+.gift-section img{
+max-width:420px;
+width:90%;
+height:auto;
+display:block;
+margin:auto;
+}
+
 /* =====================================================
 ENTOURAGE
 ===================================================== */
@@ -940,19 +955,13 @@ border-radius:10px;
 
 @media (max-width:768px){
 
-.gifts-section{
-padding:4rem 1rem;
+.gift-section{
+padding:2rem 1rem;
 }
 
-.gifts-wrapper{
-width:100%;
-}
-
-.gifts-image{
-width:100%;
-max-width:100%;
-height:auto;
-border-radius:10px;
+.gift-section img{
+width:85%;
+max-width:320px;
 }
 
 }
