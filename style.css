@@ -243,7 +243,7 @@ animation:nameFloat 6s ease-in-out infinite alternate;
 
 .names span{
 color:var(--beige);
-font-size:1.2em;
+font-size:0.5em;
 text-shadow:
 0 0 12px rgba(107,142,35,0.45),
 0 6px 18px rgba(0,0,0,0.25);
