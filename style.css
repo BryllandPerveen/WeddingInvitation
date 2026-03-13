@@ -81,7 +81,7 @@ padding:1.6rem 2rem;
 
 .logo{
 font-family:'Great Vibes',cursive;
-font-size:2.6rem;
+font-size:2.8rem;
 color:var(--olive-green);
 }
 
@@ -243,7 +243,7 @@ animation:nameFloat 6s ease-in-out infinite alternate;
 
 .names span{
 color:var(--beige);
-font-size:0.5em;
+font-size:0.9em;
 text-shadow:
 0 0 12px rgba(107,142,35,0.45),
 0 6px 18px rgba(0,0,0,0.25);
