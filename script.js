@@ -173,7 +173,15 @@ flower.remove();
 
 }
 
-setInterval(createFlower,600);
+setInterval(()=>{
+
+const amount = 2 + Math.floor(Math.random()*3);
+
+for(let i=0;i<amount;i++){
+createFlower();
+}
+
+},400);
 
 
 // ======================
