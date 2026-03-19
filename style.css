@@ -80,7 +80,7 @@ padding:1.6rem 2rem;
 }
 
 .logo{
-font-family:'Allura',cursive;
+font-family:'Great Vibes',cursive;
 font-size:2.8rem;
 color:var(--olive-green);
 }
@@ -219,7 +219,7 @@ text-shadow:
 }
 
 .names{
-font-family:'Allura', cursive;
+font-family:'Great Vibes', cursive;
 font-size:clamp(3rem,8vw,6rem);
 line-height:1.1;
 letter-spacing:1px;
