@@ -140,6 +140,7 @@ const flowers=[
 "image/flower1.png",
 "image/flower2.png",
 "image/flower3.png"
+"image/flower4.png"
 ];
 
 function createFlower(){
