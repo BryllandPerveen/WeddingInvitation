@@ -215,6 +215,19 @@ flower.remove();
 
 }
 
+setInterval(()=>{
+
+const isMobile = window.innerWidth <= 768;
+
+// fewer flowers on mobile (cleaner)
+const amount = isMobile ? 1 : (2 + Math.floor(Math.random()*3));
+
+for(let i=0;i<amount;i++){
+createFlower();
+}
+
+},400);
+
 
 // ======================
 // PRENUP GALLERY
