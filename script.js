@@ -148,24 +148,64 @@ function createFlower(){
 
 const flower=document.createElement("img");
 
+// detect screen size
+const isMobile = window.innerWidth <= 768;
+
+// weighted flower selection (you already have more flower4 👍)
 flower.src=flowers[Math.floor(Math.random()*flowers.length)];
 
 flower.classList.add("flower");
 
 const side=Math.random()<0.5;
 
-if(side){
-flower.style.left=Math.random()*20+"vw";
-flower.style.animation="fall-left linear forwards";
+// ======================
+// POSITION (RESPONSIVE)
+// ======================
+
+if(isMobile){
+
+  // MOBILE: edges only
+  if(side){
+    flower.style.left = Math.random()*10 + "vw"; // left edge
+    flower.style.animation = "fall-left linear forwards";
+  }else{
+    flower.style.left = 90 + Math.random()*10 + "vw"; // right edge
+    flower.style.animation = "fall-right linear forwards";
+  }
+
 }else{
-flower.style.left=80+Math.random()*20+"vw";
-flower.style.animation="fall-right linear forwards";
+
+  // DESKTOP: original spread
+  if(side){
+    flower.style.left = Math.random()*20 + "vw";
+    flower.style.animation = "fall-left linear forwards";
+  }else{
+    flower.style.left = 80 + Math.random()*20 + "vw";
+    flower.style.animation = "fall-right linear forwards";
+  }
+
 }
 
-const duration=12+Math.random()*6;
+// ======================
+// SIZE (RESPONSIVE)
+// ======================
 
-flower.style.animationDuration=duration+"s";
-flower.style.width=14+Math.random()*10+"px";
+if(isMobile){
+  flower.style.width = 8 + Math.random()*8 + "px";   // smaller on mobile
+}else{
+  flower.style.width = 14 + Math.random()*10 + "px"; // original
+}
+
+// ======================
+// SPEED
+// ======================
+
+const duration = 12 + Math.random()*6;
+flower.style.animationDuration = duration + "s";
+
+// ======================
+// ADD TO DOM
+// ======================
 
 flowerContainer.appendChild(flower);
 
@@ -174,16 +214,6 @@ flower.remove();
 },duration*1000);
 
 }
-
-setInterval(()=>{
-
-const amount = 2 + Math.floor(Math.random()*3);
-
-for(let i=0;i<amount;i++){
-createFlower();
-}
-
-},400);
 
 
 // ======================
