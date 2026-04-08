@@ -355,18 +355,6 @@ lightbox.style.display="none";
 
 });
 
-// INVITATION OPEN EFFECT
 
-const openBtn = document.getElementById("openInviteBtn");
-const overlay = document.getElementById("invitationOverlay");
-
-openBtn.addEventListener("click", ()=>{
-
-overlay.classList.add("hide");
-
-// OPTIONAL: start music when opened
-document.getElementById("backgroundMusic").play();
-
-});
 
 
