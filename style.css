@@ -139,7 +139,7 @@ SECTION HEADERS
 ===================================================== */
 
 section h2{
-font-family:'Allura',typeface;
+font-family:'Allura', cursive;
 font-size:clamp(2.5rem,5vw,3rem);
 color:var(--olive-dark);
 margin-bottom:3rem;
