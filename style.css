@@ -990,6 +990,24 @@ border-radius:10px;
 
 }
 
+.divider{
+  width:60px;
+  height:2px;
+  background:var(--gold-accent);
+  margin:20px auto;
+  border-radius:2px;
+}
+
+.divider.small{
+  width:40px;
+  margin:16px auto;
+}
+
+.location{
+  white-space:normal;
+  line-height:1.4;
+}
+
 /* HERO BREATHING EFFECT */
 
 .hero{
