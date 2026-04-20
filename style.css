@@ -367,94 +367,103 @@ DETAILS
 ===================================================== */
 
 .details-section{
-padding:6rem 2rem;
-background:white;
+  padding:6rem 2rem;
+  background:white;
 }
 
 .details-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:2rem;
-margin-bottom:3rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:2rem;
+  margin-bottom:3rem;
 }
 
 .detail-card{
-background:var(--white);
-padding:2rem;
-border-radius:18px;
-text-align:center;
-margin:20px 0;
-
-/* ADD THIS ↓ */
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-transition:all 0.25s ease;
-}
-
-.detail-main{
-color:var(--olive-green);
-font-weight:700;
-}
-
-.map-button{
-display:inline-block;
-margin-top:1rem;
-padding:12px 28px;
-background:var(--olive-green);
-color:white;
-border-radius:40px;
-text-decoration:none;
-font-size:0.9rem;
-font-weight:600;
-transition:all .3s ease;
-box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* fix images inside detail cards */
-.detail-card img{
-  width:30%;
-  height:auto;
-  display:block;
-  border-radius:12px; /* match card style */
-  margin:12px 0;
-}
-
-/* IMPORTANT: clips anything that overflows */
-.detail-card{
+  background:var(--white);
+  padding:2rem;
+  border-radius:18px;
+  text-align:center;
+  margin:20px 0;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:all 0.25s ease;
   overflow:hidden;
 }
 
-.map-button:hover{
-background:var(--olive-light);
-transform:translateY(-2px);
-box-shadow:0 10px 20px rgba(0,0,0,0.25);
+/* Titles / main text */
+.detail-main{
+  color:var(--olive-green);
+  font-weight:700;
 }
+
+/* FIXED IMAGE STYLE */
+.detail-card img{
+  width:100%;
+  max-width:320px;
+  height:auto;
+  display:block;
+  margin:12px auto;
+  border-radius:12px;
+}
+
+/* OPTIONAL: if you want uniform image height, use this instead */
+/*
+.detail-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:12px;
+}
+*/
+
+.map-button{
+  display:inline-block;
+  margin-top:1rem;
+  padding:12px 28px;
+  background:var(--olive-green);
+  color:white;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:0.9rem;
+  font-weight:600;
+  transition:all .3s ease;
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.map-button:hover{
+  background:var(--olive-light);
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
 .map-button:link,
 .map-button:visited{
-color:white;
-text-decoration:none;
+  color:white;
+  text-decoration:none;
 }
+
 
 /* =====================================================
 ATTIRE GUIDE
 ===================================================== */
 
 .attire-section{
-padding:6rem 2rem;
-background:var(--sage-lighter);
-text-align:center;
+  padding:6rem 2rem;
+  background:var(--sage-lighter);
+  text-align:center;
 }
 
 .attire-wrapper{
-display:flex;
-justify-content:center;
-align-items:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .attire-image{
-max-width:900px;
-width:100%;
-border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  max-width:900px;
+  width:100%;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
 
