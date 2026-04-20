@@ -367,187 +367,93 @@ DETAILS
 ===================================================== */
 
 .details-section{
-  padding:6rem 2rem 3rem; /* less bottom to separate from attire */
-  background:white;
+padding:6rem 2rem;
+background:white;
 }
 
 .details-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:2rem;
-  margin-bottom:2rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem;
+margin-bottom:3rem;
 }
 
 .detail-card{
-  background:var(--white);
-  padding:2rem;
-  border-radius:18px;
-  text-align:center;
-  margin:20px 0;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-  transition:all 0.25s ease;
-  overflow:hidden;
+background:var(--sage-lighter);
+padding:2rem;
+border-radius:15px;
+text-align:center;
 }
 
-/* subtle hover (adds life) */
-.detail-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-}.details-section{
-  padding:6rem 2rem 3rem;
-  background:white;
-}
-
-.details-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:2.5rem;
-  max-width:1100px;
-  margin:0 auto;
-}
-
-/* SQUARE CARD */
-.detail-card{
-  background:var(--white);
-  border-radius:20px;
-  padding:2rem;
-  text-align:center;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  aspect-ratio:1/1; /* 🔥 THIS MAKES IT SQUARE */
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  transition:all 0.3s ease;
-}
-
-/* hover polish */
-.detail-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 40px rgba(0,0,0,0.1);
-}
-
-/* TITLE */
 .detail-main{
-  color:var(--olive-green);
-  font-weight:700;
-  margin-bottom:10px;
+color:var(--olive-green);
+font-weight:700;
 }
 
-/* IMAGE inside square */
-.detail-card img{
-  width:100%;
-  max-width:220px;
-  height:auto;
-  border-radius:12px;
-  margin:10px 0;
-}
-
-/* BUTTON */
 .map-button{
-  margin-top:auto; /* pushes button to bottom */
-  display:inline-block;
-  padding:12px 26px;
-  background:var(--olive-green);
-  color:white;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:0.85rem;
-  font-weight:600;
-  transition:all .3s ease;
-  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+display:inline-block;
+margin-top:1rem;
+padding:12px 28px;
+background:var(--olive-green);
+color:white;
+border-radius:40px;
+text-decoration:none;
+font-size:0.9rem;
+font-weight:600;
+transition:all .3s ease;
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
 .map-button:hover{
-  background:var(--olive-light);
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+background:var(--olive-dark);
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
 }
-
-/* =====================================================
-RESPONSIVE (MOBILE)
-===================================================== */
-
-@media (max-width:768px){
-
-  .details-grid{
-    grid-template-columns:1fr; /* stack */
-    gap:2rem;
-  }
-
-  .detail-card{
-    aspect-ratio:auto; /* 🔥 allow natural height on mobile */
-    padding:2rem 1.5rem;
-  }
-
-  .detail-card img{
-    max-width:260px;
-  }
-}
-
-/* BUTTON */
-.map-button{
-  display:inline-block;
-  margin-top:1rem;
-  padding:12px 28px;
-  background:var(--olive-green);
-  color:white;
-  border-radius:40px;
-  text-decoration:none;
-  font-size:0.9rem;
-  font-weight:600;
-  transition:all .3s ease;
-  box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
-
-.map-button:hover{
-  background:var(--olive-light);
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.25);
-}
-
 .map-button:link,
 .map-button:visited{
-  color:white;
-  text-decoration:none;
+color:white;
+text-decoration:none;
 }
 
-
 /* =====================================================
-ATTIRE GUIDE (IMPROVED)
+ATTIRE GUIDE
 ===================================================== */
 
 .attire-section{
-  margin-top:4rem;              /* separates from cards */
-  padding:8rem 2rem 10rem;      /* more breathing space */
-  background:var(--sage-lighter);
-  text-align:center;
+padding:6rem 2rem;
+background:var(--sage-lighter);
+text-align:center;
 }
 
 .attire-wrapper{
-  max-width:1100px;             /* wider container */
-  margin:0 auto;
-  padding:3rem;                 /* creates “card inside section” */
-  background:white;
-  border-radius:24px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.05);
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-/* BIGGER ATTIRE IMAGE */
 .attire-image{
-  width:100%;
-  max-width:750px;              /* bigger focal point */
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+max-width:900px;
+width:100%;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
+
+/* GIFT SECTION */
+
+.gifts-section{
+padding:4rem 2rem;
+text-align:center;
+background:white;
+}
+
+.gifts-image{
+width:100%;
+max-width:520px;
+height:auto;
+display:block;
+margin:auto;
+}
 
 /* =====================================================
 ENTOURAGE
