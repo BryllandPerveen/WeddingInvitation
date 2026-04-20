@@ -393,22 +393,99 @@ DETAILS
 .detail-card:hover{
   transform:translateY(-5px);
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}.details-section{
+  padding:6rem 2rem 3rem;
+  background:white;
 }
 
-/* Titles / main text */
+.details-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:2.5rem;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* SQUARE CARD */
+.detail-card{
+  background:var(--white);
+  border-radius:20px;
+  padding:2rem;
+  text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  aspect-ratio:1/1; /* 🔥 THIS MAKES IT SQUARE */
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:all 0.3s ease;
+}
+
+/* hover polish */
+.detail-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
 .detail-main{
   color:var(--olive-green);
   font-weight:700;
+  margin-bottom:10px;
 }
 
-/* IMAGE FIX */
+/* IMAGE inside square */
 .detail-card img{
   width:100%;
-  max-width:320px;
+  max-width:220px;
   height:auto;
-  display:block;
-  margin:12px auto;
   border-radius:12px;
+  margin:10px 0;
+}
+
+/* BUTTON */
+.map-button{
+  margin-top:auto; /* pushes button to bottom */
+  display:inline-block;
+  padding:12px 26px;
+  background:var(--olive-green);
+  color:white;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:0.85rem;
+  font-weight:600;
+  transition:all .3s ease;
+  box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+.map-button:hover{
+  background:var(--olive-light);
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* =====================================================
+RESPONSIVE (MOBILE)
+===================================================== */
+
+@media (max-width:768px){
+
+  .details-grid{
+    grid-template-columns:1fr; /* stack */
+    gap:2rem;
+  }
+
+  .detail-card{
+    aspect-ratio:auto; /* 🔥 allow natural height on mobile */
+    padding:2rem 1.5rem;
+  }
+
+  .detail-card img{
+    max-width:260px;
+  }
 }
 
 /* BUTTON */
