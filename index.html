@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,62 +13,113 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
 
+<!-- FLOWER CONTAINER -->
 <div class="flower-container" id="flower-container"></div>
+
 
 <audio id="backgroundMusic" loop>
 <source src="image/audio.mp3" type="audio/mpeg">
 </audio>
 
+
+
+<!-- HEADER -->
+
 <header id="header">
+
 <nav>
 
 <div class="logo music-logo">
+
 <span class="logo-text">B & P</span>
 
 <div class="music-control">
+
 <button class="music-header-btn" id="musicToggle">
-<svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-<svg class="pause-icon hidden" viewBox="0 0 24 24"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
+
+<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M8 5v14l11-7z"/>
+</svg>
+
+<svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+</svg>
+
 </button>
+
 <span class="music-label" id="musicLabel">Play Music</span>
-</div>
 
 </div>
 
-<ul class="nav-links">
+</div>
+
+<ul class="nav-links" id="navLinks">
+
 <li><a href="#home">Home</a></li>
 <li><a href="#gallery">Pre-Wedding</a></li>
 <li><a href="#details">Details</a></li>
 <li><a href="#entourage">Entourage</a></li>
 <li><a href="#sponsors">Sponsors</a></li>
 <li><a href="#rsvp">RSVP</a></li>
-</ul>
+</ul>  
+
+<div class="mobile-menu" id="mobileMenu">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 </nav>
+
 </header>
 
+
+
 <!-- HERO -->
-<section id="home" class="hero" style="background-image:url('image/banner.png');">
+
+<section id="home" class="hero"
+style="background-image:url('image/banner.png');">
+
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<p class="pre-title">You are cordially invited to the wedding of</p>
+<p class="pre-title">
+You are cordially invited to the wedding of
+</p>
 
 <h1 class="names">
-<span class="first">Bryll</span>
-<span class="amp">&</span>
-<span class="second">Perveen</span>
+Bryll<br>
+<span>&</span><br>
+Perveen
 </h1>
 
-<div class="countdown" id="countdown"></div>
+<div class="divider"></div>
 
-<div class="date-display">August 28, 2026 • 3:00 PM</div>
+<div class="countdown" id="countdown">
 
-<a href="#details" class="cta-button">View Details</a>
+<span id="days">0</span> Days •
+
+<span id="hours">0</span> Hours •
+
+<span id="minutes">0</span> Minutes •
+
+<span id="seconds">0</span> Seconds
+
+</div>
+
+<div class="date-display">
+August 28, 2026 • 3:00 PM
+</div>
+
+<a href="#details" class="cta-button">
+View Details
+</a>
 
 </div>
 
