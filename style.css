@@ -409,6 +409,20 @@ transition:all .3s ease;
 box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
 
+/* fix images inside detail cards */
+.detail-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px; /* match card style */
+  margin:12px 0;
+}
+
+/* IMPORTANT: clips anything that overflows */
+.detail-card{
+  overflow:hidden;
+}
+
 .map-button:hover{
 background:var(--olive-dark);
 transform:translateY(-2px);
