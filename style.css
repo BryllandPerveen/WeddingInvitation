@@ -295,7 +295,7 @@ overflow:hidden;
 }
 
 .gallery-section h2{
-font-family:'Playfair Display',serif;
+font-family:'Allura',cursive;
 font-size:clamp(2.5rem,5vw,3rem);
 color:var(--olive-dark);
 margin-bottom:3rem;
