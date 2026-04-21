@@ -177,7 +177,7 @@ background-size:cover;
 background-position:center;
 color:white;
 margin-top:70px;
-padding-top: 120px; /* add space below navbar */
+padding-top: 100px; /* add space below navbar */
 }
 
 .hero::before{
@@ -232,7 +232,7 @@ text-shadow:
 .names{
 font-family:'Allura', cursive;
   font-size:clamp(5rem, 12vw, 10rem);
-  line-height:0.9  ;
+  line-height:1;
 letter-spacing:1px;
 color:white;
 
@@ -256,7 +256,7 @@ animation:nameFloat 6s ease-in-out infinite alternate;
 color:var(--beige);
 font-size:0.5em;
 display:block;
-margin: -10px 0; /* pulls it closer to both names */
+margin: -5px 0; /* pulls it closer to both names */
 text-shadow:
 0 0 12px rgba(107,142,35,0.45),
 0 6px 18px rgba(0,0,0,0.25);
