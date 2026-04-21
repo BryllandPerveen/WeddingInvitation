@@ -360,6 +360,22 @@ window.addEventListener("load", () => {
   names.classList.add("animate");
 });
 
+const openBtn = document.getElementById("openInviteBtn");
+const intro = document.getElementById("introScreen");
+const music = document.getElementById("backgroundMusic");
+
+openBtn.addEventListener("click", () => {
+  // fade out intro
+  intro.classList.add("fade-out");
+
+  // play music (important: user interaction required)
+  music.play();
+
+  // remove after animation
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 1000);
+});
 
 
 
