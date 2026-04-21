@@ -355,6 +355,11 @@ lightbox.style.display="none";
 
 });
 
+window.addEventListener("load", () => {
+  const names = document.querySelector(".names");
+  names.classList.add("animate");
+});
+
 
 
 
