@@ -1213,3 +1213,52 @@ body.loaded{
   opacity: 0;
   transition: opacity 1s ease;
 }
+
+@media (max-width: 768px){
+
+  /* 🔧 Reduce ALL section spacing */
+  section{
+    padding: 3rem 1rem !important;
+  }
+
+  /* 🔧 Fix Wedding Details specifically */
+  .details-section{
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* 🔧 Reduce title size + spacing */
+  section h2{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  section h2::after{
+    margin: 8px auto 0;
+  }
+
+  /* 🔧 Fix hero height (BIG ISSUE) */
+  .hero{
+    height: auto;
+    min-height: 85vh;
+    padding-top: 80px;
+    margin-top: 60px;
+  }
+
+  /* 🔧 Reduce gap before first content */
+  .hero-content{
+    min-height: auto;
+    gap: 0.5rem;
+  }
+
+  /* 🔧 Reduce card spacing */
+  .detail-card{
+    padding: 1.2rem;
+  }
+
+  /* 🔧 Remove extra bottom gap before details */
+  #details{
+    margin-top: 0;
+  }
+
+}
