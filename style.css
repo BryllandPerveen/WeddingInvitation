@@ -177,6 +177,7 @@ background-size:cover;
 background-position:center;
 color:white;
 margin-top:70px;
+padding-top: 120px; /* add space below navbar */
 }
 
 .hero::before{
@@ -231,7 +232,7 @@ text-shadow:
 .names{
 font-family:'Allura', cursive;
   font-size:clamp(5rem, 12vw, 10rem);
-  line-height:1;
+  line-height:0.9  ;
 letter-spacing:1px;
 color:white;
 
@@ -253,11 +254,59 @@ animation:nameFloat 6s ease-in-out infinite alternate;
 
 .names span{
 color:var(--beige);
-font-size:0.9em;
+font-size:0.5em;
+display:block;
+margin: -10px 0; /* pulls it closer to both names */
 text-shadow:
 0 0 12px rgba(107,142,35,0.45),
 0 6px 18px rgba(0,0,0,0.25);
 }
+
+/* base hidden state */
+.names .line{
+  display:block;
+  opacity:0;
+  transform:translateY(40px) scale(0.95);
+  filter:blur(6px);
+}
+
+/* animation */
+.names.animate .line{
+  animation:cinematicReveal 1.2s ease forwards;
+}
+
+/* stagger timing */
+.names.animate .bryll{
+  animation-delay:0.3s;
+}
+
+.names.animate .amp{
+  animation-delay:0.8s;
+}
+
+.names.animate .perveen{
+  animation-delay:1.3s;
+}
+
+/* keyframes */
+@keyframes cinematicReveal{
+  0%{
+    opacity:0;
+    transform:translateY(60px) scale(0.9);
+    filter:blur(10px);
+  }
+  60%{
+    opacity:1;
+    transform:translateY(-5px) scale(1.02);
+    filter:blur(2px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
 
 .date-display{
 font-size:1.2rem;
