@@ -177,7 +177,7 @@ background-size:cover;
 background-position:center;
 color:white;
 margin-top:70px;
-padding-top: 100px; /* add space below navbar */
+padding-top: 50px; /* add space below navbar */
 }
 
 .hero::before{
@@ -1080,5 +1080,22 @@ transform:scale(1.05);
 }
 
 }
+/* FIX SPACING BETWEEN NAMES */
 
+.names{
+  line-height:1;
+}
+
+.names .bryll{
+  margin-bottom:12px;
+}
+
+.names .amp{
+  font-size:0.5em;
+  margin:6px 0;
+}
+
+.names .perveen{
+  margin-top:-8px;
+}
 
