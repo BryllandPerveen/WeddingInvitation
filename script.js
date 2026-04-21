@@ -365,17 +365,14 @@ const intro = document.getElementById("introScreen");
 const music = document.getElementById("backgroundMusic");
 
 openBtn.addEventListener("click", () => {
-  // fade out intro
   intro.classList.add("fade-out");
+  document.body.classList.add("loaded");
 
-  // play music (important: user interaction required)
   music.play();
 
-  // remove after animation
   setTimeout(() => {
     intro.style.display = "none";
   }, 1000);
 });
-
 
 
