@@ -364,15 +364,30 @@ const openBtn = document.getElementById("openInviteBtn");
 const intro = document.getElementById("introScreen");
 const music = document.getElementById("backgroundMusic");
 
+const logo = document.querySelector(".intro-logo");
+
 openBtn.addEventListener("click", () => {
-  intro.classList.add("fade-out");
-  document.body.classList.add("loaded");
 
-  music.play();
+  // STEP 1: Flip
+  logo.classList.add("flip");
 
+  // STEP 2: After flip → expand
+  setTimeout(() => {
+    logo.classList.add("expand");
+  }, 700);
+
+  // STEP 3: Fade intro + unlock scroll
+  setTimeout(() => {
+    intro.classList.add("fade-out");
+    document.body.classList.add("loaded");
+    music.play();
+  }, 1200);
+
+  // STEP 4: Remove intro completely
   setTimeout(() => {
     intro.style.display = "none";
-  }, 1000);
+  }, 2000);
+
 });
 
 
