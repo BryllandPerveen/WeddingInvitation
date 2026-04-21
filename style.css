@@ -139,12 +139,16 @@ SECTION HEADERS
 ===================================================== */
 
 section h2{
-font-family:'Allura', cursive;
-font-size:clamp(2.5rem,5vw,3rem);
-color:var(--olive-dark);
-margin-bottom:3rem;
-text-align:center;
-letter-spacing:0.5px;
+  font-family:'Allura', cursive;
+  font-size:clamp(3.5rem, 7vw, 4.5rem);
+  color:var(--olive-dark);
+  text-align:center;
+  letter-spacing:1px;
+
+  /* makes it look bolder */
+  text-shadow: 
+    0 1px 0 rgba(0,0,0,0.1),
+    0 2px 3px rgba(0,0,0,0.15);
 }
 
 section h2::after{
