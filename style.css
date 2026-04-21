@@ -231,7 +231,7 @@ text-shadow:
 
 .names{
 font-family:'Allura', cursive;
-  font-size:clamp(6rem, 14vw, 11rem);
+  font-size:clamp(5rem, 12vw, 9rem);
   line-height:1;
 letter-spacing:1px;
 color:white;
@@ -1105,6 +1105,11 @@ transform:scale(1.05);
   .names{
     font-size:clamp(4rem, 12vw, 6rem);
   }
+}
+
+.hero-content{
+  justify-content:center;
+  min-height:80vh; /* keeps content balanced */
 }
 
 
