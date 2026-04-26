@@ -1300,3 +1300,21 @@ body.loaded{
     opacity:1;
   }
 }
+
+/* WHITE FADE OVERLAY */
+#whiteFade{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+  z-index:99998;
+  transition:opacity 0.8s ease;
+}
+
+#whiteFade.active{
+  opacity:1;
+}
