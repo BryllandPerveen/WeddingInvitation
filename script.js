@@ -366,23 +366,29 @@ const music = document.getElementById("backgroundMusic");
 
 const logo = document.querySelector(".intro-logo");
 
+const whiteFade = document.getElementById("whiteFade");
+
 openBtn.addEventListener("click", () => {
 
-  // STEP 1: Single flip
+  // STEP 1: Flip
   logo.classList.add("flip");
 
-  // STEP 2: Fade intro + play music AFTER flip
+  // STEP 2: White fade IN (after flip starts)
   setTimeout(() => {
-    intro.classList.add("fade-out");
-    document.body.classList.add("loaded");
-    music.play().catch(()=>{});
-  }, 800);
+    whiteFade.classList.add("active");
+  }, 600);
 
-  // STEP 3: Remove intro
+  // STEP 3: Remove intro + unlock scroll + play music
   setTimeout(() => {
     intro.style.display = "none";
-  }, 1600);
+    document.body.classList.add("loaded");
+    music.play().catch(()=>{});
+  }, 1200);
+
+  // STEP 4: White fade OUT (reveal website)
+  setTimeout(() => {
+    whiteFade.classList.remove("active");
+  }, 1400);
 
 });
-
 
