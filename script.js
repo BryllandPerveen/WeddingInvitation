@@ -368,25 +368,20 @@ const logo = document.querySelector(".intro-logo");
 
 openBtn.addEventListener("click", () => {
 
-  // STEP 1: Flip
+  // STEP 1: Single flip
   logo.classList.add("flip");
 
-  // STEP 2: After flip → expand
-  setTimeout(() => {
-    logo.classList.add("expand");
-  }, 700);
-
-  // STEP 3: Fade intro + unlock scroll
+  // STEP 2: Fade intro + play music AFTER flip
   setTimeout(() => {
     intro.classList.add("fade-out");
     document.body.classList.add("loaded");
-    music.play();
-  }, 1200);
+    music.play().catch(()=>{});
+  }, 800);
 
-  // STEP 4: Remove intro completely
+  // STEP 3: Remove intro
   setTimeout(() => {
     intro.style.display = "none";
-  }, 2000);
+  }, 1600);
 
 });
 
