@@ -370,22 +370,22 @@ const whiteFade = document.getElementById("whiteFade");
 
 openBtn.addEventListener("click", () => {
 
-  // STEP 1: Flip
-  intro.classList.add("flip");
+  // STEP 1: cinematic exit
+  intro.classList.add("exit");
 
-  // STEP 2: White fade IN (after flip starts)
+  // STEP 2: white flash (soft)
   setTimeout(() => {
     whiteFade.classList.add("active");
-  }, 600);
+  }, 500);
 
-  // STEP 3: Remove intro + unlock scroll + play music
+  // STEP 3: remove intro + unlock scroll + play music
   setTimeout(() => {
     intro.style.display = "none";
     document.body.classList.add("loaded");
     music.play().catch(()=>{});
   }, 1200);
 
-  // STEP 4: White fade OUT (reveal website)
+  // STEP 4: reveal site
   setTimeout(() => {
     whiteFade.classList.remove("active");
   }, 1400);
