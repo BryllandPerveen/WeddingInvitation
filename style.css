@@ -1433,3 +1433,7 @@ body.intro-active{
 #introScreen{
   touch-action: none;
 }
+
+[data-aos]{
+  opacity:1;
+}
