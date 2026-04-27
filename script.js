@@ -363,20 +363,18 @@ window.addEventListener("load", () => {
 const openBtn = document.getElementById("openInviteBtn");
 const intro = document.getElementById("introScreen");
 const music = document.getElementById("backgroundMusic");
-
-const logo = document.querySelector(".intro-logo");
-
 const whiteFade = document.getElementById("whiteFade");
+const logoCard = document.querySelector(".logo-card");
 
 openBtn.addEventListener("click", () => {
 
-  // STEP 1: cinematic exit
-  intro.classList.add("exit");
+  // STEP 1: flip card
+  logoCard.classList.add("flip");
 
-  // STEP 2: white flash (soft)
+  // STEP 2: white fade (smooth)
   setTimeout(() => {
     whiteFade.classList.add("active");
-  }, 500);
+  }, 600);
 
   // STEP 3: remove intro + unlock scroll + play music
   setTimeout(() => {
@@ -388,6 +386,13 @@ openBtn.addEventListener("click", () => {
   // STEP 4: reveal site
   setTimeout(() => {
     whiteFade.classList.remove("active");
+
+    // trigger hero animation AFTER reveal
+    const names = document.querySelector(".names");
+    if(names){
+      names.classList.add("animate");
+    }
+
   }, 1400);
 
 });
