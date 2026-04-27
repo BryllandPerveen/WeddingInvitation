@@ -396,5 +396,4 @@ openBtn.addEventListener("click", () => {
 
 });
 
-});
 
