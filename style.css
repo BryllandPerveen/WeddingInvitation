@@ -1434,12 +1434,4 @@ body.intro-active{
   touch-action: none;
 }
 
-[data-aos] {
-  opacity: 0;
-}
-
-[data-aos].aos-animate {
-  opacity: 1;
-}
-
 
