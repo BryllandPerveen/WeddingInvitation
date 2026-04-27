@@ -1446,3 +1446,26 @@ body.intro-active{
   transform:translateY(0);
 }
 
+/* BACK TEXT DESIGN */
+.logo-back{
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+/* subtitle */
+.welcome-text{
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* main names */
+.couple-text{
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--olive-green);
+  line-height: 1.2;
+}
