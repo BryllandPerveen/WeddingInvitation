@@ -1410,9 +1410,26 @@ body.intro-active{
   overflow: hidden;
 }
 
-/* REMOVE BAD OLD RULES EFFECT */
-body.intro-active,
-html, body{
-  position: static !important;
-  height: auto !important;
+/* ===== FINAL PATCH ===== */
+
+/* FIX CLICK BLOCK */
+.logo-card{
+  pointer-events: none;
+}
+
+/* ENSURE BUTTON WORKS */
+.open-btn{
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* CLEAN SCROLL LOCK */
+body.intro-active{
+  overflow: hidden;
+}
+
+/* HARD LOCK TOUCH SCROLL */
+#introScreen{
+  touch-action: none;
 }
