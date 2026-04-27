@@ -696,7 +696,6 @@ z-index:5;
 
 .flower{
 position:fixed;
-top:-60px;
 opacity:1;
 pointer-events:none;
 z-index:10;
