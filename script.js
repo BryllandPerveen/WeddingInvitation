@@ -370,21 +370,23 @@ openBtn.addEventListener("click", () => {
 
   // STEP 3: remove intro + unlock scroll + play music
   setTimeout(() => {
-    intro.style.display = "none";
-    document.body.classList.remove("intro-active");
-    document.body.classList.add("loaded");
+  intro.style.display = "none";
+  document.body.classList.remove("intro-active");
+  document.body.classList.add("loaded");
 
-    music.play().catch(()=>{});
+  music.play().catch(()=>{});
 
-    AOS.init({
+  AOS.init({
     duration:1000,
     once:true,
     offset:100,
     easing:'ease-in-out'
   });
 
-    
-  }, 1400);
+  AOS.refreshHard();  // 🔥 REQUIRED
+  AOS.refresh();      // 🔥 REQUIRED
+
+}, 1400);
 
   // STEP 4: reveal
   setTimeout(() => {
