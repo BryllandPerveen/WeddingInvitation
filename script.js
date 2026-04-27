@@ -371,7 +371,7 @@ const whiteFade = document.getElementById("whiteFade");
 openBtn.addEventListener("click", () => {
 
   // STEP 1: Flip
-  logo.classList.add("flip");
+  intro.classList.add("flip");
 
   // STEP 2: White fade IN (after flip starts)
   setTimeout(() => {
