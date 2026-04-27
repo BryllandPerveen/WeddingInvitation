@@ -376,6 +376,10 @@ openBtn.addEventListener("click", () => {
 
   music.play().catch(()=>{});
 
+    document.querySelectorAll(".fade-up").forEach(el => {
+    observer.observe(el);
+      
+  });
   AOS.init({
     duration:1000,
     once:true,
@@ -394,5 +398,24 @@ openBtn.addEventListener("click", () => {
   }, 1600);
 
 });
+
+// ======================
+// SCROLL ANIMATION (REPLACES AOS)
+// ======================
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll(".fade-up").forEach(el => {
+  observer.observe(el);
+});
+
 
 
