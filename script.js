@@ -1,6 +1,7 @@
 // ======================
 // INITIALIZE AOS
 // ======================
+document.body.classList.add("intro-active");
 
 AOS.init({
 duration:1000,
