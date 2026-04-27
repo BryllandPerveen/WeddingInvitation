@@ -1371,3 +1371,13 @@ LOGO CARD FLIP
 .logo-card.flip{
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
 }
+
+html, body {
+  height: 100%;
+}
+
+body.intro-active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
