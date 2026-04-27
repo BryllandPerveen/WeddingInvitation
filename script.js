@@ -367,28 +367,33 @@ const music = document.getElementById("backgroundMusic");
 const logo = document.querySelector(".intro-logo");
 
 const whiteFade = document.getElementById("whiteFade");
+const logoCard = document.getElementById("logoCard");
 
 openBtn.addEventListener("click", () => {
 
-  // STEP 1: cinematic exit
-  intro.classList.add("exit");
+  // STEP 1: flip ONLY the card
+  logoCard.classList.add("flip");
 
-  // STEP 2: white flash (soft)
+  // STEP 2: white fade after flip starts
   setTimeout(() => {
     whiteFade.classList.add("active");
-  }, 500);
+  }, 800);
 
   // STEP 3: remove intro + unlock scroll + play music
   setTimeout(() => {
     intro.style.display = "none";
+    document.body.classList.remove("intro-active");
     document.body.classList.add("loaded");
-    music.play().catch(()=>{});
-  }, 1200);
 
-  // STEP 4: reveal site
+    music.play().catch(()=>{});
+  }, 1400);
+
+  // STEP 4: reveal
   setTimeout(() => {
     whiteFade.classList.remove("active");
-  }, 1400);
+  }, 1600);
+
+});
 
 });
 
