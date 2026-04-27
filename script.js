@@ -374,9 +374,6 @@ openBtn.addEventListener("click", () => {
     document.body.classList.remove("intro-active");
     document.body.classList.add("loaded");
 
-    AOS.refreshHard();   // recalculates everything
-    AOS.refresh();       // triggers animations
-
     music.play().catch(()=>{});
 
     AOS.init({
