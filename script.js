@@ -1,17 +1,4 @@
 // ======================
-// INITIALIZE AOS
-// ======================
-document.body.classList.add("intro-active");
-
-AOS.init({
-duration:1000,
-once:true,
-offset:100,
-easing:'ease-in-out'
-});
-
-
-// ======================
 // MUSIC PLAYER
 // ======================
 
@@ -357,6 +344,7 @@ lightbox.style.display="none";
 });
 
 window.addEventListener("load", () => {
+  document.body.classList.add("intro-active");
   const names = document.querySelector(".names");
   names.classList.add("animate");
 });
@@ -387,6 +375,15 @@ openBtn.addEventListener("click", () => {
     document.body.classList.add("loaded");
 
     music.play().catch(()=>{});
+
+    AOS.init({
+    duration:1000,
+    once:true,
+    offset:100,
+    easing:'ease-in-out'
+  });
+
+    
   }, 1400);
 
   // STEP 4: reveal
