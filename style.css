@@ -1193,8 +1193,15 @@ body.loaded{
   transform-style: preserve-3d;
 }
 
-.intro-logo.flip{
-  transform: rotateY(180deg);
+#introScreen{
+  transition: transform 1s ease, opacity 1s ease;
+  transform-style: preserve-3d;
+}
+
+#introScreen.flip{
+  transform: scale(0.9);
+  opacity: 0;
+}
 }
 
 
