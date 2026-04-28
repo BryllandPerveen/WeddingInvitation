@@ -1,424 +1,504 @@
-// ======================
-// MUSIC PLAYER
-// ======================
+<!DOCTYPE html>
+<html lang="en">
 
-const musicToggle = document.getElementById("musicToggle");
-const backgroundMusic = document.getElementById("backgroundMusic");
+<head>
 
-const playIcon = document.querySelector(".play-icon");
-const pauseIcon = document.querySelector(".pause-icon");
-const musicLabel = document.getElementById("musicLabel");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-let isPlaying = false;
+<title>Bryll & Perveen - Wedding Invitation</title>
 
-musicToggle.addEventListener("click", () => {
+<link rel="stylesheet" href="style.css">
 
-if(isPlaying){
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-backgroundMusic.pause();
-playIcon.classList.remove("hidden");
-pauseIcon.classList.add("hidden");
-musicLabel.textContent = "Play Music";
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-}else{
+</head>
 
-backgroundMusic.play();
-playIcon.classList.add("hidden");
-pauseIcon.classList.remove("hidden");
-musicLabel.textContent = "Pause Music";
+<body>
 
-}
+<!-- FLOWER CONTAINER -->
+<div class="flower-container" id="flower-container"></div>
 
-isPlaying = !isPlaying;
 
-});
+<audio id="backgroundMusic" loop>
+<source src="image/audio.mp3" type="audio/mpeg">
+</audio>
 
 
-// ======================
-// MOBILE MENU
-// ======================
 
-const mobileMenu=document.getElementById("mobileMenu");
-const navLinks=document.getElementById("navLinks");
+<!-- HEADER -->
 
-mobileMenu.addEventListener("click",()=>{
-mobileMenu.classList.toggle("active");
-navLinks.classList.toggle("active");
-});
+<header id="header">
 
+<nav>
 
-// ======================
-// HEADER SCROLL
-// ======================
+<div class="logo music-logo">
 
-const header=document.getElementById("header");
+<span class="logo-text">B & P</span>
 
-window.addEventListener("scroll",()=>{
-if(window.pageYOffset>50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
-});
+<div class="music-control">
 
+<button class="music-header-btn" id="musicToggle">
 
-// ======================
-// SMOOTH SCROLL
-// ======================
+<svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M8 5v14l11-7z"/>
+</svg>
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+<svg class="pause-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+</svg>
 
-anchor.addEventListener("click",function(e){
+</button>
 
-e.preventDefault();
+<span class="music-label" id="musicLabel">Play Music</span>
 
-const target=document.querySelector(this.getAttribute("href"));
+</div>
 
-if(target){
-window.scrollTo({
-top:target.offsetTop-60,
-behavior:"smooth"
-});
-}
+</div>
 
-});
+<ul class="nav-links" id="navLinks">
 
-});
+<li><a href="#home">Home</a></li>
+<li><a href="#gallery">Pre-Wedding</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#entourage">Entourage</a></li>
+<li><a href="#sponsors">Sponsors</a></li>
+<li><a href="#rsvp">RSVP</a></li>
+</ul>  
 
+<div class="mobile-menu" id="mobileMenu">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-// ======================
-// COUNTDOWN
-// ======================
+</nav>
 
-const weddingDate=new Date("2026-08-28T15:00:00").getTime();
+</header>
 
-function updateCountdown(){
 
-const now=new Date().getTime();
-const distance=weddingDate-now;
 
-if(distance<=0){
-document.getElementById("countdown").innerHTML="Today is the Wedding Day!";
-return;
-}
+<!-- HERO -->
 
-const days=Math.floor(distance/(1000*60*60*24));
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds=Math.floor((distance%(1000*60))/1000);
+<section id="home" class="hero"
+style="background-image:url('image/banner.png');">
 
-document.getElementById("days").textContent=days;
-document.getElementById("hours").textContent=hours;
-document.getElementById("minutes").textContent=minutes;
-document.getElementById("seconds").textContent=seconds;
+<div class="hero-overlay"></div>
 
-}
+<div class="hero-content">
 
-setInterval(updateCountdown,1000);
-updateCountdown();
+<p class="pre-title">
+You are cordially invited to the wedding of
+</p>
 
+<h1 class="names">
+Bryll<br>
+<span>&</span><br>
+Perveen
+</h1>
 
-// ======================
-// FLOWERS
-// ======================
+<div class="divider"></div>
 
-const flowerContainer=document.getElementById("flower-container");
+<div class="countdown" id="countdown">
 
-const flowers=[
-"image/flower1.png",
-"image/flower2.png",
-"image/flower3.png",
-"image/flower4.png",
-"image/flower4.png"
-];
+<span id="days">0</span> Days •
 
-function createFlower(){
+<span id="hours">0</span> Hours •
 
-const flower=document.createElement("img");
+<span id="minutes">0</span> Minutes •
 
-// detect screen size
-const isMobile = window.innerWidth <= 768;
+<span id="seconds">0</span> Seconds
 
-// weighted flower selection (you already have more flower4 👍)
-flower.src=flowers[Math.floor(Math.random()*flowers.length)];
+</div>
 
-flower.classList.add("flower");
+<div class="date-display">
+August 28, 2026 • 3:00 PM
+</div>
 
-const side=Math.random()<0.5;
+<a href="#details" class="cta-button">
+View Details
+</a>
 
-// ======================
-// POSITION (RESPONSIVE)
-// ======================
+</div>
 
-if(isMobile){
+<div class="scroll-indicator">
+<span></span>
+</div>
 
-  // MOBILE: edges only
-  if(side){
-    flower.style.left = Math.random()*10 + "vw"; // left edge
-    flower.style.animation = "fall-left linear forwards";
-  }else{
-    flower.style.left = 90 + Math.random()*10 + "vw"; // right edge
-    flower.style.animation = "fall-right linear forwards";
-  }
+</section>
 
-}else{
 
-  // DESKTOP: original spread
-  if(side){
-    flower.style.left = Math.random()*20 + "vw";
-    flower.style.animation = "fall-left linear forwards";
-  }else{
-    flower.style.left = 80 + Math.random()*20 + "vw";
-    flower.style.animation = "fall-right linear forwards";
-  }
 
-}
+<!-- GALLERY -->
 
-// ======================
-// SIZE (RESPONSIVE)
-// ======================
+<section id="gallery" class="gallery-section">
 
-if(isMobile){
-  flower.style.width = 8 + Math.random()*8 + "px";   // smaller on mobile
-}else{
-  flower.style.width = 14 + Math.random()*10 + "px"; // original
-}
+<div class="container">
 
-// ======================
-// SPEED
-// ======================
+<h2 data-aos="fade-up">
+Our Prenup Gallery
+</h2>
 
-const duration = 12 + Math.random()*6;
-flower.style.animationDuration = duration + "s";
+<div class="carousel-wrapper">
 
-// ======================
-// ADD TO DOM
-// ======================
+<button class="carousel-btn prev">&#10094;</button>
 
-flowerContainer.appendChild(flower);
+<div class="gallery-carousel" id="galleryCarousel">
 
-setTimeout(()=>{
-flower.remove();
-},duration*1000);
+<img src="image/prenup1.jpg">
+<img src="image/prenup2.jpg">
+<img src="image/prenup3.jpg">
+<img src="image/prenup4.jpg">
+<img src="image/prenup5.jpg">
+<img src="image/prenup6.jpg">
+<img src="image/prenup7.jpg">
+<img src="image/prenup8.jpg">
+<img src="image/prenup9.jpg">
 
-}
+</div>
 
-setInterval(()=>{
+<button class="carousel-btn next">&#10095;</button>
 
-const isMobile = window.innerWidth <= 768;
+</div>
 
-// fewer flowers on mobile (cleaner)
-const amount = isMobile ? 1 : (2 + Math.floor(Math.random()*3));
+</div>
 
-for(let i=0;i<amount;i++){
-createFlower();
-}
+</section>
 
-},400);
 
 
-// ======================
-// PRENUP GALLERY
-// ======================
+<!-- DETAILS -->
 
-const carousel=document.getElementById("galleryCarousel");
+<section id="details" class="details-section">
 
-// Duplicate images for seamless infinite loop
-carousel.innerHTML += carousel.innerHTML;
+<div class="container">
 
-let scrollSpeed = 0.3;
+<h2 data-aos="fade-up">Wedding Details</h2>
 
-function autoScroll(){
-carousel.scrollLeft += scrollSpeed;
+<div class="details-grid">
 
-if(carousel.scrollLeft >= carousel.scrollWidth / 2){
-carousel.scrollLeft = 0;
-}
+<!-- WHEN -->
+<div class="detail-card">
 
-requestAnimationFrame(autoScroll);
-}
+<div class="icon">📅</div>
 
-autoScroll();
+<h3>When</h3>
 
+<p class="detail-main">August 28, 2026</p>
+<p class="detail-sub">3:00 PM</p>
 
-// ======================
-// CAROUSEL BUTTONS
-// ======================
+<h3>Where</h3>
+<p class="detail-main">Ceremony</p>
+<p class="detail-sub">Iglesia ni Cristo, District of Laoag City, Ilocos Norte</p>
 
-const nextBtn=document.querySelector(".carousel-btn.next");
-const prevBtn=document.querySelector(".carousel-btn.prev");
+<p class="detail-main">Reception</p>
+<p class="detail-sub">ARABELLA Events Place</p>
 
-nextBtn.addEventListener("click",()=>{
-carousel.scrollLeft += 350;
-});
+</div>
 
-prevBtn.addEventListener("click",()=>{
-carousel.scrollLeft -= 350;
-});
+<!-- CEREMONY -->
+<div class="detail-card map-card">
 
+<h3>Ceremony Location</h3>
 
-// Pause animation on hover
+<img src="image/church.png" class="qr-image">
 
-carousel.addEventListener("mouseenter",()=>{
-scrollSpeed = 0;
-});
+<a href="https://maps.app.goo.gl/fTpwmA2fZW3qZp1YA"
+target="_blank"
+class="map-button">
 
-carousel.addEventListener("mouseleave",()=>{
-scrollSpeed = 0.3;
-});
+Open Ceremony in Google Maps
 
+</a>
 
-// ======================
-// LIGHTBOX
-// ======================
+</div>
 
-const galleryImages=document.querySelectorAll("#galleryCarousel img");
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightboxImg");
-const closeBtn=document.querySelector(".lightbox-close");
-const lightboxNext=document.querySelector(".lightbox-next");
-const lightboxPrev=document.querySelector(".lightbox-prev");
+<!-- RECEPTION -->
+<div class="detail-card map-card">
 
-let currentIndex=0;
+<h3>Reception Location</h3>
 
-function showImage(index){
+<img src="image/venue.png" class="qr-image">
 
-if(index<0) index=galleryImages.length-1;
-if(index>=galleryImages.length) index=0;
+<a href="https://maps.app.goo.gl/4uTAMCxULk9W5ZF68"
+target="_blank"
+class="map-button">
 
-currentIndex=index;
-lightboxImg.src=galleryImages[currentIndex].src;
+Open Reception in Google Maps
 
-}
+</a>
 
-galleryImages.forEach((img,index)=>{
+</div>
 
-img.addEventListener("click",()=>{
-lightbox.style.display="flex";
-document.body.style.overflow = "hidden"; // 🔥 FIX
-showImage(index);
-});
+</div>
 
-});
 
-lightboxNext.addEventListener("click",()=>{
-showImage(currentIndex+1);
-});
+<!-- ATTIRE (NOW INSIDE DETAILS) -->
 
-lightboxPrev.addEventListener("click",()=>{
-showImage(currentIndex-1);
-});
+<div class="attire-wrapper">
 
-closeBtn.addEventListener("click",()=>{
-lightbox.style.display="none";
-document.body.style.overflow = ""; // 🔥 FIX
-});
+<img src="image/attire.jpg" alt="Wedding Attire Guide" class="attire-image">
 
-lightbox.addEventListener("click",(e)=>{
-if(e.target===lightbox){
-lightbox.style.display="none";
-document.body.style.overflow = ""; // 🔥 FIX
-}
-});
+</div>
 
+</div>
 
-// ======================
-// KEYBOARD NAVIGATION
-// ======================
+</section>
 
-document.addEventListener("keydown",(e)=>{
+<section id="entourage" class="entourage-section">
 
-if(lightbox.style.display==="flex"){
+<div class="container">
 
-if(e.key==="ArrowRight"){
-showImage(currentIndex+1);
-}
+<h2 data-aos="fade-up">Entourage</h2>
 
-if(e.key==="ArrowLeft"){
-showImage(currentIndex-1);
-}
+  <div class="parents-section">
 
-if(e.key==="Escape"){
-lightbox.style.display="none";
-}
+<h3 class="parents-title">With the Blessings of Our Parents</h3>
 
-}
+<div class="parents-grid">
 
-});
+<div class="parent-card">
+<p class="parent-role">Parents of the Groom</p>
+<p class="parent-names">
+Mr. Randy V. Atienza<br>
+Mrs. Eliza B. Atienza
+</p>
+</div>
 
-window.addEventListener("load", () => {
-  document.body.classList.add("intro-active");
-  const names = document.querySelector(".names");
-  names.classList.add("animate");
-});
+<div class="parent-card">
+<p class="parent-role">Parents of the Bride</p>
+<p class="parent-names">
+Mr. Pedro F. Castillo Jr.<br>
+Mrs. Imelda A. Castillo
+</p>
+</div>
 
-const openBtn = document.getElementById("openInviteBtn");
-const intro = document.getElementById("introScreen");
-const music = document.getElementById("backgroundMusic");
+</div>
 
-const logo = document.querySelector(".intro-logo");
+</div>
 
-const whiteFade = document.getElementById("whiteFade");
-const logoCard = document.getElementById("logoCard");
+<div class="entourage-row">
 
-openBtn.addEventListener("click", () => {
+<div class="entourage-card">
+<h3>Best Man</h3>
+<p>Angelberth T. Pascua</p>
+</div>
 
-  // STEP 1: flip ONLY the card
-  logoCard.classList.add("flip");
+<div class="entourage-card">
+<h3>Maid of Honor</h3>
+<p>Angelica N. Facundo</p>
+</div>
 
-  // STEP 2: white fade after flip starts
-  setTimeout(() => {
-    whiteFade.classList.add("active");
-  }, 800);
+</div>
+  
+<div class="wedding-party">
 
-  // STEP 3: remove intro + unlock scroll + play music
-  setTimeout(() => {
-  intro.classList.add("hidden");
-  document.body.classList.remove("intro-active");
-  document.body.classList.add("loaded");
+<div class="party-column">
+<h3>Bridesmaids</h3>
+<ul>
+<li>Lyra B. Atienza</li>
+<li>Charie Anne P. Agustin</li>
+<li>Veachryzea Joyce A. Agustin</li>
+<li>Khyla Marie B. Pahinag</li>
+<li>Jarlene A. Chan</li>
+</ul>
+</div>
 
-  music.play().catch(()=>{});
+<div class="party-column">
+<h3>Groomsmen</h3>
+<ul>
+<li>Jomiko B. Ay-Ay</li>
+<li>Joshua G. Ballesteros</li>
+<li>June Zyrus A. Castillo</li>
+<li>Julius Ceasar A. Castillo</li>
+<li>Ayrton B. Alop</li>
+</ul>
+</div>
 
-    document.querySelectorAll(".fade-up").forEach(el => {
-    observer.observe(el);
-      
-  });
-  AOS.init({
-    duration:1000,
-    once:true,
-    offset:100,
-    easing:'ease-in-out'
-  });
+</div>
 
-  AOS.refreshHard();  // 🔥 REQUIRED
-  AOS.refresh();      // 🔥 REQUIRED
 
-}, 1400);
+<div class="flower-ring-bearers">
 
-  // STEP 4: reveal
-  setTimeout(() => {
-    whiteFade.classList.remove("active");
-  }, 1600);
+<div class="bearer-group">
+<h3>Flower Girls</h3>
+<ul>
+<li>Marivic G. Sanchez</li>
+<li>Avia M. Ballesteros</li>
+</ul>
+</div>
 
-});
+<div class="bearer-group">
+<h3>Ring Bearer</h3>
+<ul>
+<li>Matt Rafael E. Sanchez</li>
+</ul>
+</div>
 
-// ======================
-// SCROLL ANIMATION (REPLACES AOS)
-// ======================
+<div class="bearer-group">
+<h3>Flag Bearer</h3>
+<ul>
+<li>Jan Kael M. Ballesteros</li>
+</ul>
+</div>
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.2
-});
+</div>
 
-document.querySelectorAll(".fade-up").forEach(el => {
-  observer.observe(el);
-});
+</div>
 
+</section>
 
 
+<section id="sponsors" class="sponsors-section">
+
+<div class="container">
+
+<h2 data-aos="fade-up">Principal Sponsors</h2>
+
+<div class="sponsors-grid">
+
+<div class="sponsor-column">
+<ul>
+<li>Mr. Benjie Atienza</li>
+<li>Mrs. Elma B. Ceredon</li>
+<li>Mr. Marlon Deus</li>
+<li>Mrs. Imelda Alop</li>
+<li>Mr. Daniel Manzanillo</li>
+<li>Mrs. Marissa Vigilla</li>
+<li>Mr. George Miguel</li>
+<li>Mrs. Gigibel Retutar</li>
+<li>Mr. Joel Corpuz</li>
+<li>Mrs. Zenaida Pineda</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+  <!-- SPECIAL GUESTS -->
+
+<h2 class="special-title" data-aos="fade-up">Special Guests</h2>
+
+<div class="sponsors-grid">
+
+<div class="sponsor-column">
+<ul>
+<li>Guest Name 1</li>
+<li>Guest Name 2</li>
+<li>Guest Name 3</li>
+<li>Guest Name 4</li>
+<li>Guest Name 5</li>
+<li>Guest Name 6</li>
+<li>Guest Name 7</li>
+<li>Guest Name 8</li>
+<li>Guest Name 9</li>
+<li>Guest Name 10</li>
+<li>Guest Name 11</li>
+</ul>
+</div>
+
+<div class="sponsor-column">
+<ul>
+<li>Guest Name 12</li>
+<li>Guest Name 13</li>
+<li>Guest Name 14</li>
+<li>Guest Name 15</li>
+<li>Guest Name 16</li>
+<li>Guest Name 17</li>
+<li>Guest Name 18</li>
+<li>Guest Name 19</li>
+<li>Guest Name 20</li>
+<li>Guest Name 21</li>
+<li>Guest Name 22</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+  
+
+<section id="rsvp" class="rsvp-section">
+
+<div class="container">
+
+<h2>RSVP</h2>
+
+<p class="rsvp-text">
+We kindly ask you to confirm your attendance by filling out the form below.
+</p>
+
+<div class="rsvp-form">
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe47FoPhHU8W_s8NjEDkH0DD7k4cO-VgfYkuxAovyBP2WyJXA/viewform?embedded=true" 
+width="100%"
+height="900"
+frameborder="0"
+marginheight="0"
+marginwidth="0"
+class="rsvp-iframe">
+Loading…
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="lightbox-close">
+&times;
+</span>
+
+<img class="lightbox-img" id="lightboxImg">
+
+<button class="lightbox-prev">&#10094;</button>
+
+<button class="lightbox-next">&#10095;</button>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<p class="footer-names">
+Bryll & Perveen
+</p>
+
+<p class="footer-date">
+August 28, 2026 • 3:00 PM
+</p>
+
+<p class="footer-copyright">
+© 2026 BRPV Wedding. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
