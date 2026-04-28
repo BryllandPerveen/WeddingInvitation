@@ -311,11 +311,13 @@ showImage(currentIndex-1);
 
 closeBtn.addEventListener("click",()=>{
 lightbox.style.display="none";
+document.body.style.overflow = ""; // 🔥 FIX
 });
 
 lightbox.addEventListener("click",(e)=>{
 if(e.target===lightbox){
 lightbox.style.display="none";
+document.body.style.overflow = ""; // 🔥 FIX
 }
 });
 
