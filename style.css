@@ -1189,12 +1189,13 @@ body.loaded{
   overflow:auto;
 }
 .intro-logo{
-  transition: transform 0.8s ease;
+  transition: transform 0.35s ease; /* faster */
   transform-style: preserve-3d;
+  backface-visibility: hidden; /* prevents backside showing */
 }
 
 .intro-logo.flip{
-  transform: rotateY(180deg);
+  transform: rotateY(70deg); /* partial flip only */
 }
 
 
