@@ -696,6 +696,7 @@ z-index:5;
 
 .flower{
 position:fixed;
+top:-60px;
 opacity:1;
 pointer-events:none;
 z-index:10;
@@ -715,7 +716,7 @@ opacity:1;
 }
 
 100%{
-transform:translateY(200vh) translateX(120px) rotate(360deg);
+transform:translateY(110vh) translateX(120px) rotate(360deg);
 opacity:0;
 }
 
@@ -1180,21 +1181,22 @@ transform:scale(1.05);
   }
 }
 
+body{
+  overflow:hidden;
+}
 
+body.loaded{
+  overflow:auto;
+}
 .intro-logo{
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
 
-/* smooth cinematic exit */
-#introScreen{
-  transition: 
-    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 1s ease;
-
-  transform-origin: center;
-  will-change: transform, opacity;
+.intro-logo.flip{
+  transform: rotateY(180deg);
 }
+
 
 
 /* fade intro background */
@@ -1315,157 +1317,4 @@ transform:scale(1.05);
 
 #whiteFade.active{
   opacity:1;
-}
-
-body{
-  perspective: 1200px;
-}
-
-/* =========================
-LOGO CARD FLIP
-========================= */
-
-.logo-card{
-  width:320px;
-  height:320px;
-  perspective:1200px;
-}
-
-.logo-inner{
-  width:100%;
-  height:100%;
-  position:relative;
-  transform-style:preserve-3d;
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* ONLY THIS FLIPS */
-.logo-card.flip .logo-inner{
-  transform: rotateY(180deg);
-}
-
-/* FRONT + BACK */
-.logo-front,
-.logo-back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  backface-visibility:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.logo-back{
-  transform: rotateY(180deg);
-}
-
-/* subtle glow while flipping */
-.logo-card.flip{
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
-}
-
-html, body {
-  height: 100%;
-}
-
-/* =========================
-FINAL CLEAN FIX (WORKING)
-========================= */
-
-/* FORCE INTRO ABOVE EVERYTHING */
-#introScreen{
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  background:#f5f5f2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow: hidden;
-  z-index: 999999;
-}
-
-/* FIX STACKING */
-.intro-content{
-  position: relative;
-  z-index: 2;
-}
-
-/* BACKGROUND GLOW BELOW CONTENT */
-.intro-content::before{
-  z-index: 1;
-}
-
-/* BUTTON ALWAYS CLICKABLE */
-.open-btn{
-  position: relative;
-  z-index: 3;
-}
-
-/* REMOVE ALL SCROLL DURING INTRO */
-body.intro-active{
-  overflow: hidden;
-}
-
-/* ===== FINAL PATCH ===== */
-
-/* FIX CLICK BLOCK */
-.logo-card{
-  pointer-events: none;
-}
-
-/* ENSURE BUTTON WORKS */
-.open-btn{
-  pointer-events: auto;
-  position: relative;
-  z-index: 3;
-}
-
-/* CLEAN SCROLL LOCK */
-body.intro-active{
-  overflow: hidden;
-}
-
-/* HARD LOCK TOUCH SCROLL */
-#introScreen{
-  touch-action: none;
-}
-
-/* ===== CUSTOM SCROLL ANIMATION ===== */
-
-.fade-up{
-  opacity:0;
-  transform:translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fade-up.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* BACK TEXT DESIGN */
-.logo-back{
-  flex-direction: column;
-  text-align: center;
-  padding: 20px;
-}
-
-/* subtitle */
-.welcome-text{
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: var(--text-light);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-/* main names */
-.couple-text{
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.8rem;
-  color: var(--olive-green);
-  line-height: 1.2;
 }
