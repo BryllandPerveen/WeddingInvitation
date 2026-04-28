@@ -368,32 +368,26 @@ const logo = document.querySelector(".intro-logo");
 
 const whiteFade = document.getElementById("whiteFade");
 
-const introText = document.querySelector(".intro-text");
 openBtn.addEventListener("click", () => {
 
   // STEP 1: Flip
   logo.classList.add("flip");
 
-  // STEP 2: Show text AFTER flip starts
-  setTimeout(() => {
-    introText.classList.add("show");
-  }, 250);
-
-  // STEP 3: White fade IN (after text appears)
+  // STEP 2: White fade IN (after flip starts)
   setTimeout(() => {
     whiteFade.classList.add("active");
-  }, 900);
+  }, 600);
 
-  // STEP 4: Remove intro + play music
+  // STEP 3: Remove intro + unlock scroll + play music
   setTimeout(() => {
     intro.style.display = "none";
     document.body.classList.add("loaded");
     music.play().catch(()=>{});
-  }, 1400);
+  }, 1200);
 
-  // STEP 5: Fade OUT
+  // STEP 4: White fade OUT (reveal website)
   setTimeout(() => {
     whiteFade.classList.remove("active");
-  }, 1600);
+  }, 1400);
 
 });
