@@ -376,7 +376,7 @@ openBtn.addEventListener("click", () => {
   // STEP 2: White fade IN (after flip starts)
   setTimeout(() => {
     whiteFade.classList.add("active");
-  }, 600);
+  }, 150);
 
   // STEP 3: Remove intro + unlock scroll + play music
   setTimeout(() => {
