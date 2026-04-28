@@ -392,18 +392,25 @@ openBtn.addEventListener("click", () => {
 
 });
 
-const slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
-}
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? "1" : "0";
+      slide.style.zIndex = i === index ? "1" : "0";
+    });
+  }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // initial display
   showSlide(currentSlide);
-}
 
-// auto play every 5 seconds
-setInterval(nextSlide, 5000);
+  // auto transition
+  setInterval(nextSlide, 4000);
+});
