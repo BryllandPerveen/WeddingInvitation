@@ -392,25 +392,18 @@ openBtn.addEventListener("click", () => {
 
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? "1" : "0";
-      slide.style.zIndex = i === index ? "1" : "0";
-    });
-  }
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  // initial display
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
+}
 
-  // auto transition
-  setInterval(nextSlide, 4000);
-});
+// auto play every 5 seconds
+setInterval(nextSlide, 5000);
