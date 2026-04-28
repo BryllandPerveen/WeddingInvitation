@@ -1191,11 +1191,10 @@ body.loaded{
 .intro-logo{
   transition: transform 0.35s ease; /* faster */
   transform-style: preserve-3d;
-  backface-visibility: hidden; /* prevents backside showing */
 }
 
 .intro-logo.flip{
-  transform: rotateY(70deg); /* partial flip only */
+  transform: rotateY(90deg); /* partial flip only */
 }
 
 
