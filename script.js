@@ -295,6 +295,7 @@ galleryImages.forEach((img,index)=>{
 
 img.addEventListener("click",()=>{
 lightbox.style.display="flex";
+document.body.style.overflow = "hidden"; // 🔥 FIX
 showImage(index);
 });
 
