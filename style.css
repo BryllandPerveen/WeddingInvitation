@@ -1349,3 +1349,8 @@ body.loaded{
   transform: scale(1.1);
   transition: opacity 1.2s ease, transform 6s ease;
 }
+
+.slide:first-child {
+  opacity: 1;
+  z-index: 1;
+}
