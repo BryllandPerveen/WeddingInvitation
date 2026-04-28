@@ -1471,8 +1471,10 @@ body.intro-active{
 }
 
 #introScreen.hidden{
-  display: none !important;
-  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
 }
 
 #whiteFade{
