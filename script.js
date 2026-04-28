@@ -370,7 +370,7 @@ openBtn.addEventListener("click", () => {
 
   // STEP 3: remove intro + unlock scroll + play music
   setTimeout(() => {
-  intro.style.display = "none";
+  intro.classList.add("hidden");
   document.body.classList.remove("intro-active");
   document.body.classList.add("loaded");
 
