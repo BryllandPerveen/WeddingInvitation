@@ -11,40 +11,30 @@
 <link rel="stylesheet" href="style.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- INTRO SCREEN -->
-<div id="introScreen">
-  <div class="intro-card">
-<div id="whiteFade"></div>
-    <div class="intro-content">
-      <div class="logo-card" id="logoCard">
-  <div class="logo-inner">
+  <!-- INVITATION OVERLAY -->
+<div id="invitationOverlay">
 
-    <div class="logo-front">
-      <img src="image/logo.png" class="intro-logo">
-    </div>
+  <div class="invitation-box">
+    
+    <p class="invite-text">You are invited to the wedding of</p>
+    
+    <h1 class="invite-names">
+      Bryll & Perveen
+    </h1>
 
-  <div class="logo-back">
-  <span class="welcome-text">Welcome to the wedding of</span>
-  <span class="couple-text">Bryll & Perveen</span>
-</div>
+    <button id="openInviteBtn">Open Invitation</button>
 
   </div>
+
 </div>
 
-      <button id="openInviteBtn" class="open-btn">
-        Open Invitation
-      </button>
-    </div>
-
-  </div>
-</div>
 
 <!-- FLOWER CONTAINER -->
 <div class="flower-container" id="flower-container"></div>
@@ -122,9 +112,9 @@ You are cordially invited to the wedding of
 </p>
 
 <h1 class="names">
-  <span class="line bryll">Bryll</span>
-  <span class="line amp">&</span>
-  <span class="line perveen">Perveen</span>
+Bryll<br>
+<span>&</span><br>
+Perveen
 </h1>
 
 <div class="divider"></div>
@@ -165,7 +155,7 @@ View Details
 
 <div class="container">
 
-<h2 class="fade-up">
+<h2 data-aos="fade-up">
 Our Prenup Gallery
 </h2>
 
@@ -175,15 +165,15 @@ Our Prenup Gallery
 
 <div class="gallery-carousel" id="galleryCarousel">
 
-<img src="image/prenup1.jpg" loading="lazy">
-<img src="image/prenup2.jpg" loading="lazy">
-<img src="image/prenup3.jpg" loading="lazy">
-<img src="image/prenup4.jpg" loading="lazy">
-<img src="image/prenup5.jpg" loading="lazy">
-<img src="image/prenup6.jpg" loading="lazy">
-<img src="image/prenup7.jpg" loading="lazy">
-<img src="image/prenup8.jpg" loading="lazy">
-<img src="image/prenup9.jpg" loading="lazy">
+<img src="image/prenup1.jpg">
+<img src="image/prenup2.jpg">
+<img src="image/prenup3.jpg">
+<img src="image/prenup4.jpg">
+<img src="image/prenup5.jpg">
+<img src="image/prenup6.jpg">
+<img src="image/prenup7.jpg">
+<img src="image/prenup8.jpg">
+<img src="image/prenup9.jpg">
 
 </div>
 
@@ -203,28 +193,26 @@ Our Prenup Gallery
 
 <div class="container">
 
-<h2 class="fade-up">Wedding Details</h2>
+<h2 data-aos="fade-up">Wedding Details</h2>
 
 <div class="details-grid">
 
 <!-- WHEN -->
 <div class="detail-card">
 
-<h3>When</h3>
-<p>August 28, 2026</p>
-<p>3:00 PM</p>
+<div class="icon">📅</div>
 
-<div class="divider"></div>
+<h3>When</h3>
+
+<p class="detail-main">August 28, 2026</p>
+<p class="detail-sub">3:00 PM</p>
 
 <h3>Where</h3>
+<p class="detail-main">Ceremony</p>
+<p class="detail-sub">Iglesia ni Cristo, District of Laoag City, Ilocos Norte</p>
 
-<h3>Ceremony</h3>
-<p class="location">Iglesia ni Cristo, District of Laoag City, Ilocos Norte</p>
-
-<div class="divider small"></div>
-
-<h3>Reception</h3>
-<p>ARABELLA Events Place</p>
+<p class="detail-main">Reception</p>
+<p class="detail-sub">ARABELLA Events Place</p>
 
 </div>
 
@@ -264,6 +252,7 @@ Open Reception in Google Maps
 
 </div>
 
+
 <!-- ATTIRE (NOW INSIDE DETAILS) -->
 
 <div class="attire-wrapper">
@@ -280,11 +269,11 @@ Open Reception in Google Maps
 
 <div class="container">
 
-<h2 class="fade-up">Entourage</h2>
+<h2 data-aos="fade-up">Entourage</h2>
 
   <div class="parents-section">
 
-<h3 class="parents-title">With the blessing of our parents</h3>
+<h3 class="parents-title">With the Blessings of Our Parents</h3>
 
 <div class="parents-grid">
 
@@ -384,13 +373,13 @@ Mrs. Imelda A. Castillo
 
 <div class="container">
 
-<h2 class="fade-up">Principal Sponsors</h2>
+<h2 data-aos="fade-up">Principal Sponsors</h2>
 
 <div class="sponsors-grid">
 
 <div class="sponsor-column">
 <ul>
-<li>Mr. Danilo M. Alop</li>
+<li>Mr. Benjie Atienza</li>
 <li>Mrs. Elma B. Ceredon</li>
 <li>Mr. Marlon Deus</li>
 <li>Mrs. Imelda Alop</li>
@@ -417,35 +406,33 @@ Mrs. Imelda A. Castillo
 
 <div class="sponsor-column">
 <ul>
-<li>Mr. Ronnel Castillo</li>
-<li>Mr. Rudy Gante</li>
-<li>Mr. Dionisio Bucao</li>
-<li>Mr. Cornelio Balbesino</li>
-<li>Mr. Erwin Sanchez</li>
-<li>Mr. Lolito Nacnac</li>
-<li>Mr. Excelsior Castillo</li>
-<li>Mr. Emerson Sanchez</li>
-<li>Mr. Ignacio Agamata</li>
-<li>Mr. Roel Diego</li>
-<li>Mr. Reynaldo Balaqui</li>
-<li>Mr. Elmer Miguel</li>  
+<li>Guest Name 1</li>
+<li>Guest Name 2</li>
+<li>Guest Name 3</li>
+<li>Guest Name 4</li>
+<li>Guest Name 5</li>
+<li>Guest Name 6</li>
+<li>Guest Name 7</li>
+<li>Guest Name 8</li>
+<li>Guest Name 9</li>
+<li>Guest Name 10</li>
+<li>Guest Name 11</li>
 </ul>
 </div>
 
 <div class="sponsor-column">
 <ul>
-<li>Mrs. Alma Gamayon</li>
-<li>Mrs. Alpha Burgos</li>
-<li>Mrs. Armie Sabugo</li>
-<li>Mrs. Myrnalyn Bogate</li>
-<li>Mrs. Ferizza Felipe</li>
-<li>Mrs. Annabelle Pascua</li>
-<li>Mrs. Heidee Ignacio</li>
-<li>Mrs. Guillerma Dela Cruz</li>
-<li>Mrs. Corazon Manayan</li>
-<li>Mrs. Reyla Asuncion</li>
-<li>Mrs. Daisy Ballesteros</li>
-<li>Mrs. Gemma Gagarin</li>
+<li>Guest Name 12</li>
+<li>Guest Name 13</li>
+<li>Guest Name 14</li>
+<li>Guest Name 15</li>
+<li>Guest Name 16</li>
+<li>Guest Name 17</li>
+<li>Guest Name 18</li>
+<li>Guest Name 19</li>
+<li>Guest Name 20</li>
+<li>Guest Name 21</li>
+<li>Guest Name 22</li>
 </ul>
 </div>
 
@@ -522,6 +509,10 @@ August 28, 2026 • 3:00 PM
 </div>
 
 </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script src="script.js"></script>
 
