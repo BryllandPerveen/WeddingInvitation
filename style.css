@@ -45,12 +45,6 @@ overflow-x:hidden;
 width:100%;
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
 /* =====================================================
 LAYOUT
 ===================================================== */
@@ -72,7 +66,7 @@ left:0;
 width:100%;
 background:rgba(255,255,255,.97);
 backdrop-filter:blur(10px);
-z-index: 1000;
+z-index:1000;
 box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
@@ -139,16 +133,12 @@ SECTION HEADERS
 ===================================================== */
 
 section h2{
-  font-family:'Allura', cursive;
-  font-size:clamp(3.5rem, 7vw, 4.5rem);
-  color:var(--olive-dark);
-  text-align:center;
-  letter-spacing:1px;
-
-  /* makes it look bolder */
-  text-shadow: 
-    0 1px 0 rgba(0,0,0,0.1),
-    0 2px 3px rgba(0,0,0,0.15);
+font-family:'Playfair Display',serif;
+font-size:clamp(2.5rem,5vw,3rem);
+color:var(--olive-dark);
+margin-bottom:3rem;
+text-align:center;
+letter-spacing:0.5px;
 }
 
 section h2::after{
@@ -177,7 +167,6 @@ background-size:cover;
 background-position:center;
 color:white;
 margin-top:70px;
-padding-top: 50px; /* add space below navbar */
 }
 
 .hero::before{
@@ -197,7 +186,7 @@ z-index:2;
 max-width:900px;
 display:flex;
 flex-direction:column;
-gap:0.8rem;
+gap:1.5rem;
 align-items:center;
 }
 
@@ -230,9 +219,9 @@ text-shadow:
 }
 
 .names{
-font-family:'Allura', cursive;
-  font-size:clamp(5rem, 12vw, 9rem);
-  line-height:1;
+font-family:'Great Vibes', cursive;
+font-size:clamp(3rem,8vw,6rem);
+line-height:1.1;
 letter-spacing:1px;
 color:white;
 
@@ -254,59 +243,11 @@ animation:nameFloat 6s ease-in-out infinite alternate;
 
 .names span{
 color:var(--beige);
-font-size:0.5em;
-display:block;
-margin: -5px 0; /* pulls it closer to both names */
+font-size:0.9em;
 text-shadow:
 0 0 12px rgba(107,142,35,0.45),
 0 6px 18px rgba(0,0,0,0.25);
 }
-
-/* base hidden state */
-.names .line{
-  display:block;
-  opacity:0;
-  transform:translateY(40px) scale(0.95);
-  filter:blur(6px);
-}
-
-/* animation */
-.names.animate .line{
-  animation:cinematicReveal 1.2s ease forwards;
-}
-
-/* stagger timing */
-.names.animate .bryll{
-  animation-delay:0.3s;
-}
-
-.names.animate .amp{
-  animation-delay:0.8s;
-}
-
-.names.animate .perveen{
-  animation-delay:1.3s;
-}
-
-/* keyframes */
-@keyframes cinematicReveal{
-  0%{
-    opacity:0;
-    transform:translateY(60px) scale(0.9);
-    filter:blur(10px);
-  }
-  60%{
-    opacity:1;
-    transform:translateY(-5px) scale(1.02);
-    filter:blur(2px);
-  }
-  100%{
-    opacity:1;
-    transform:translateY(0) scale(1);
-    filter:blur(0);
-  }
-}
-
 
 .date-display{
 font-size:1.2rem;
@@ -348,7 +289,7 @@ overflow:hidden;
 }
 
 .gallery-section h2{
-font-family:'Allura',cursive;
+font-family:'Playfair Display',serif;
 font-size:clamp(2.5rem,5vw,3rem);
 color:var(--olive-dark);
 margin-bottom:3rem;
@@ -444,12 +385,6 @@ border-radius:15px;
 text-align:center;
 }
 
-.detail-card img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-}
-
 .detail-main{
 color:var(--olive-green);
 font-weight:700;
@@ -480,7 +415,6 @@ color:white;
 text-decoration:none;
 }
 
-
 /* =====================================================
 ATTIRE GUIDE
 ===================================================== */
@@ -504,6 +438,22 @@ border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
+
+/* GIFT SECTION */
+
+.gifts-section{
+padding:4rem 2rem;
+text-align:center;
+background:white;
+}
+
+.gifts-image{
+width:100%;
+max-width:520px;
+height:auto;
+display:block;
+margin:auto;
+}
 
 /* =====================================================
 ENTOURAGE
@@ -656,7 +606,7 @@ border-radius:6px;
 }
 
 .special-title{
-font-family:'Allura',cursive;
+font-family:'Playfair Display',serif;
 font-size:2.2rem;
 color:var(--olive-dark);
 margin:4rem 0 2rem 0;
@@ -675,7 +625,7 @@ padding:3rem 2rem;
 }
 
 .footer-names{
-font-family:'Allura',cursive;
+font-family:'Great Vibes',cursive;
 font-size:2.5rem;
 color:var(--gold-accent);
 margin-bottom:1rem;
@@ -696,6 +646,7 @@ z-index:5;
 
 .flower{
 position:fixed;
+top:-60px;
 opacity:1;
 pointer-events:none;
 z-index:10;
@@ -715,7 +666,7 @@ opacity:1;
 }
 
 100%{
-transform:translateY(200vh) translateX(120px) rotate(360deg);
+transform:translateY(110vh) translateX(120px) rotate(360deg);
 opacity:0;
 }
 
@@ -794,7 +745,10 @@ LIGHTBOX
 
 .lightbox{
 position:fixed;
-inset: 0;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,.9);
 display:none;
 align-items:center;
@@ -878,18 +832,12 @@ border-radius:12px;
 MOBILE
 ===================================================== */
 
-@media(max-width:800px){
+@media(max-width:768px){
 
 .container{
-  max-width:100%;
-  width:100%;
-  padding:0 12px;
-}
-
-nav{
-  flex-direction:column;
-  gap:6px;
-  padding:6px 10px;
+max-width:100%;
+width:100%;
+padding:0 12px;
 }
 
 }
@@ -938,12 +886,12 @@ margin:0;
 /* navigation */
 
 .nav-links{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  white-space:normal;
-  font-size:12px;
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+white-space:nowrap;
+font-size:12px;
 }
 
 .nav-links a{
@@ -1039,24 +987,6 @@ border-radius:10px;
 
 }
 
-.divider{
-  width:60px;
-  height:2px;
-  background:var(--gold-accent);
-  margin:20px auto;
-  border-radius:2px;
-}
-
-.divider.small{
-  width:40px;
-  margin:16px auto;
-}
-
-.location{
-  white-space:normal;
-  line-height:1.4;
-}
-
 /* HERO BREATHING EFFECT */
 
 .hero{
@@ -1076,404 +1006,5 @@ transform:scale(1.05);
 }
 
 }
-/* FIX SPACING BETWEEN NAMES */
 
-.names{
-  line-height:1;
-}
 
-.names .bryll{
-  font-size:1em;
-  margin-bottom:12px;
-}
-
-.names .amp{
-  font-size:0.40em;
-  margin:6px 0;
-}
-
-.names .perveen{
-  font-size:1em;
-  margin-top:-8px;
-}
-
-@media(max-width:768px){
-  .names{
-    font-size:clamp(4rem, 12vw, 6rem);
-  }
-}
-
-.hero-content{
-  justify-content:center;
-  min-height:80vh; /* keeps content balanced */
-}
-
-/* INTRO SCREEN */
-#introScreen{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100dvh; /* FIX for mobile browsers */
-
-  background:#f5f5f2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  z-index:99999; /* make sure it's above header */
-}
-
-.intro-content{
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-.intro-logo{
-  width:320px;
-  max-width:90%;
-  margin-bottom:30px;
-}
-
-/* BUTTON */
-.open-btn{
-  padding:14px 40px;
-  font-size:1rem;
-  border:none;
-  border-radius:50px;
-
-  background:var(--olive-green);
-  color:white;
-  cursor:pointer;
-
-  margin-top:20px; /* spacing from logo */
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  transition:0.3s;
-}
-
-.open-btn:hover{
-  transform:translateY(-2px);
-  background:var(--olive-dark);
-}
-
-/* FADE OUT */
-#introScreen.fade-out{
-  opacity:0;
-  pointer-events:none;
-}
-
-/* animation */
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-
-.intro-logo{
-  transition: transform 0.8s ease;
-  transform-style: preserve-3d;
-}
-
-/* smooth cinematic exit */
-#introScreen{
-  transition: 
-    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 1s ease;
-
-  transform-origin: center;
-  will-change: transform, opacity;
-}
-
-
-/* fade intro background */
-#introScreen.fade-out{
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-@media (max-width: 768px){
-
-  /* 🔧 Reduce ALL section spacing */
-  section{
-    padding: 3rem 1rem !important;
-  }
-
-  /* 🔧 Fix Wedding Details specifically */
-  .details-section{
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-
-  /* 🔧 Reduce title size + spacing */
-  section h2{
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  section h2::after{
-    margin: 8px auto 0;
-  }
-
-  /* 🔧 Fix hero height (BIG ISSUE) */
-  .hero{
-    height: auto;
-    min-height: 85vh;
-    padding-top: 80px;
-    margin-top: 60px;
-  }
-
-  /* 🔧 Reduce gap before first content */
-  .hero-content{
-    min-height: auto;
-    gap: 0.5rem;
-  }
-
-  /* 🔧 Reduce card spacing */
-  .detail-card{
-    padding: 1.2rem;
-  }
-
-  /* 🔧 Remove extra bottom gap before details */
-  #details{
-    margin-top: 0;
-  }
-
-}
-
-/* GLOW BEHIND LOGO */
-.intro-content{
-  position: relative;
-}
-
-.intro-content::before{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-
-  background: radial-gradient(
-    circle,
-    rgba(156,175,136,0.45) 0%,
-    rgba(156,175,136,0.25) 40%,
-    rgba(156,175,136,0.08) 60%,
-    transparent 75%
-  );
-
-  border-radius:50%;
-  filter: blur(40px);
-
-  z-index:0;
-  top:35%;
-  left:50%;
-  transform:translate(-50%,-50%);
-
-  animation: introGlowBreath 4s ease-in-out infinite;
-}
-
-/* make logo above glow */
-.intro-logo{
-  position:relative;
-  z-index:2;
-}
-
-@keyframes introGlowBreath{
-  0%{
-    transform:translate(-50%,-50%) scale(1);
-    opacity:0.6;
-  }
-  100%{
-    transform:translate(-50%,-50%) scale(1.3);
-    opacity:1;
-  }
-}
-
-/* WHITE FADE OVERLAY */
-#whiteFade{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:white;
-  opacity:0;
-  pointer-events:none;
-  z-index:99998;
-  transition:opacity 0.8s ease;
-}
-
-#whiteFade.active{
-  opacity:1;
-}
-
-body{
-  perspective: 1200px;
-}
-
-/* =========================
-LOGO CARD FLIP
-========================= */
-
-.logo-card{
-  width:320px;
-  height:320px;
-  perspective:1200px;
-}
-
-.logo-inner{
-  width:100%;
-  height:100%;
-  position:relative;
-  transform-style:preserve-3d;
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* ONLY THIS FLIPS */
-.logo-card.flip .logo-inner{
-  transform: rotateY(180deg);
-}
-
-/* FRONT + BACK */
-.logo-front,
-.logo-back{
-  position:absolute;
-  width:100%;
-  height:100%;
-  backface-visibility:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.logo-back{
-  transform: rotateY(180deg);
-}
-
-/* subtle glow while flipping */
-.logo-card.flip{
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.25));
-}
-
-html, body {
-  height: 100%;
-}
-
-/* =========================
-FINAL CLEAN FIX (WORKING)
-========================= */
-
-/* FORCE INTRO ABOVE EVERYTHING */
-#introScreen{
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  background:#f5f5f2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow: hidden;
-  z-index: 999999;
-}
-
-/* FIX STACKING */
-.intro-content{
-  position: relative;
-  z-index: 2;
-}
-
-/* BACKGROUND GLOW BELOW CONTENT */
-.intro-content::before{
-  z-index: 1;
-}
-
-/* BUTTON ALWAYS CLICKABLE */
-.open-btn{
-  position: relative;
-  z-index: 3;
-}
-
-/* REMOVE ALL SCROLL DURING INTRO */
-body.intro-active{
-  overflow: hidden;
-}
-
-/* ===== FINAL PATCH ===== */
-
-/* ENSURE BUTTON WORKS */
-.open-btn{
-  pointer-events: auto;
-  position: relative;
-  z-index: 3;
-}
-
-/* CLEAN SCROLL LOCK */
-body.intro-active{
-  overflow: hidden;
-}
-
-/* HARD LOCK TOUCH SCROLL */
-#introScreen{
-  touch-action: none;
-}
-
-/* ===== CUSTOM SCROLL ANIMATION ===== */
-
-.fade-up{
-  opacity:0;
-  transform:translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.fade-up.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* BACK TEXT DESIGN */
-.logo-back{
-  flex-direction: column;
-  text-align: center;
-  padding: 20px;
-}
-
-/* subtitle */
-.welcome-text{
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  color: var(--text-light);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-/* main names */
-.couple-text{
-  font-family: 'Allura', cursive;
-  font-size: 2.8rem;
-  color: var(--olive-green);
-  line-height: 1.2;
-}
-
-
-#introScreen{
-  pointer-events: auto;
-}
-
-#introScreen.hidden{
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: -1;
-}
-
-#whiteFade{
-  pointer-events: none;
-}
