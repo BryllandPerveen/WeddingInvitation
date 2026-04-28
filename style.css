@@ -1469,3 +1469,17 @@ body.intro-active{
   color: var(--olive-green);
   line-height: 1.2;
 }
+
+
+#introScreen{
+  pointer-events: auto;
+}
+
+#introScreen.hidden{
+  display: none !important;
+  pointer-events: none !important;
+}
+
+#whiteFade{
+  pointer-events: none;
+}
