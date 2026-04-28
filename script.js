@@ -1,16 +1,4 @@
 // ======================
-// INITIALIZE AOS
-// ======================
-
-AOS.init({
-duration:1000,
-once:true,
-offset:100,
-easing:'ease-in-out'
-});
-
-
-// ======================
 // MUSIC PLAYER
 // ======================
 
@@ -355,5 +343,76 @@ lightbox.style.display="none";
 
 });
 
+window.addEventListener("load", () => {
+  document.body.classList.add("intro-active");
+  const names = document.querySelector(".names");
+  names.classList.add("animate");
+});
 
+const openBtn = document.getElementById("openInviteBtn");
+const intro = document.getElementById("introScreen");
+const music = document.getElementById("backgroundMusic");
 
+const logo = document.querySelector(".intro-logo");
+
+const whiteFade = document.getElementById("whiteFade");
+const logoCard = document.getElementById("logoCard");
+
+openBtn.addEventListener("click", () => {
+
+  // STEP 1: flip ONLY the card
+  logoCard.classList.add("flip");
+
+  // STEP 2: white fade after flip starts
+  setTimeout(() => {
+    whiteFade.classList.add("active");
+  }, 800);
+
+  // STEP 3: remove intro + unlock scroll + play music
+  setTimeout(() => {
+  intro.style.display = "none";
+  document.body.classList.remove("intro-active");
+  document.body.classList.add("loaded");
+
+  music.play().catch(()=>{});
+
+    document.querySelectorAll(".fade-up").forEach(el => {
+    observer.observe(el);
+      
+  });
+  AOS.init({
+    duration:1000,
+    once:true,
+    offset:100,
+    easing:'ease-in-out'
+  });
+
+  AOS.refreshHard();  // 🔥 REQUIRED
+  AOS.refresh();      // 🔥 REQUIRED
+
+}, 1400);
+
+  // STEP 4: reveal
+  setTimeout(() => {
+    whiteFade.classList.remove("active");
+  }, 1600);
+
+});
+
+// ======================
+// SCROLL ANIMATION (REPLACES AOS)
+// ======================
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll(".fade-up").forEach(el => {
+  observer.observe(el);
+});
