@@ -1189,12 +1189,12 @@ body.loaded{
   overflow:auto;
 }
 .intro-logo{
-  transition: transform 0.35s ease; /* faster */
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
 
 .intro-logo.flip{
-  transform: rotateY(90deg); /* partial flip only */
+  transform: rotateY(180deg);
 }
 
 
@@ -1317,27 +1317,4 @@ body.loaded{
 
 #whiteFade.active{
   opacity:1;
-}
-.intro-text{
-  opacity:0;
-  transform:translateY(20px);
-  font-family:'Playfair Display', serif;
-  font-size:1.1rem;
-  color:var(--text-dark);
-  text-align:center;
-  transition: all 0.6s ease;
-}
-
-.intro-text span{
-  display:block;
-  font-family:'Allura', cursive;
-  font-size:2.2rem;
-  color:var(--olive-green);
-  margin-top:5px;
-}
-
-/* when visible */
-.intro-text.show{
-  opacity:1;
-  transform:translateY(0);
 }
