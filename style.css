@@ -1340,7 +1340,7 @@ body.loaded{
   background-position: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  filter: blur(2.6px) brightness(0.85);
+  filter: blur(2px) brightness(0.85);
   transform: scale(1.05);
 }
 
