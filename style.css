@@ -185,8 +185,8 @@ content:"";
 position:absolute;
 inset:0;
 background:linear-gradient(
-rgba(120,140,110,0.65),
-rgba(120,140,110,0.65)
+rgba(156,175,136,0.35),
+rgba(156,175,136,0.35)
 );
 z-index:1;
 }
@@ -210,7 +210,7 @@ width:520px;
 height:320px;
 background:radial-gradient(
 circle,
-rgba(0,0,0,0.35) 0%,
+rgba(0,0,0,0.15) 0%,
 rgba(0,0,0,0.2) 40%,
 rgba(0,0,0,0) 70%
 );
