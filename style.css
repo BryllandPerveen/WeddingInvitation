@@ -1355,17 +1355,12 @@ body.loaded{
   font-size: 0.78rem;
   color: white;
   letter-spacing: 2px;
-  line-height: 1.5;
+  line-height: 1.7;
   margin-top: -12px;
   margin-bottom: 8px;
   text-transform: uppercase;
   opacity: 0.9;
-
-  max-width: 90%;
-  text-align: center;
-
-  word-break: break-word;
-  overflow-wrap: break-word;
+  text-align:center;
 }
 
 .date-display{
