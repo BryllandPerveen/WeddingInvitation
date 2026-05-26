@@ -1109,7 +1109,7 @@ transform:scale(1.05);
 
 .hero-content{
   justify-content:center;
-  min-height:80vh; /* keeps content balanced */
+  /* keeps content balanced */
 }
 
 /* INTRO SCREEN */
