@@ -1350,3 +1350,13 @@ body.loaded{
   transform: scale(1.1);
   transition: opacity 1.2s ease, transform 6s ease;
 }
+
+.hero-subtext{
+  font-size: 0.5rem;
+  color: white;
+  letter-spacing: 3px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
