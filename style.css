@@ -177,7 +177,8 @@ background-size:cover;
 background-position:center;
 color:white;
 margin-top:70px;
-padding-top: 50px; /* add space below navbar */
+padding-top: 50px;
+padding-bottom:60px;/* add space below navbar */
 }
 
 .hero::before{
