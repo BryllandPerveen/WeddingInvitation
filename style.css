@@ -1109,6 +1109,7 @@ transform:scale(1.05);
 
 .hero-content{
   justify-content:center;
+   min-height:100vh;
   /* keeps content balanced */
 }
 
