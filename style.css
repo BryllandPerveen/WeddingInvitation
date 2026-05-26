@@ -1352,14 +1352,20 @@ body.loaded{
 }
 
 .hero-subtext{
-  font-size: 0.95rem;
+  font-size: 0.78rem;
   color: white;
   letter-spacing: 2px;
-  margin-top: -18px;
-  margin-bottom: 5px;
   line-height: 1.5;
+  margin-top: -12px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   opacity: 0.9;
+
+  max-width: 90%;
+  text-align: center;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .date-display{
@@ -1368,4 +1374,29 @@ body.loaded{
 
 .cta-button{
   margin-top: -5px;
+}
+
+@media(max-width:768px){
+
+  .hero-subtext{
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    line-height: 1.45;
+    max-width: 88%;
+  }
+
+  .countdown{
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .date-display{
+    font-size: 0.95rem;
+  }
+
+  .cta-button{
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+  }
+
 }
