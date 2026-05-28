@@ -273,20 +273,20 @@ text-shadow:
 
 /* animation */
 .names.animate .line{
-  animation:cinematicReveal 1.2s ease forwards;
+  animation:cinematicReveal 0.7s ease forwards;
 }
 
 /* stagger timing */
 .names.animate .bryll{
-  animation-delay:0.3s;
+  animation-delay:0s;
 }
 
 .names.animate .amp{
-  animation-delay:0.8s;
+  animation-delay:0.15s;
 }
 
 .names.animate .perveen{
-  animation-delay:1.3s;
+  animation-delay:0.3s;
 }
 
 /* keyframes */
