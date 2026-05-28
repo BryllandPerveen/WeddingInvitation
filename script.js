@@ -355,7 +355,7 @@ lightbox.style.display="none";
 
 });
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const names = document.querySelector(".names");
   names.classList.add("animate");
 });
